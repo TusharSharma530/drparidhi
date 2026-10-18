@@ -14,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <!-- Main CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="branch/css/style.css">
 </head>
 <body>
 
@@ -27,7 +27,7 @@
                 <!-- Logo -->
                 <a class="site-logo" href="../index.php">
                     <img
-                        src="../assets/logo.png"
+                        src="branch/assets/logo.png"
                         alt="Dr.Paridhi Chaudhary Logo"
                         class="site-logo-img"
                     >
@@ -65,7 +65,7 @@
 
             <a class="navbar-brand mobile-logo d-lg-none" href="../index.php">
                 <img
-                    src="../assets/logo.png"
+                    src="branch/assets/logo.png"
                     alt="Dr.Paridhi Chaudhary Logo"
                     class="site-logo-img"
                 >

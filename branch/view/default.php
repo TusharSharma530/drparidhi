@@ -8,7 +8,7 @@
     <main>
         <section class="home-banner">
             <img
-                src="../assets/banner.webp"
+                src="branch/assets/banner.webp"
                 alt="Dr. Paridhi Chaudhary - Obstetrician and Gynecologist"
                 fetchpriority="high"
             >
@@ -96,7 +96,7 @@
                 <!-- Right Side Image -->
                 <div class="why-choose">
                     <img
-                        src="../assets/drparidhi.jpg"
+                        src="branch/assets/drparidhi.jpg"
                         alt="Dr. Paridhi Chaudhary"
                     >
                 </div>
@@ -114,16 +114,16 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="../assets/gallery1.jpg.webp" alt="Gallery Image 1">
+                    <img src="branch/assets/gallery1.jpg.webp" alt="Gallery Image 1">
                 </div>
                 <div class="gallery-item">
-                    <img src="../assets/gallery2.jpg.webp" alt="Gallery Image 2">
+                    <img src="branch/assets/gallery2.jpg.webp" alt="Gallery Image 2">
                 </div>
                 <div class="gallery-item">
-                    <img src="../assets/gallery3.jpg.webp" alt="Gallery Image 3">
+                    <img src="branch/assets/gallery3.jpg.webp" alt="Gallery Image 3">
                 </div>
                 <div class="gallery-item">
-                    <img src="../assets/gallery4.jpg.webp" alt="Gallery Image 4">
+                    <img src="branch/assets/gallery4.jpg.webp" alt="Gallery Image 4">
                 </div>
             </div>
 
@@ -144,7 +144,7 @@
 
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="../assets/pregnancy.svg" alt="Pregnancy Care">
+                            <img src="branch/assets/pregnancy.svg" alt="Pregnancy Care">
                             <h3 class="condition-name">Pregnancy &amp; High-Risk Pregnancy</h3>
                             <p class="condition-text">
                                 Comprehensive care during pregnancy, including high-risk cases,
@@ -155,7 +155,7 @@
 
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="../assets/menstrural disorders.svg" alt="Menstrual Disorders">
+                            <img src="branch/assets/menstrural disorders.svg" alt="Menstrual Disorders">
                             <h3 class="condition-name">Menstrual Disorders</h3>
                             <p class="condition-text">
                                 Diagnosis and treatment for painful, heavy, or irregular periods
@@ -166,7 +166,7 @@
 
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="../assets/pcos.svg" alt="PCOS / PCOD">
+                            <img src="branch/assets/pcos.svg" alt="PCOS / PCOD">
                             <h3 class="condition-name">PCOS / PCOD</h3>
                             <p class="condition-text">
                                 Personalized care for PCOS/PCOD to manage hormonal imbalance,
@@ -177,7 +177,7 @@
 
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="../assets/uterine.svg" alt="Uterine Fibroids">
+                            <img src="branch/assets/uterine.svg" alt="Uterine Fibroids">
                             <h3 class="condition-name">Uterine Fibroids</h3>
                             <p class="condition-text">
                                 Non-invasive and surgical treatment options for fibroids causing
@@ -187,7 +187,7 @@
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="../assets/uterine.svg" alt="Uterine Fibroids">
+                            <img src="branch/assets/uterine.svg" alt="Uterine Fibroids">
                             <h3 class="condition-name">Ovarian Cysts</h3>
                             <p class="condition-text">
                                 Non-invasive and surgical treatment options for ovarian cysts causing
@@ -197,7 +197,7 @@
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="../assets/uterine.svg" alt="Uterine Fibroids">
+                            <img src="branch/assets/uterine.svg" alt="Uterine Fibroids">
                             <h3 class="condition-name">Endometriosis</h3>
                             <p class="condition-text">
                                 Non-invasive and surgical treatment options for endometriosis causing
@@ -207,7 +207,7 @@
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="../assets/infertility.svg" alt="Infertility & Reproductive Health Issues">
+                            <img src="branch/assets/infertility.svg" alt="Infertility & Reproductive Health Issues">
                             <h3 class="condition-name">Infertility & Reproductive Health Issues</h3>
                             <p class="condition-text">
                                 Non-invasive and surgical treatment options for infertility and reproductive health issues causing
@@ -217,7 +217,7 @@
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="../assets/ovarian.svg" alt="Ovarian Cysts">
+                            <img src="branch/assets/ovarian.svg" alt="Ovarian Cysts">
                             <h3 class="condition-name">Pelvic Inflammatory Disease</h3>
                             <p class="condition-text">
                                 Non-invasive and surgical treatment options for pelvic inflammatory disease causing
@@ -238,7 +238,7 @@
 
                 <div class="commitment-image">
                     <img
-                        src="../assets/commitment-image.webp"
+                        src="branch/assets/commitment-image.webp"
                         alt="Dr. Paridhi Chaudhary - Commitment to Patients"
                     >
                 </div>
@@ -274,7 +274,7 @@
         <!-- Appointment Section -->
         <section
             class="about-doctor-section"
-            style="padding-top: 130px; padding-bottom: 130px; background: linear-gradient(rgba(37, 148, 156, 0.88), rgba(37, 148, 156, 0.88)), url('../assets/book-appointment.webp') center / cover no-repeat;"
+            style="padding-top: 130px; padding-bottom: 130px; background: linear-gradient(rgba(37, 148, 156, 0.88), rgba(37, 148, 156, 0.88)), url('branch/assets/book-appointment.webp') center / cover no-repeat;"
         >
             <div class="container px-4">
                 <div class="row">
