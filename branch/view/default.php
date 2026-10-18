@@ -8,51 +8,10 @@
     <main>
         <section class="home-banner">
             <img
-                src="branch/assets/banner.webp"
+                src="branch/assets/banner2.png"
                 alt="Dr. Paridhi Chaudhary - Obstetrician and Gynecologist"
                 fetchpriority="high"
             >
-
-            <!-- Banner Right Side Content -->
-            <div class="banner-content">
-                <h4 class="banner-name">Dr. Paridhi Chaudhary</h4>
-
-                <h2 class="banner-title">Gynecologist in Rohini Delhi</h2>
-
-                <ul class="banner-qualifications">
-                    <li>MBBS, MS (Obs &amp; Gynae)</li>
-                    <li>Robotic &amp; Laparoscopic Surgeon (DMIS, Germany)</li>
-                    <li>Cosmetic Gynaecologist (ICCG)</li>
-                </ul>
-
-                <p class="banner-desc">
-                    Dr. Paridhi Chaudhary is an experienced Gynecologist in Rohini Delhi with over
-                    23+ years of experience in Obstetrics &amp; Gynecology. MBBS, MS, and
-                    Laparoscopic, Specialized in advanced women&rsquo;s health, pregnancy care,
-                    infertility, and minimally invasive surgery.
-                </p>
-
-                <ul class="banner-features">
-                    <li>
-                        <span class="feature-icon">
-                            <i class="bi bi-graph-up-arrow"></i>
-                        </span>
-                        <span class="feature-text">23+ Years of Experience</span>
-                    </li>
-                    <li>
-                        <span class="feature-icon">
-                            <i class="bi bi-heart-pulse"></i>
-                        </span>
-                        <span class="feature-text">Trusted Gynecologist</span>
-                    </li>
-                    <li>
-                        <span class="feature-icon">
-                            <i class="bi bi-shield-check"></i>
-                        </span>
-                        <span class="feature-text">4.9 Rating Based Out of 240+ Positive Google Reviews</span>
-                    </li>
-                </ul>
-            </div>
         </section>
 
         <!-- About / Why Choose Section -->
@@ -272,10 +231,7 @@
         </section>
 
         <!-- Appointment Section -->
-        <section
-            class="about-doctor-section"
-            style="padding-top: 130px; padding-bottom: 130px; background: linear-gradient(rgba(37, 148, 156, 0.88), rgba(37, 148, 156, 0.88)), url('branch/assets/book-appointment.webp') center / cover no-repeat;"
-        >
+        <section class="about-doctor-section appointment-section">
             <div class="container px-4">
                 <div class="row">
                     <div class="col-lg-7">
@@ -338,7 +294,7 @@
                         What Are The Symptoms Of Gynaecological Diseases?
                     </h2>
 
-                    <p class="text-center fs-5 lh-lg mt-4 mb-0" style="color: #333333;">
+                    <p class="section-text mt-4 mb-0">
                         Gynecological conditions can often go unnoticed in the early stages.
                         Recognizing the warning signs early is key to timely diagnosis and
                         effective treatment. If you&rsquo;re experiencing any of the following

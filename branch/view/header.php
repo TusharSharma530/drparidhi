@@ -63,7 +63,7 @@
     <nav class="navbar navbar-expand-lg container">
         <div class="container-fluid ">
 
-            <a class="navbar-brand mobile-logo d-lg-none" href="../index.php">
+            <a class="navbar-brand d-lg-none" href="../index.php">
                 <img
                     src="branch/assets/logo.png"
                     alt="Dr.Paridhi Chaudhary Logo"
