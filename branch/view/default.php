@@ -376,8 +376,196 @@
             </div>
         </section>
 
-        
+        <!-- Schedule Consultation / Appointment Section -->
+        <section class="consult-section">
+            <div class="container px-4">
+
+                <div class="section-head">
+                    <h2 class="section-title">
+                        Your Health Deserves Priority. Don&rsquo;t Wait &mdash;
+                        Schedule Your Consultation Now
+                    </h2>
+                </div>
+
+                <div class="row g-4 align-items-start">
+
+                    <!-- Left Side - Clinic / Hospital Info -->
+                    <div class="col-lg-7">
+
+                        <!-- Clinic / Hospital Tabs -->
+                        <div class="consult-tabs" role="tablist">
+                            <button type="button"
+                                    class="consult-tab"
+                                    data-consult-tab="clinic"
+                                    role="tab"
+                                    aria-selected="false">
+                                Clinic
+                            </button>
+
+                            <button type="button"
+                                    class="consult-tab active"
+                                    data-consult-tab="hospital"
+                                    role="tab"
+                                    aria-selected="true">
+                                Hospital
+                            </button>
+                        </div>
+
+                        <!-- Contact Details -->
+                        <ul class="consult-list">
+
+                            <li class="consult-item">
+                                <span class="consult-icon">
+                                    <i class="bi bi-telephone"></i>
+                                </span>
+                                <span class="consult-detail">
+                                    <span class="consult-label">Call now</span>
+                                    <a class="consult-value" href="tel:+918383963033">
+                                        +918383963033
+                                    </a>
+                                </span>
+                            </li>
+
+                            <li class="consult-item">
+                                <span class="consult-icon">
+                                    <i class="bi bi-envelope"></i>
+                                </span>
+                                <span class="consult-detail">
+                                    <span class="consult-label">Email</span>
+                                    <a class="consult-value" href="mailto:drsuneet80@gmail.com">
+                                        drsuneet80@gmail.com
+                                    </a>
+                                </span>
+                            </li>
+
+                            <li class="consult-item">
+                                <span class="consult-icon">
+                                    <i class="bi bi-geo-alt"></i>
+                                </span>
+                                <span class="consult-detail">
+                                    <span class="consult-label">Address</span>
+                                    <span class="consult-value" id="consultAddress">
+                                        Cloudnine Hospital Community Centre, Plot no 2,
+                                        Sector 3, Sector 3A, Rohini, Delhi, 110085
+                                    </span>
+                                </span>
+                            </li>
+
+                            <li class="consult-item">
+                                <span class="consult-icon">
+                                    <i class="bi bi-clock"></i>
+                                </span>
+                                <span class="consult-detail">
+                                    <span class="consult-label">Timings</span>
+                                    <span class="consult-value">
+                                        Mon &ndash; Sat: 10:00 AM To 02:00 PM
+                                    </span>
+                                </span>
+                            </li>
+
+                        </ul>
+
+                        <!-- Location Button -->
+                        <button type="button" class="consult-branch" id="consultBranch">
+                            Punjabi Bagh
+                        </button>
+
+                        <!-- Google Map -->
+                        <div class="consult-map">
+                            <a class="consult-map-link"
+                               id="consultMapLink"
+                               href="https://www.google.com/maps/search/?api=1&amp;query=Cloudnine+Hospital+Rohini+Delhi"
+                               target="_blank"
+                               rel="noopener">
+                                Maps <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+
+                            <iframe
+                                id="consultMap"
+                                src="https://www.google.com/maps?q=Cloudnine+Hospital+Rohini+Delhi&amp;z=15&amp;output=embed"
+                                title="Clinic Location Map"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                allowfullscreen></iframe>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Side - Appointment Form -->
+                    <div class="col-lg-5">
+                        <div class="consult-form-card">
+
+                            <form class="consult-form" id="consultForm" novalidate>
+
+                                <div class="consult-field">
+                                    <label for="consultName">Full Name</label>
+                                    <div class="consult-input-wrap">
+                                        <i class="bi bi-person"></i>
+                                        <input type="text"
+                                               class="consult-input"
+                                               id="consultName"
+                                               name="full_name"
+                                               placeholder="Your Name"
+                                               required>
+                                    </div>
+                                </div>
+
+                                <div class="consult-field">
+                                    <label for="consultEmail">Email Address</label>
+                                    <div class="consult-input-wrap">
+                                        <i class="bi bi-envelope"></i>
+                                        <input type="email"
+                                               class="consult-input"
+                                               id="consultEmail"
+                                               name="email"
+                                               placeholder="Your Email"
+                                               required>
+                                    </div>
+                                </div>
+
+                                <div class="consult-field">
+                                    <label for="consultPhone">Phone Number</label>
+                                    <div class="consult-input-wrap">
+                                        <i class="bi bi-telephone"></i>
+                                        <input type="tel"
+                                               class="consult-input"
+                                               id="consultPhone"
+                                               name="phone"
+                                               placeholder="+91-12345-67890"
+                                               required>
+                                    </div>
+                                </div>
+
+                                <div class="consult-field">
+                                    <label for="consultMessage">Message</label>
+                                    <div class="consult-input-wrap consult-input-area">
+                                        <i class="bi bi-chat-dots"></i>
+                                        <textarea class="consult-input"
+                                                  id="consultMessage"
+                                                  name="message"
+                                                  placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="consult-submit">
+                                    Confirm Appointment
+                                </button>
+
+                                <p class="consult-msg" id="consultMsg"></p>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
     </main>
+
+    <script src="branch/js/script.js"></script>
 
 </body>
 </html>
