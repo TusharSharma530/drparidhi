@@ -23,7 +23,7 @@
                     <span class="section-tag">Dr. Paridhi Chaudhary</span>
 
                     <h2 class="section-title">
-                        Trusted Gynecologist In Rohini Delhi
+                        Meet Our Gynecologist in Rohini Delhi
                     </h2>
 
                     <p class="section-text">
@@ -44,7 +44,7 @@
                         </p>
 
                     <div class="about-actions">
-                        <a class="about-btn" href="../view/about.php">About Us</a>
+                        <a class="about-btn" href="about">About Us</a>
 
                         <a class="about-helpline" href="tel:+918383963033">
                             Helpline! +91-8383963033
@@ -562,10 +562,214 @@
 
             </div>
         </section>
+        
+
+        <section class="testimonials-section">
+
+            <div class="container px-4">
+
+                <div class="section-head text-center mb-5">
+                    <span class="section-tag">Testimonials</span>
+
+                    <h2 class="section-title">
+                        What Our Patients Say About Us
+                    </h2>
+
+                    <p class="section-text mt-3">
+                        Experiences shared by patients about their care
+                        and consultation with Dr. Paridhi Chaudhary.
+                    </p>
+                </div>
+
+                <div class="testimonials-flex">
+
+                    <!-- Review Box 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 stars">
+                            ★★★★★
+                        </div>
+
+                        <h3 class="testimonial-heading">Excellent</h3>
+
+                        <p class="section-text">
+                            Dr. Paridhi Chaudhary is very kind and supportive.
+                            She listens patiently and explains medical concerns
+                            clearly, making the consultation comfortable.
+                        </p>
+                    </div>
+
+                    <!-- Review Box 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 stars">
+                            ★★★★★
+                        </div>
+
+                        <h3 class="testimonial-heading">Very Caring</h3>
+
+                        <p class="section-text">
+                            The doctor takes time to understand concerns and
+                            provides clear guidance. Her respectful approach
+                            makes it easier to discuss women's health issues.
+                        </p>
+                    </div>
+
+                    <!-- Review Box 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars" aria-label="5 stars">
+                            ★★★★★
+                        </div>
+
+                        <h3 class="testimonial-heading">Great Experience</h3>
+
+                        <p class="section-text">
+                            The consultation was informative, and the doctor
+                            explained the available treatment options patiently.
+                            I appreciated the attention given to my concerns.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        
+
+        <section class="blogs-section">
+
+            <div class="container px-4">
+
+                <div class="section-head text-center ">
+                    <span class="section-tag">Health Articles</span>
+
+                    <h2 class="section-title">
+                        Latest Blogs
+                    </h2>
+
+                    <p class="section-text mt-3">
+                        Explore helpful information, expert guidance, and
+                        women's healthcare tips from Dr. Paridhi Chaudhary.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+
+                   
+                    <div class="col-md-6 col-lg-4">
+                        <div class="blog-card h-100">
+
+                            <img
+                                src="branch/assets/blog1.webp"
+                                alt="Pregnancy care and maternal health"
+                                class="img-fluid"
+                                loading="lazy"
+                            >
+
+                            <div class="blog-content p-3">
+
+                                <span class="section-tag">
+                                    Pregnancy Care
+                                </span>
+
+                                <h3 class="testimonial-heading">
+                                    Tips for a Healthy Pregnancy
+                                </h3>
+
+                                <p class="section-text mt-3">
+                                    Learn about prenatal checkups, healthy
+                                    habits, nutrition, and important precautions
+                                    during pregnancy.
+                                </p>
+
+                               
+
+                            </div>
+                        </div>
+                    </div>
+
+                
+                    <div class="col-md-6 col-lg-4">
+                        <div class="blog-card h-100">
+
+                            <img
+                                src="branch/assets/blog2.webp"
+                                alt="Women's menstrual health awareness"
+                                class="img-fluid"
+                                loading="lazy"
+                            >
+
+                            <div class="blog-content p-3">
+
+                                <span class="section-tag">
+                                    Women's Health
+                                </span>
+
+                                <h3 class="testimonial-heading">
+                                    Understanding Irregular Periods
+                                </h3>
+
+                                <p class="section-text mt-3">
+                                    Discover common reasons for irregular
+                                    menstrual cycles and when to consult
+                                    a gynecologist.
+                                </p>
+
+                                <!-- <a href="../view/blog-irregular-periods.php">
+                                    Read More
+                                </a> -->
+
+                            </div>
+                        </div>
+                    </div>
+
+              
+                    <div class="col-md-6 col-lg-4">
+                        <div class="blog-card h-100">
+
+                            <img
+                                src="branch/assets/blog3.webp"
+                                alt="PCOS and hormonal health awareness"
+                                class="img-fluid"
+                                loading="lazy"
+                            >
+
+                            <div class="blog-content p-3">
+
+                                <span class="section-tag">
+                                    PCOS / PCOD
+                                </span>
+
+                                <h3 class="testimonial-heading">
+                                    PCOS: Symptoms and Treatment Options
+                                </h3>
+
+                                <p class="section-text mt-3">
+                                    Understand common PCOS symptoms,
+                                    diagnosis, and how individualized
+                                    treatment can help manage this condition.
+                                </p>
+
+                                <!-- <a href="../view/blog-pcos-treatment.php">
+                                    Read More
+                                </a> -->
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+<!-- End Latest Blogs Section -->
+
+<!-- End Patient Testimonials Section -->
+
 
     </main>
-
-    <script src="branch/js/script.js"></script>
+   <?php include __DIR__ . '/footer.php'; ?>    
+   
 
 </body>
 </html>

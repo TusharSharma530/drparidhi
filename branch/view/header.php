@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,7 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="branch/css/style.css">
 </head>
+ <script src="branch/js/script.js"></script>
 <body>
 
 <header class="site-header">
@@ -25,7 +27,7 @@
             <div class="header-top-inner">
 
                 <!-- Logo -->
-                <a class="site-logo" href="../index.php">
+                <a class="site-logo" href="branch/view/default.php">
                     <img
                         src="branch/assets/logo.png"
                         alt="Dr.Paridhi Chaudhary Logo"
@@ -60,10 +62,10 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg container">
+    <nav class="navbar navbar-expand-lg container ">
         <div class="container-fluid ">
 
-            <a class="navbar-brand d-lg-none" href="../index.php">
+            <a class="navbar-brand d-lg-none" href="default.php">
                 <img
                     src="branch/assets/logo.png"
                     alt="Dr.Paridhi Chaudhary Logo"
@@ -80,55 +82,28 @@
                 <ul class="navbar-nav me-auto align-items-lg-center">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="../index.php">
+                        <a class="nav-link active" href="index.php">
                             Home
                         </a>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"
-                           href="../view/about.php"
-                           role="button"
-                           data-bs-toggle="dropdown"
-                           aria-expanded="false">
+                   <li class="nav-item">
+                        <a class="nav-link" href="about">
                             About Us
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="../view/conditions.php">
-                            Condition
-                        </a>
-                    </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"
-                           href="../view/specialities.php"
-                           role="button"
-                           data-bs-toggle="dropdown"
-                           aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link" href="specialities">
                             Specialities
                         </a>
-
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"
-                           href="../view/gallery.php"
-                           role="button"
-                           data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Media
-                        </a>
-                    </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"
-                           href="../view/blogs.php"
-                           role="button"
-                           data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Health Tips
+                    <li class="nav-item">
+                        <a class="nav-link" href="blogs">
+                            Blogs
                         </a>
                     </li>
 
@@ -152,5 +127,6 @@
     </nav>
 
 </header>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -110,7 +110,7 @@ a {
 .site-header .navbar {
     min-height: 84px;
     padding: 8px 0;
-    background-color: var(--white);
+    background-color: #87ceeb0d;
 }
 
 .site-header .site-logo {
@@ -222,6 +222,7 @@ a {
     display: flex;
     align-items: flex-start;
     gap: 45px;
+    background: #87ceeb0d;
 }
 
 /* Left Side */
@@ -237,7 +238,7 @@ a {
     color: #1a1a1a;
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.5;
+    margin: 15px;
 }
 
 .about-doctor-section .about-actions {
@@ -305,17 +306,18 @@ a {
 
 .section-head {
     max-width: 1100px;
-    margin: 0 auto 45px;
+    margin: 0 auto 30px;
     padding: 0 20px;
     text-align: center;
 }
 
 .section-tag {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: -1px;
     color: var(--primary-color);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
+    padding: 10px;
 }
 
 .section-title {
@@ -351,8 +353,7 @@ a {
 
 .conditions-section {
     width: 100%;
-    padding: 70px 0 80px;
-    background-color: var(--white);
+    padding: 50px;
 }
 
 .conditions-section .condition-card {
@@ -439,8 +440,7 @@ a {
 .appointment-section {
     padding-top: 130px;
     padding-bottom: 130px;
-    background: linear-gradient(rgba(37, 148, 156, 0.88), rgba(37, 148, 156, 0.88)),
-        url('../assets/book-appointment.webp') center / cover no-repeat;
+    background: linear-gradient(rgb(37 148 156 / 38%), rgba(37, 148, 156, 0.88)), url(../assets/book-appointment.webp) center / cover no-repeat;
 }
 
 /* Schedule Consultation Section (Clinic / Hospital info + Appointment form) */
@@ -449,10 +449,9 @@ a {
     --consult-maroon: #7d1f41;
     --consult-maroon-dark: #661834;
     --consult-pink: #ea3c86;
-
     width: 100%;
     padding: 70px 0 80px;
-    background-color: var(--white);
+    background-color: #87ceeb0d;
 }
 
 .consult-section .section-title {
@@ -591,7 +590,7 @@ a.consult-section .consult-value:hover {
 }
 
 .consult-section .consult-map-link {
-    position: absolute;
+    /* position: absolute; */
     top: 14px;
     left: 14px;
     z-index: 2;
@@ -704,4 +703,286 @@ a.consult-section .consult-value:hover {
     transform: translateY(-2px);
 }
 
+/* Patient Testimonials */
+.testimonials-section {
+    padding: 60px 0;
+    background: #25949c0a;
+}
 
+.testimonials-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+}
+
+.testimonial-card {
+    flex: 1 1 300px;
+    max-width: 360px;
+    padding: 28px 24px;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-stars {
+    color: #f5a623;
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.testimonial-heading {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #000000;
+}
+
+.testimonial-name {
+    margin-top: auto;
+    padding-top: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+
+.site-footer {
+    background: #25949c;
+    color: #ffffff;
+    padding: 60px 0 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.site-footer .container {
+    max-width: 1200px;
+}
+
+.site-footer .row {
+    row-gap: 35px;
+}
+
+.site-footer h3 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 22px;
+    line-height: 1.4;
+}
+
+.site-footer p {
+    color: #d5e0e1;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.9;
+    /* margin-bottom: 16px; */
+}
+
+.site-footer ul {
+    padding: 0;
+    margin: 0;
+}
+
+.site-footer ul li {
+    color: #d5e0e1;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.site-footer a {
+    color: #d5e0e1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer ul li a {
+    display: inline-block;
+}
+
+.site-footer a:hover {
+    color: #25949c;
+}
+
+.site-footer strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.site-footer hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 35px 0 0;
+    opacity: 1;
+}
+
+
+
+.site-footer .footer-bottom {
+    padding: 20px 0;
+}
+
+.site-footer .footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    color: #d5e0e1;
+}
+
+/* Appointment Link */
+
+.site-footer a[href*="appointment.php"] {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 11px 18px;
+    background: #ffffff;
+    color: #102d32;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    
+}
+
+.site-footer a[href*="appointment.php"]:hover {
+    background: #25949c;
+    color: #102d32;
+}
+
+
+/* Footer Doctor Logo and Branding */
+
+.site-footer .footer-doctor-brand {
+    margin-bottom: 22px;
+}
+
+.site-footer .footer-doctor-logo {
+    display: block;
+    width: 95px;
+    margin-bottom: 12px;
+}
+
+.site-footer .footer-doctor-logo img {
+    display: block;
+    width: 100%;
+    height: 75px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.site-footer .footer-doctor-name {
+    margin-bottom: 6px;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.site-footer .footer-doctor-brand p {
+    /* margin-bottom: 12px; */
+}
+
+/* Footer Social Media Icons */
+
+.site-footer .footer-social-icons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.site-footer .footer-social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 19px;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.site-footer .footer-social-icons a:hover {
+    background: #ffffff;
+    color: #102d32;
+    transform: translateY(-3px);
+}
+
+
+
+
+
+/* ============================================
+   Doctor Credentials Ã¢â‚¬â€œ Simple List Style
+   ============================================ */
+
+.pc-profile-section {
+    width: 100%;
+    padding: 70px 22px;
+    background: #87ceeb0d;
+    box-sizing: border-box;
+}
+
+.pc-profile-container {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+
+.pc-profile-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.pc-profile-content {
+    flex: 1 1 60%;
+    max-width: 60%;
+}
+
+.pc-profile-image {
+    flex: 1 1 35%;
+    max-width: 35%;
+}
+
+.pc-profile-image img {
+    position: sticky;
+    top: 30px;
+    display: block;
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    object-position: center top;
+}
+
+
+
+.pc-profile-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pc-profile-list li {
+    position: relative;
+    padding: 9px 0 9px 36px;
+    color: #111111;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.pc-profile-list li small {
+    display: block;
+    margin-top: 2px;
+    color: #444444;
+    font-size: 15px;
+    font-weight: 500;
+}
