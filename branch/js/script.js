@@ -76,3 +76,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+/* ---------- Back to Top Button ---------- */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    var backToTop = document.querySelector('.back-to-top');
+
+    if (!backToTop) return;
+
+    window.addEventListener('scroll', function () {
+        backToTop.classList.toggle('show', window.scrollY > 300);
+    });
+
+    backToTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+});

@@ -25,16 +25,11 @@
                     </h3>
 
                     <p>
-                        Obstetrician &amp; Gynecologist
+                        Obstetrician &amp; Gynecologist Laparascopic
+                        <br>Surgeon and Infertility Specialist
                     </p>
 
                 </div>
-
-                <p>
-                    Providing compassionate and personalized women's
-                    healthcare, pregnancy care, and gynecological
-                    consultations in Rohini, Delhi.
-                </p>
 
             </div>
 
@@ -45,28 +40,21 @@
 
                 <div class="footer-social-icons">
 
-                    <a href="https://www.youtube.com/"
+                    <a href="https://www.youtube.com/@paridhichaudharyshaurya6955"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="YouTube">
                         <i class="bi bi-youtube"></i>
                     </a>
 
-                    <a href="https://www.instagram.com/"
+                    <a href="https://www.instagram.com/drparidhigyne/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram">
                         <i class="bi bi-instagram"></i>
                     </a>
 
-                    <a href="https://www.linkedin.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-
-                    <a href="https://www.facebook.com/"
+                    <a href="https://www.facebook.com/Dr.Paridhi.chaudhary"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook">
@@ -83,10 +71,10 @@
                 <h3>Quick Links</h3>
 
                 <ul class="list-unstyled">
-                    <li><a href="../default.php">Home</a></li>
-                    <li><a href="../view/about.php">About Us</a></li>
-                    <li><a href="../default.php#blogs-section">Latest Blogs</a></li>
-                    <li><a href="../default.php#contact">Contact Us</a></li>
+                    <li><a href="default">Home</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="blogs">Latest Blogs</a></li>
+                    <li><a href="contact">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -112,34 +100,32 @@
 
                 <p>
                     <strong>Address:</strong><br>
-                    B-19, Hil Apartments,<br>
-                    Sector 13, Rohini, Delhi
+                    Shop No,6,7,RPG Galleria<br>
+                    GP Pocket,Ganga Nagar,<br>
+                    Meerut,Uttar Pradesh-250001
                 </p>
 
                 <p>
                     <strong>Phone:</strong><br>
-                    <a href="tel:+918383963033">
-                        +91-8383963033
+                    <a href="tel:+919286197331">
+                        +91-9286197331, 01214567142
                     </a>
                 </p>
 
                 <p>
                     <strong>Email:</strong><br>
                     <a href="mailto:drsuneet80@gmail.com">
-                        drsuneet80@gmail.com
+                        drparidhichaudhary@gmail.com
                     </a>
                 </p>
 
-                <a href="../view/appointment.php">
-                    Book an Appointment
-                </a>
             </div>
 
         </div>
 
         <hr>
 
-        <div class="footer-bottom text-center">
+        <div class="footer-bottom text-left">
             <p>
                 &copy; <?php echo date('Y'); ?>
                 Dr. Paridhi Chaudhary. All Rights Reserved.
@@ -149,3 +135,22 @@
     </div>
 
 </footer>
+
+<div class="float-contact">
+    <a href="tel:+919286197331" class="float-call" aria-label="Call us">
+        <i class="bi bi-telephone-fill"></i>
+    </a>
+
+    <a href="https://wa.me/919286197331"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="float-whatsapp"
+       aria-label="Chat on WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+</div>
+
+<!-- Back to Top Button (right side) -->
+<button type="button" class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+</button>

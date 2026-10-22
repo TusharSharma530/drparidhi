@@ -23,7 +23,7 @@
                     <span class="section-tag">Dr. Paridhi Chaudhary</span>
 
                     <h2 class="section-title">
-                        Meet Our Gynecologist in Rohini Delhi
+                        Meet Our Gynecologist in Meerut
                     </h2>
 
                     <p class="section-text">
@@ -46,8 +46,8 @@
                     <div class="about-actions">
                         <a class="about-btn" href="about">About Us</a>
 
-                        <a class="about-helpline" href="tel:+918383963033">
-                            Helpline! +91-8383963033
+                        <a class="about-helpline" href="tel:+919286197331">
+                            Helpline! +91-9286197331 , 01214567142
                         </a>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                 <!-- Right Side Image -->
                 <div class="why-choose">
                     <img
-                        src="branch/assets/drparidhi.jpg"
+                        src="branch/assets/drparidhi.jpeg"
                         alt="Dr. Paridhi Chaudhary"
                     >
                 </div>
@@ -73,16 +73,16 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="branch/assets/gallery1.jpg.webp" alt="Gallery Image 1">
+                    <img src="branch/assets/gallery1.jpeg" alt="Gallery Image 1">
                 </div>
                 <div class="gallery-item">
-                    <img src="branch/assets/gallery2.jpg.webp" alt="Gallery Image 2">
+                    <img src="branch/assets/gallery2.jpeg" alt="Gallery Image 2">
                 </div>
                 <div class="gallery-item">
-                    <img src="branch/assets/gallery3.jpg.webp" alt="Gallery Image 3">
+                    <img src="branch/assets/gallery3.jpeg" alt="Gallery Image 3">
                 </div>
                 <div class="gallery-item">
-                    <img src="branch/assets/gallery4.jpg.webp" alt="Gallery Image 4">
+                    <img src="branch/assets/gallery4.jpeg" alt="Gallery Image 4">
                 </div>
             </div>
 
@@ -94,7 +94,7 @@
                 <span class="section-tag">Condition We Treat</span>
                 <h2 class="section-title">
                     Conditions Treated By Dr. Paridhi Chaudhary -
-                    Gynecologist In Rohini Delhi
+                    Gynecologist In Meerut
                 </h2>
             </div>
 
@@ -102,86 +102,67 @@
                 <div class="row g-4">
 
                     <div class="col-md-6 col-lg-3">
-                        <div class="condition-card">
+                        <a href="pregnancycare" class="condition-card">
                             <img src="branch/assets/pregnancy.svg" alt="Pregnancy Care">
-                            <h3 class="condition-name">Pregnancy &amp; High-Risk Pregnancy</h3>
-                            <p class="condition-text">
-                                Comprehensive care during pregnancy, including high-risk cases,
-                                ensuring the health and safety of both mother and baby.
-                            </p>
-                        </div>
+                            <h3 class="condition-name">Antenatal Screening, Pregnancy Treatment Including High Rusk Pregnancy</h3>
+                            <!-- <p class="condition-text">
+                                Antenatal Screening,Pregnancy Treatment Including High Risk Pregnancy
+                            </p> -->
+                        </a>
                     </div>
 
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
                             <img src="branch/assets/menstrural disorders.svg" alt="Menstrual Disorders">
-                            <h3 class="condition-name">Menstrual Disorders</h3>
-                            <p class="condition-text">
-                                Diagnosis and treatment for painful, heavy, or irregular periods
-                                to restore hormonal balance and menstrual health.
-                            </p>
+                            <h3 class="condition-name">
+                               Delivery-Normal and C-Section
+                             </h3>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
                             <img src="branch/assets/pcos.svg" alt="PCOS / PCOD">
-                            <h3 class="condition-name">PCOS / PCOD</h3>
-                            <p class="condition-text">
-                                Personalized care for PCOS/PCOD to manage hormonal imbalance,
-                                weight gain, acne, irregular cycles, and infertility.
-                            </p>
+                            <h3 class="condition-name">
+                                Infertility Problem
+                            </h3>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
                             <img src="branch/assets/uterine.svg" alt="Uterine Fibroids">
-                            <h3 class="condition-name">Uterine Fibroids</h3>
-                            <p class="condition-text">
+                            <h3 class="condition-name">Treatment of itching,pain and other Infection of female genital tract,PCOS Treatment</h3>
+                            <!-- <p class="condition-text">
                                 Non-invasive and surgical treatment options for fibroids causing
                                 heavy bleeding, pain, infertility, or pressure symptoms.
-                            </p>
+                            </p> -->
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
                             <img src="branch/assets/uterine.svg" alt="Uterine Fibroids">
-                            <h3 class="condition-name">Ovarian Cysts</h3>
-                            <p class="condition-text">
-                                Non-invasive and surgical treatment options for ovarian cysts causing
-                                pain, bloating, or other symptoms.
-                            </p>
+                            <h3 class="condition-name">Period Related Problem</h3>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
                             <img src="branch/assets/uterine.svg" alt="Uterine Fibroids">
-                            <h3 class="condition-name">Endometriosis</h3>
-                            <p class="condition-text">
-                                Non-invasive and surgical treatment options for endometriosis causing
-                                pain, infertility, or other symptoms.
-                            </p>
+                            <h3 class="condition-name">Adolescent girls health related problem</h3>
+                           
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
                             <img src="branch/assets/infertility.svg" alt="Infertility & Reproductive Health Issues">
-                            <h3 class="condition-name">Infertility & Reproductive Health Issues</h3>
-                            <p class="condition-text">
-                                Non-invasive and surgical treatment options for infertility and reproductive health issues causing
-                                pain.
-                            </p>
+                            <h3 class="condition-name">Cancer Screening and Prevention</h3>
+                           
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
                             <img src="branch/assets/ovarian.svg" alt="Ovarian Cysts">
-                            <h3 class="condition-name">Pelvic Inflammatory Disease</h3>
-                            <p class="condition-text">
-                                Non-invasive and surgical treatment options for pelvic inflammatory disease causing
-                                pain, infertility, or other symptoms.
-                            </p>
+                            <h3 class="condition-name">Laparascopic Hysterectomy and Open Surgical Hysterectomy</h3>
                         </div>
                     </div>
 
@@ -247,9 +228,9 @@
                                     <i class="bi bi-telephone text-white fs-4"></i>
                                     <span class="text-white fw-bold fs-4">Call Us:</span>
                                 </div>
-                                <a href="tel:+918383963033"
+                                <a href="tel:+919286197331"
                                    class="text-white text-decoration-none fs-5">
-                                    +91-8383963033
+                                    +91-9286197331 , 0121 4567142
                                 </a>
                             </div>
 
@@ -258,9 +239,9 @@
                                     <i class="bi bi-envelope text-white fs-4"></i>
                                     <span class="text-white fw-bold fs-4">E-mail Us:</span>
                                 </div>
-                                <a href="mailto:drsuneet80@gmail.com"
+                                <a href="mailto:drparidhichaudhary@gmail.com"
                                    class="text-white text-decoration-none fs-5">
-                                    drsuneet80@gmail.com
+                                    drparidhichaudhary@gmail.com
                                 </a>
                             </div>
                         </div>
@@ -271,12 +252,14 @@
                                 <span class="text-white fw-bold fs-4">Visit Us:</span>
                             </div>
                             <span class="text-white fs-5">
-                                B-19, Hil apartments, sector-13, Rohini, Delhi
+                               Shop No,6,7,RPG Galleria,
+                               GP Packet,Ganga Nagar,
+                               Meerut,Uttar Pradesh 250001
                             </span>
                         </div>
 
                         <a class="about-btn bg-white text-dark border-0"
-                           href="../view/appointment.php">
+                           href="contact">
                             Book an Appointment
                         </a>
 
@@ -392,7 +375,7 @@
                     <!-- Left Side - Clinic / Hospital Info -->
                     <div class="col-lg-7">
 
-                        <!-- Clinic / Hospital Tabs -->
+                     
                         <div class="consult-tabs" role="tablist">
                             <button type="button"
                                     class="consult-tab"
@@ -402,16 +385,16 @@
                                 Clinic
                             </button>
 
-                            <button type="button"
+                            <!-- <button type="button"
                                     class="consult-tab active"
                                     data-consult-tab="hospital"
                                     role="tab"
                                     aria-selected="true">
                                 Hospital
-                            </button>
+                            </button> -->
                         </div>
 
-                        <!-- Contact Details -->
+                        
                         <ul class="consult-list">
 
                             <li class="consult-item">
@@ -419,9 +402,10 @@
                                     <i class="bi bi-telephone"></i>
                                 </span>
                                 <span class="consult-detail">
+                                    
                                     <span class="consult-label">Call now</span>
-                                    <a class="consult-value" href="tel:+918383963033">
-                                        +918383963033
+                                    <a class="consult-value" href="tel:+919286197331">
+                                        +919286197331 , 01214567142
                                     </a>
                                 </span>
                             </li>
@@ -432,8 +416,8 @@
                                 </span>
                                 <span class="consult-detail">
                                     <span class="consult-label">Email</span>
-                                    <a class="consult-value" href="mailto:drsuneet80@gmail.com">
-                                        drsuneet80@gmail.com
+                                    <a class="consult-value" href="mailto:drparidhichaudhary@gmail.com">
+                                        drparidhichaudhary@gmail.com
                                     </a>
                                 </span>
                             </li>
@@ -445,8 +429,9 @@
                                 <span class="consult-detail">
                                     <span class="consult-label">Address</span>
                                     <span class="consult-value" id="consultAddress">
-                                        Cloudnine Hospital Community Centre, Plot no 2,
-                                        Sector 3, Sector 3A, Rohini, Delhi, 110085
+                                       Shop No,6,7,RPG Galleria,
+                                       GP Pocket ,Ganga Nagar,
+                                       Meerut,Uttar Pradesh 250001
                                     </span>
                                 </span>
                             </li>
@@ -458,7 +443,7 @@
                                 <span class="consult-detail">
                                     <span class="consult-label">Timings</span>
                                     <span class="consult-value">
-                                        Mon &ndash; Sat: 10:00 AM To 02:00 PM
+                                        Mon &ndash; Sat: 11:00 AM To 08:00 PM (Closed on Sundays)
                                     </span>
                                 </span>
                             </li>
@@ -467,26 +452,12 @@
 
                         <!-- Location Button -->
                         <button type="button" class="consult-branch" id="consultBranch">
-                            Punjabi Bagh
+                            Meerut
                         </button>
 
                         <!-- Google Map -->
                         <div class="consult-map">
-                            <a class="consult-map-link"
-                               id="consultMapLink"
-                               href="https://www.google.com/maps/search/?api=1&amp;query=Cloudnine+Hospital+Rohini+Delhi"
-                               target="_blank"
-                               rel="noopener">
-                                Maps <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-
-                            <iframe
-                                id="consultMap"
-                                src="https://www.google.com/maps?q=Cloudnine+Hospital+Rohini+Delhi&amp;z=15&amp;output=embed"
-                                title="Clinic Location Map"
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                                allowfullscreen></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.3969264330626!2d77.74936437551455!3d29.00523667546334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c7b9d685b63ed%3A0x424008da6370361b!2sDr%20Paridhi%20Chaudhary!5e0!3m2!1sen!2sin!4v1792669839434!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                         </div>
 
                     </div>
@@ -655,37 +626,30 @@
                 <div class="row g-4">
 
                    
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-card h-100">
+                       <div class="col-md-6 col-lg-4">
+                    <a href="pregnancycareblog" class="blog-card h-100">
 
-                            <img
-                                src="branch/assets/blog1.webp"
-                                alt="Pregnancy care and maternal health"
-                                class="img-fluid"
-                                loading="lazy"
-                            >
+                        <img src="branch/assets/blog1.webp"
+                             alt="Pregnancy care and maternal health"
+                             class="img-fluid"
+                             loading="lazy">
 
-                            <div class="blog-content p-3">
+                        <div class="blog-content p-3">
+                            <span class="section-tag">Pregnancy Care</span>
 
-                                <span class="section-tag">
-                                    Pregnancy Care
-                                </span>
+                            <h3 class="testimonial-heading">
+                                Tips for a Healthy Pregnancy
+                            </h3>
 
-                                <h3 class="testimonial-heading">
-                                    Tips for a Healthy Pregnancy
-                                </h3>
+                            <p class="section-text mt-3">
+                                Learn about prenatal checkups, healthy habits,
+                                nutrition, and important precautions during pregnancy.
+                            </p>
 
-                                <p class="section-text mt-3">
-                                    Learn about prenatal checkups, healthy
-                                    habits, nutrition, and important precautions
-                                    during pregnancy.
-                                </p>
-
-                               
-
-                            </div>
+                            <span class="read-more">Read More →</span>
                         </div>
-                    </div>
+                    </a>
+                </div>
 
                 
                     <div class="col-md-6 col-lg-4">
@@ -713,10 +677,6 @@
                                     menstrual cycles and when to consult
                                     a gynecologist.
                                 </p>
-
-                                <!-- <a href="../view/blog-irregular-periods.php">
-                                    Read More
-                                </a> -->
 
                             </div>
                         </div>
