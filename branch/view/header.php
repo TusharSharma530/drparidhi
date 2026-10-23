@@ -64,8 +64,8 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg container ">
-        <div class="container-fluid ">
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container ">
 
             <a class="navbar-brand d-lg-none" href="default">
                 <img
@@ -235,30 +235,63 @@
                     <div class="row g-3">
 
                         <div class="col-md-6">
-                            <label for="appointmentName" class="form-label">
-                                Full Name *
-                            </label>
-                            <input type="text" class="form-control"
-                                   id="appointmentName" name="full_name"
-                                   placeholder="Enter your name" required>
-                        </div>
+                                <label for="appointmentName" class="form-label">
+                                    Full Name *
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="appointmentName"
+                                    name="full_name"
+                                    placeholder="Enter your name"
+                                    pattern="[A-Za-z]+( [A-Za-z]+)*"
+                                    minlength="3"
+                                    maxlength="60"
+                                    title="Only letters and spaces are allowed."
+                                    required
+                                >
+                                <div class="invalid-feedback">
+                                    Name must contain only letters and spaces, with at least 3 characters.
+                                </div>
+                            </div>
 
                         <div class="col-md-6">
                             <label for="appointmentPhone" class="form-label">
                                 Phone Number *
                             </label>
-                            <input type="tel" class="form-control"
-                                   id="appointmentPhone" name="phone"
-                                   placeholder="Enter phone number" required>
+                            <input
+                                type="tel"
+                                class="form-control"
+                                id="appointmentPhone"
+                                name="phone"
+                                placeholder="Enter 10-digit mobile number"
+                                pattern="[6-9][0-9]{9}"
+                                maxlength="10"
+                                inputmode="numeric"
+                                title="Enter a valid 10-digit Indian mobile number."
+                                required
+                            >
+                            <div class="invalid-feedback">
+                                Enter a valid 10-digit mobile number starting with 6, 7, 8, or 9.
+                            </div>
                         </div>
 
                         <div class="col-md-6">
                             <label for="appointmentEmail" class="form-label">
                                 Email Address
                             </label>
-                            <input type="email" class="form-control"
-                                   id="appointmentEmail" name="email"
-                                   placeholder="Enter email address">
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="appointmentEmail"
+                                name="email"
+                                placeholder="Enter email address"
+                                maxlength="254"
+                                title="Enter a valid email address."
+                            >
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
                         </div>
 
                         <div class="col-md-6">

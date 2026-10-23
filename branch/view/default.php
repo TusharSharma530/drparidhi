@@ -499,70 +499,71 @@
 
                     <!-- Right Side - Appointment Form -->
                     <div class="col-lg-5">
-                        <div class="consult-form-card">
+    <div class="consult-form-card">
 
-                            <form class="consult-form" id="consultForm" novalidate>
+        <form class="consult-form" id="consultForm" novalidate>
 
-                                <div class="consult-field">
-                                    <label for="consultName">Full Name</label>
-                                    <div class="consult-input-wrap">
-                                        <i class="bi bi-person"></i>
-                                        <input type="text"
-                                               class="consult-input"
-                                               id="consultName"
-                                               name="full_name"
-                                               placeholder="Your Name"
-                                               required>
-                                    </div>
-                                </div>
+            <div class="consult-field">
+                <label for="consultName">Full Name</label>
+                <div class="consult-input-wrap">
+                    <i class="bi bi-person"></i>
+                    <input type="text"
+                           class="consult-input validate-name"
+                           id="consultName"
+                           name="full_name"
+                           placeholder="Your Name"
+                           required>
+                </div>
+            </div>
 
-                                <div class="consult-field">
-                                    <label for="consultEmail">Email Address</label>
-                                    <div class="consult-input-wrap">
-                                        <i class="bi bi-envelope"></i>
-                                        <input type="email"
-                                               class="consult-input"
-                                               id="consultEmail"
-                                               name="email"
-                                               placeholder="Your Email"
-                                               required>
-                                    </div>
-                                </div>
+            <div class="consult-field">
+                <label for="consultEmail">Email Address</label>
+                <div class="consult-input-wrap">
+                    <i class="bi bi-envelope"></i>
+                    <input type="email"
+                           class="consult-input validate-email"
+                           id="consultEmail"
+                           name="email"
+                           placeholder="Your Email"
+                           required>
+                </div>
+            </div>
 
-                                <div class="consult-field">
-                                    <label for="consultPhone">Phone Number</label>
-                                    <div class="consult-input-wrap">
-                                        <i class="bi bi-telephone"></i>
-                                        <input type="tel"
-                                               class="consult-input"
-                                               id="consultPhone"
-                                               name="phone"
-                                               placeholder="+91-12345-67890"
-                                               required>
-                                    </div>
-                                </div>
+            <div class="consult-field">
+                <label for="consultPhone">Phone Number</label>
+                <div class="consult-input-wrap">
+                    <i class="bi bi-telephone"></i>
+                    <input type="tel"
+                           class="consult-input validate-phone"
+                           id="consultPhone"
+                           name="phone"
+                           placeholder="10-digit mobile number"
+                           maxlength="10"
+                           required>
+                </div>
+            </div>
 
-                                <div class="consult-field">
-                                    <label for="consultMessage">Message</label>
-                                    <div class="consult-input-wrap consult-input-area">
-                                        <i class="bi bi-chat-dots"></i>
-                                        <textarea class="consult-input"
-                                                  id="consultMessage"
-                                                  name="message"
-                                                  placeholder="Message"></textarea>
-                                    </div>
-                                </div>
+            <div class="consult-field">
+                <label for="consultMessage">Message</label>
+                <div class="consult-input-wrap consult-input-area">
+                    <i class="bi bi-chat-dots"></i>
+                    <textarea class="consult-input"
+                              id="consultMessage"
+                              name="message"
+                              placeholder="Message"></textarea>
+                </div>
+            </div>
 
-                                <button type="submit" class="consult-submit">
-                                    Confirm Appointment
-                                </button>
+            <button type="submit" class="consult-submit">
+                Confirm Appointment
+            </button>
 
-                                <p class="consult-msg" id="consultMsg"></p>
+            <p class="consult-msg" id="consultMsg"></p>
 
-                            </form>
+        </form>
 
-                        </div>
-                    </div>
+    </div>
+</div>
 
                 </div>
 
