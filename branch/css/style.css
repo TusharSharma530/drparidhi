@@ -800,6 +800,20 @@ a.consult-section .consult-value:hover {
     opacity: 1;
 }
 
+/* ===== Blog cards (ye rules bhi 03c886b commit me delete ho gaye the - wapas restore) ===== */
+.blog-content img, .blogs-section a.blog-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 10px;
+}
+
 /* ===== Floating Call + WhatsApp buttons (git commit 03c886b me galti se delete ho gaye the, wapas restore kiye) ===== */
 .float-contact {
     position: fixed;
