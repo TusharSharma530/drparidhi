@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Home | Dr. Paridhi Chaudhary</title>
+    <title>Home | Dr.Paridhi Chaudhary</title>
 
     <!-- Google Font: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,7 +108,7 @@
                                 Specialities
                             </a>
 
-                            <!-- Click arrow to open dropdown -->
+                            <!-- Click arrow to open dropdown
                             <button
                                 class="nav-link dropdown-toggle speciality-toggle"
                                 type="button"
@@ -116,10 +116,10 @@
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
                                 aria-label="Show speciality options">
-                            </button>
+                            </button> -->
                         </div>
 
-                        <ul class="dropdown-menu" aria-labelledby="specialitiesDropdown">
+                        <!-- <ul class="dropdown-menu" aria-labelledby="specialitiesDropdown">
                             <li><a class="dropdown-item" href="pregnancycare">Antenatal Screening, Pregnancy Treatment Including High Rusk Pregnancy</a></li>
                             <li><a class="dropdown-item" href="high-risk-pregnancy">Delivery-Normal and C-Section</a></li>
                             <li><a class="dropdown-item" href="pcos-pcod">Infertility Problem</a></li>
@@ -128,7 +128,7 @@
                             <li><a class="dropdown-item" href="ovarian-cysts">Adolescent girls health related problem</a></li>
                             <li><a class="dropdown-item" href="uterine-fibroids">Cancer Screening and Prevention</a></li>
                             <li><a class="dropdown-item" href="menopause-care">Laparascopic Hysterectomy and Open Surgical Hysterectomy</a></li>
-                        </ul>
+                        </ul> -->
 
                     </li>
 
@@ -138,6 +138,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="blogs">
                             Blogs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery">
+                            Gallery
                         </a>
                     </li>
 
@@ -172,6 +177,7 @@
             'about'        => 'About Us',
             'specialities' => 'Specialities',
             'blogs'        => 'Blogs',
+            'gallery'        => 'Gallery',
             'contact'      => 'Contact Us'
         ];
 

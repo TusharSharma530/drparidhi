@@ -8,7 +8,7 @@
     <main>
         <section class="home-banner">
             <img
-                src="branch/assets/banner2.png"
+                src="branch/assets/drparidhibanner1.png"
                 alt="Dr. Paridhi Chaudhary - Obstetrician and Gynecologist"
                 fetchpriority="high"
             >
@@ -24,6 +24,7 @@
 
                     <h2 class="section-title">
                         Meet Our Gynecologist in Meerut
+                        <br>MBBS,MS,DNB
                     </h2>
 
                     <p class="section-text">
@@ -64,8 +65,9 @@
         </section>
 
         <!-- Gallery Section -->
+       
+<!-- Gallery Section -->
         <section class="gallery-section container">
-
             <div class="section-head">
                 <span class="section-tag">Our Clinic</span>
                 <h2 class="section-title">Gallery</h2>
@@ -85,8 +87,15 @@
                     <img src="branch/assets/gallery4.jpeg" alt="Gallery Image 4">
                 </div>
             </div>
-
         </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" id="lightboxClose"
+                aria-label="Close image">&times;</button>
+            <img src="" alt="Enlarged gallery image" id="lightboxImage">
+        </div>
+
 
         <section class="conditions-section">
 
@@ -103,66 +112,83 @@
 
                     <div class="col-md-6 col-lg-3">
                         <a href="pregnancycare" class="condition-card">
-                            <img src="branch/assets/pregnancy.svg" alt="Pregnancy Care">
-                            <h3 class="condition-name">Antenatal Screening, Pregnancy Treatment Including High Rusk Pregnancy</h3>
-                            <!-- <p class="condition-text">
-                                Antenatal Screening,Pregnancy Treatment Including High Risk Pregnancy
-                            </p> -->
+                            <img src="branch/assets/highriskpregnancycare.webp" alt="Pregnancy Care">
+                            <h3 class="condition-name">Antenatal Screening, Pregnancy Treatment Including High Risk Pregnancy</h3>
+                            <p class="condition-text">
+                                Antenatal screening detects complications early, while high-risk pregnancy care ensures maternal and fetal safety.
+                            </p>
+                            <span class="read-more">Read More →</span>
                         </a>
                     </div>
 
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="branch/assets/menstrural disorders.svg" alt="Menstrual Disorders">
+                            <img src="branch/assets/csection.webp" alt="Menstrual Disorders">
                             <h3 class="condition-name">
                                Delivery-Normal and C-Section
                              </h3>
+                             <p class="condition-text">
+                              Provides safe normal and C-section deliveries with proper medical care for mother and baby.
+                            </p>
+                            
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="branch/assets/pcos.svg" alt="PCOS / PCOD">
+                            <img src="branch/assets/infertilityproblem.webp" alt="PCOS / PCOD">
                             <h3 class="condition-name">
                                 Infertility Problem
                             </h3>
+                            <p class="condition-text">
+                              Provides diagnosis and treatment to help couples overcome infertility and achieve pregnancy.
+                            </p>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="branch/assets/uterine.svg" alt="Uterine Fibroids">
+                            <img src="branch/assets/pcostreatment.webp" alt="Uterine Fibroids">
                             <h3 class="condition-name">Treatment of itching,pain and other Infection of female genital tract,PCOS Treatment</h3>
-                            <!-- <p class="condition-text">
-                                Non-invasive and surgical treatment options for fibroids causing
-                                heavy bleeding, pain, infertility, or pressure symptoms.
-                            </p> -->
+                            <p class="condition-text">
+                                Provides effective treatment for female genital infections, itching, pain, and PCOS management.
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="branch/assets/uterine.svg" alt="Uterine Fibroids">
+                            <img src="branch/assets/periodrelated.webp" alt="Uterine Fibroids">
                             <h3 class="condition-name">Period Related Problem</h3>
+                            <p class="condition-text">
+                                Provides diagnosis and treatment for irregular, painful, and heavy periods.
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="branch/assets/uterine.svg" alt="Uterine Fibroids">
+                            <img src="branch/assets/adolscent.webp" alt="Uterine Fibroids">
                             <h3 class="condition-name">Adolescent girls health related problem</h3>
-                           
+                           <p class="condition-text">
+                                Provides care and guidance for adolescent girls’ health, menstrual issues, and hormonal changes.
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="branch/assets/infertility.svg" alt="Infertility & Reproductive Health Issues">
+                            <img src="branch/assets/cancerscreening1.webp" alt="Infertility & Reproductive Health Issues">
                             <h3 class="condition-name">Cancer Screening and Prevention</h3>
-                           
+                           <p class="condition-text">
+                                Provides early cancer screening, detection, and preventive care for better health.
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
-                            <img src="branch/assets/ovarian.svg" alt="Ovarian Cysts">
+                            <img src="branch/assets/laparascopic.webp" alt="Ovarian Cysts">
                             <h3 class="condition-name">Laparascopic Hysterectomy and Open Surgical Hysterectomy</h3>
+                            <p class="condition-text">
+                              Provides laparoscopic and open surgical hysterectomy with expert care and safe treatment.
+                            </p>
                         </div>
                     </div>
 
@@ -178,7 +204,7 @@
 
                 <div class="commitment-image">
                     <img
-                        src="branch/assets/commitment-image.webp"
+                        src="branch/assets/mertinitycouple1.png"
                         alt="Dr. Paridhi Chaudhary - Commitment to Patients"
                     >
                 </div>
@@ -455,9 +481,18 @@
                             Meerut
                         </button>
 
-                        <!-- Google Map -->
-                        <div class="consult-map">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.3969264330626!2d77.74936437551455!3d29.00523667546334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c7b9d685b63ed%3A0x424008da6370361b!2sDr%20Paridhi%20Chaudhary!5e0!3m2!1sen!2sin!4v1792669839434!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                          <!-- Google Map -->
+                       <div class="consult-map">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.3969264330626!2d77.74936437551455!3d29.00523667546334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c7b9d685b63ed%3A0x424008da6370361b!2sDr%20Paridhi%20Chaudhary!5e0!3m2!1sen!2sin!4v1792673184230!5m2!1sen!2sin"
+                                loading="lazy"
+                                allowfullscreen>
+                            </iframe>
+
+                            <div class="consult-map-address">
+                                Shop No. 6, 7, RPG Galleria,<br>
+                                GP Pocket, Ganga Nagar
+                            </div>
                         </div>
 
                     </div>
@@ -656,7 +691,7 @@
                         <div class="blog-card h-100">
 
                             <img
-                                src="branch/assets/blog2.webp"
+                                src="branch/assets/blog2.png"
                                 alt="Women's menstrual health awareness"
                                 class="img-fluid"
                                 loading="lazy"
@@ -687,7 +722,7 @@
                         <div class="blog-card h-100">
 
                             <img
-                                src="branch/assets/blog3.webp"
+                                src="branch/assets/blog3.png"
                                 alt="PCOS and hormonal health awareness"
                                 class="img-fluid"
                                 loading="lazy"

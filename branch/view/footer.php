@@ -10,7 +10,7 @@
             <!-- About Doctor -->
             <div class="col-lg-3 col-md-6">
 
-                <div class="footer-doctor-brand">
+                <div class="">
 
                     <!-- Logo above Doctor Name -->
                     <a href="default.php" class="footer-doctor-logo">
@@ -83,7 +83,7 @@
                 <h3>Our Services</h3>
 
                 <ul class="list-unstyled">
-                    <li>Pregnancy Care</li>
+                    <li><a href="pregnancycare">Pregnancy Care</a></li>
                     <li>High-Risk Pregnancy</li>
                     <li>PCOS / PCOD</li>
                     <li>Menstrual Disorders</li>
@@ -107,30 +107,35 @@
 
                 <p>
                     <strong>Phone:</strong><br>
-                    <a href="tel:+919286197331">
                         +91-9286197331, 01214567142
-                    </a>
                 </p>
 
                 <p>
                     <strong>Email:</strong><br>
-                    <a href="mailto:drsuneet80@gmail.com">
                         drparidhichaudhary@gmail.com
-                    </a>
                 </p>
 
             </div>
 
         </div>
 
-        <hr>
-
-        <div class="footer-bottom text-left">
-            <p>
+    
+        <div class="footer-bottom">
+            <p class="copyright-text">
                 &copy; <?php echo date('Y'); ?>
                 Dr. Paridhi Chaudhary. All Rights Reserved.
             </p>
+
+            <p class="footer-credit">
+                Designed &amp; Developed by
+                <a href="https://promotionparadise.in"
+                target="_blank"
+                rel="noopener noreferrer">
+                    Promotion Paradise
+                </a>
+            </p>
         </div>
+
 
     </div>
 

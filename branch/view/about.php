@@ -11,6 +11,7 @@
 
                 <h2 class="section-title">
                     Trusted Gynecologist In Meerut
+                      <br>MBBS,MS,DNB
                 </h2>
 
                 <p class="section-text">

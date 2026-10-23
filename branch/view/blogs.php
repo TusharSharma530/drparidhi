@@ -5,14 +5,7 @@
         <div class="container px-4">
 
             <div class="section-head text-center">
-                <span class="section-tag">Health Articles</span>
-
-                <h2 class="section-title">Latest Blogs</h2>
-
-                <p class="section-text mt-3">
-                    Explore helpful information, expert guidance, and
-                    women's healthcare tips from Dr. Paridhi Chaudhary.
-                </p>
+               
             </div>
 
             <div class="row g-4">
@@ -47,7 +40,7 @@
                 <div class="col-md-6 col-lg-4">
                     <a href="irregularperiodsblog" class="blog-card h-100">
 
-                        <img src="branch/assets/blog2.webp"
+                        <img src="branch/assets/blog2.png"
                              alt="Women's menstrual health awareness"
                              class="img-fluid"
                              loading="lazy">
@@ -71,7 +64,7 @@
                 <div class="col-md-6 col-lg-4">
                     <a href="pcosblog" class="blog-card h-100">
 
-                        <img src="branch/assets/blog3.webp"
+                        <img src="branch/assets/blog3.png"
                              alt="PCOS and hormonal health awareness"
                              class="img-fluid"
                              loading="lazy">
