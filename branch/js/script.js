@@ -116,3 +116,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+
+/* ---------- Back to Top Button ----------
+   (d4834fd commit me ye JS galti se delete ho gayi thi - wapas restore ki,
+   warna .back-to-top par .show class kabhi add nahi hoti aur button
+   opacity: 0 / visibility: hidden hi rehta tha) */
+document.addEventListener('DOMContentLoaded', function () {
+
+    const backToTop = document.querySelector('.back-to-top');
+
+    if (!backToTop) return;
+
+    window.addEventListener('scroll', function () {
+        backToTop.classList.toggle('show', window.scrollY > 300);
+    });
+
+    backToTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+});
