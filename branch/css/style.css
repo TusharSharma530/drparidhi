@@ -202,6 +202,12 @@ a {
     margin: 34px;
 }
 
+.about-doctor-section.container {
+    margin-top: 34px;
+    margin-bottom: 34px;
+    margin-inline: auto;
+}
+
 .about-doctor-section .about-row {
     display: flex;
     align-items: flex-start;
@@ -214,6 +220,12 @@ a {
     flex: 1 1 62%;
     max-width: 62%;
     padding-top: 10px;
+}
+
+/* section-tag (padding: 10px) aur section-text (margin: 10px) ke left edge
+   ke sath title ko bhi vertically align karo - 10px spacing same rakho */
+.about-doctor-section .about-left .section-title {
+    margin: 10px;
 }
 
 /* Reusable paragraph class - kisi bhi section me lagao, UI same rahega */
@@ -285,6 +297,15 @@ a {
     margin: 40px;
 }
 
+/* Container wale gallery section me left/right auto margin restore karo -
+   warna margin: 40px Bootstrap ke margin-inline: auto ko override kar deta
+   hai aur left/right space unequal ho jata hai */
+.gallery-section.container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-inline: auto;
+}
+
 .section-head {
     max-width: 1100px;
     margin: 0 auto 30px;
@@ -304,7 +325,7 @@ a {
 .section-title {
     margin: 0;
     color: #000000;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 600;
     line-height: 1.3;
 }

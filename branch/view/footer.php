@@ -8,7 +8,7 @@
            
             
             <!-- About Doctor -->
-            <div class="col-lg-3 col-md-6">
+            <div class="col-md-4 col-lg-3">
 
                 <div class="">
 
@@ -34,7 +34,7 @@
             </div>
 
             <!-- Social Media Icons -->
-            <div class="col-lg-2 col-md-6">
+            <div class="col-md-4 col-lg-2">
 
                 <h3>Follow Us</h3>
 
@@ -67,7 +67,7 @@
 
 
          
-            <div class="col-lg-2 col-md-6"">
+            <div class="col-md-4 col-lg-2">
                 <h3>Quick Links</h3>
 
                 <ul class="list-unstyled">
