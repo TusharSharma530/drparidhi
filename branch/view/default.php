@@ -97,7 +97,7 @@
         </div>
 
 
-        <section class="conditions-section">
+        <section class="conditions-section container">
 
             <div class="section-head">
                 <span class="section-tag">Condition We Treat</span>
@@ -107,8 +107,7 @@
                 </h2>
             </div>
 
-            <div class="container px-4">
-                <div class="row g-4">
+            <div class="row g-4">
 
                     <div class="col-md-6 col-lg-3">
                         <a href="pregnancycare" class="condition-card">
@@ -193,12 +192,11 @@
                     </div>
 
                 </div>
-            </div>
 
         </section>
 
       
-        <section class="about-doctor-section commitment-section">
+        <section class="about-doctor-section commitment-section container">
 
             <div class="about-row">
 
@@ -295,10 +293,9 @@
         </section>
 
         <!-- Symptoms Section -->
-        <section class="conditions-section">
-            <div class="container px-4">
+        <section class="conditions-section container">
 
-                <div class="section-head">
+            <div class="section-head">
                     <h2 class="section-title">
                         What Are The Symptoms Of Gynaecological Diseases?
                     </h2>
@@ -348,14 +345,7 @@
                                 <i class="bi bi-check2-circle fs-4"></i>
                                 <span class="condition-text">Excessive bloating</span>
                             </li>
-                            <li class="symptom-item">
-                                <i class="bi bi-check2-circle fs-4"></i>
-                                <span class="condition-text">Painful or excessive urination</span>
-                            </li>
-                            <li class="symptom-item">
-                                <i class="bi bi-check2-circle fs-4"></i>
-                                <span class="condition-text">Bleeding after menopause</span>
-                            </li>
+                           
                         </ul>
                     </div>
 
@@ -373,16 +363,11 @@
                                 <i class="bi bi-check2-circle fs-4"></i>
                                 <span class="condition-text">Breast changes</span>
                             </li>
-                            <li class="symptom-item">
-                                <i class="bi bi-check2-circle fs-4"></i>
-                                <span class="condition-text">Frequent need to urinate</span>
-                            </li>
+                           
                         </ul>
                     </div>
 
                 </div>
-
-            </div>
         </section>
 
         <!-- Schedule Consultation / Appointment Section -->

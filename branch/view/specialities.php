@@ -1,10 +1,9 @@
  <?php include 'header.php'; ?>
 
 <main>
- <section class="conditions-section">
+ <section class="conditions-section container">
 
-            <div class="container px-4">
-                <div class="row g-4">
+            <div class="row g-4">
 
                     <div class="col-md-6 col-lg-3">
                         <a href="pregnancycare" class="condition-card">
@@ -88,7 +87,6 @@
                     </div>
 
                 </div>
-            </div>
 
         </section>
 </main>
