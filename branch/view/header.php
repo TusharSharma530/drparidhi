@@ -54,7 +54,7 @@
                     <a href="tel:+919286197331" class="contact-item">
                         <i class="bi bi-telephone"></i>
                         <span class="contact-info">
-                            <strong>+91-9286197331 , 0121 4567142</strong>
+                            <strong>+91-9286197331 , +91-01214567142</strong>
                             <small>Contact Us</small>
                         </span>
                     </a>

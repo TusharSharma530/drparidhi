@@ -37,7 +37,7 @@
                                 <span class="consult-detail">
                                     <span class="consult-label">Call now</span>
                                     <a class="consult-value" href="tel:+919286197331">
-                                        +919286197331 ,+0121 4567142
+                                        +91-9286197331 ,+91-01214567142
                                     </a>
                                 </span>
                             </li>
