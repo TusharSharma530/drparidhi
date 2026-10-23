@@ -1,8 +1,9 @@
- <?php include 'header.php'; ?>
+
+<?php include 'header.php'; ?>
 
 <main>
-   
-<!-- Pregnancy Care Section -->
+
+<!-- Antenatal Screening & High-Risk Pregnancy Care Section -->
 <section class="pregnancy-care-section">
     <div class="container">
         <div class="row align-items-center g-4 g-lg-5">
@@ -12,7 +13,7 @@
                 <div class="pregnancy-care-image">
                     <img
                         src="branch/assets/pregnancycare.webp"
-                        alt="Pregnancy care and maternity consultation"
+                        alt="Antenatal screening and high-risk pregnancy care"
                         loading="lazy"
                     >
                 </div>
@@ -22,49 +23,59 @@
             <div class="col-lg-7">
                 <div class="pregnancy-care-content">
 
-                    <span class="section-tag">Compassionate Maternity Care</span>
+                    <span class="section-tag">
+                        Expert Pregnancy Care
+                    </span>
 
                     <h1 class="section-title">
-                        Pregnancy Care in Rohini, Delhi
+                        Antenatal Screening & High-Risk Pregnancy Treatment in Rohini, Delhi
                     </h1>
 
                     <p>
-                        Pregnancy is a special journey that deserves expert
-                        medical guidance, regular monitoring, and compassionate
-                        support. Dr. Paridhi Chaudhary provides personalized
-                        pregnancy care to support the health and well-being
-                        of both mother and baby.
+                        Antenatal screening plays an important role in
+                        identifying potential pregnancy complications
+                        at an early stage. Dr. Paridhi Chaudhary provides
+                        personalized antenatal care, helping monitor
+                        maternal health and the baby's development
+                        throughout pregnancy.
                     </p>
 
                     <p>
-                        From early pregnancy consultations and routine
-                        antenatal checkups to nutritional guidance and
-                        preparation for delivery, every stage of pregnancy
-                        requires appropriate medical attention.
+                        High-risk pregnancies require specialized medical
+                        attention, regular monitoring, and an individualized
+                        treatment plan. Whether a pregnancy involves
+                        high blood pressure, gestational diabetes, or other
+                        risk factors, timely evaluation and appropriate
+                        medical care can help support the health and
+                        well-being of both mother and baby.
                     </p>
 
-                    <h3>Our Pregnancy Care Services</h3>
+                    <h3>Our Antenatal & High-Risk Pregnancy Services</h3>
 
                     <ul class="pregnancy-care-list">
                         <li>
                             <i class="bi bi-check-circle-fill"></i>
-                            Regular antenatal checkups
+                            Antenatal screening and pregnancy assessments
                         </li>
                         <li>
                             <i class="bi bi-check-circle-fill"></i>
-                            Maternal and fetal health monitoring
+                            Early detection of potential pregnancy complications
                         </li>
                         <li>
                             <i class="bi bi-check-circle-fill"></i>
-                            Pregnancy nutrition and lifestyle guidance
+                            High-risk pregnancy evaluation and management
                         </li>
                         <li>
                             <i class="bi bi-check-circle-fill"></i>
-                            Guidance for delivery preparation
+                            Maternal health and fetal growth monitoring
                         </li>
                         <li>
                             <i class="bi bi-check-circle-fill"></i>
-                            Support throughout pregnancy
+                            Pregnancy care for gestational diabetes and high blood pressure
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Personalized treatment and follow-up care
                         </li>
                     </ul>
 
@@ -83,6 +94,6 @@
     </div>
 </section>
 
-    
 </main>
+
 <?php include __DIR__ . '/footer.php'; ?>

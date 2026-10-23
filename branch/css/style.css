@@ -1170,7 +1170,7 @@ a.consult-section .consult-value:hover {
     font-size: 15px;
 }
 
-/* Floating Mobile / WhatsApp Icons - sab pages pe dikhte hain */
+
 .float-contact {
     position: fixed;
     left: 18px;
@@ -1205,7 +1205,7 @@ a.consult-section .consult-value:hover {
     background-color: #25d366;
 }
 
-/* Back to Top button - right side */
+
 .back-to-top {
     position: fixed;
     right: 18px;
@@ -1240,7 +1240,7 @@ a.consult-section .consult-value:hover {
     background-color: var(--btn-maroon-dark);
 }
 
-/* Lightbox Overlay */
+
 .lightbox {
     display: none;
     position: fixed;
@@ -1252,12 +1252,9 @@ a.consult-section .consult-value:hover {
     padding: 20px;
 }
 
-/* Show Lightbox */
 .lightbox.active {
     display: flex;
 }
-
-/* Enlarged Image */
 .lightbox img {
     max-width: 90%;
     max-height: 85vh;
@@ -1267,8 +1264,6 @@ a.consult-section .consult-value:hover {
     border-radius: 10px;
     animation: lightboxZoom 0.3s ease;
 }
-
-/* Close Button */
 .lightbox-close {
     position: absolute;
     top: 15px;
@@ -1284,7 +1279,7 @@ a.consult-section .consult-value:hover {
     color: #ffffff;
 }
 
-/* Zoom Animation */
+
 @keyframes lightboxZoom {
     from {
         transform: scale(0.85);
