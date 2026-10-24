@@ -2,7 +2,7 @@
 
 <main>
     <section class="blogs-section">
-        <div class="container">
+        <div class="container custom-margin">
 
             <div class="row g-4">
 
