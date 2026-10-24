@@ -1,11 +1,11 @@
 <?php include 'header.php'; ?>
 
 <main>
-    <section class="blogs-section">
+    <section class="blogs-section pregnancy-blog-page">
         <div class="container px-4">
 
             <!-- Pregnancy Image First -->
-            <div class="mb-4">
+            <div class="mb-4 pregnancy-blog-banner">
                 <img
                     src="branch/assets/blog1.webp"
                     alt="Tips for a Healthy Pregnancy"

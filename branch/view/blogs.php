@@ -1,8 +1,8 @@
 <?php include 'header.php'; ?>
 
 <main>
-    <section class="blogs-section">
-        <div class="container custom-margin">
+    <section class="blogs-section blogs-list-page">
+        <div class="container">
 
             <div class="row g-4">
 
@@ -34,7 +34,7 @@
 
                 <!-- Blog 2 -->
                 <div class="col-md-6 col-lg-4">
-                    <a href="irregularperiodsblog" class="blog-card h-100">
+                     <a href="pregnancycareblog" class="blog-card h-100">
 
                         <img src="branch/assets/blog2.png"
                              alt="Women's menstrual health awareness"
@@ -52,13 +52,14 @@
                                 Discover common reasons for irregular menstrual
                                 cycles and when to consult a gynecologist.
                             </p>
+                             <span class="read-more">Read More →</span>
                         </div>
                     </a>
                 </div>
 
                 <!-- Blog 3 -->
                 <div class="col-md-6 col-lg-4">
-                    <a href="pcosblog" class="blog-card h-100">
+                     <a href="pregnancycareblog" class="blog-card h-100">
 
                         <img src="branch/assets/blog3.png"
                              alt="PCOS and hormonal health awareness"
@@ -77,6 +78,7 @@
                                 and how individualized treatment can help
                                 manage this condition.
                             </p>
+                             <span class="read-more">Read More →</span>
                         </div>
                     </a>
                 </div>

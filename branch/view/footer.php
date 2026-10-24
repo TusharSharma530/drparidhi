@@ -3,139 +3,172 @@
 <footer class="site-footer">
 
     <div class="container">
-        <div class="row g-4">
 
-            <!-- About Doctor -->
-            <div class="col-md-4 col-lg-3 footer-col-doctor">
+        <!-- Top Row: Logo + Follow Us -->
+        <div class="footer-top">
 
-                <div class="footer-doctor-brand">
+            <a href="default" class="footer-doctor-brand">
+                <span class="footer-doctor-logo">
+                    <img
+                        src="./branch/assets/logo.png"
+                        alt="Dr. Paridhi Chaudhary Logo"
+                    >
+                </span>
 
-                    <a href="default" class="footer-doctor-logo">
-                        <img
-                            src="./branch/assets/logo.png"
-                            alt="Dr. Paridhi Chaudhary Logo"
-                        >
-                    </a>
+                <span class="footer-doctor-info">
+                    <span class="footer-doctor-name">
+                        Dr. Paridhi Chaudhary
+                    </span>
 
-                    <div class="footer-doctor-info">
-                        <h3 class="footer-doctor-name">
-                            Dr. Paridhi Chaudhary
-                        </h3>
+                    <span class="footer-doctor-tagline">
+                        Obstetrician &amp; Gynecologist Laparascopic
+                        <br>Surgeon and Infertility Specialist
+                    </span>
+                </span>
+            </a>
 
-                        <p>
-                            Obstetrician &amp; Gynecologist Laparascopic
-                            <br>Surgeon and Infertility Specialist
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Social Media Icons -->
-            <div class="col-md-4 col-lg-2 footer-col-follow">
-
-                <h3>Follow Us</h3>
+            <div class="footer-follow">
+                <span class="footer-follow-title">Follow Us On</span>
 
                 <div class="footer-social-icons">
 
                     <a href="https://www.youtube.com/@paridhichaudharyshaurya6955"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="YouTube">
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="social-youtube"
+                       aria-label="YouTube">
                         <i class="bi bi-youtube"></i>
                     </a>
 
                     <a href="https://www.instagram.com/drparidhigyne/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram">
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="social-instagram"
+                       aria-label="Instagram">
                         <i class="bi bi-instagram"></i>
                     </a>
 
                     <a href="https://www.facebook.com/Dr.Paridhi.chaudhary"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook">
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="social-facebook"
+                       aria-label="Facebook">
                         <i class="bi bi-facebook"></i>
                     </a>
 
                 </div>
-
-            </div>
-
-
-         
-            <div class="col-md-4 col-lg-2">
-                <h3>Quick Links</h3>
-
-                <ul class="list-unstyled">
-                    <li><a href="default">Home</a></li>
-                    <li><a href="about">About Us</a></li>
-                    <li><a href="blogs">Latest Blogs</a></li>
-                    <li><a href="contact">Contact Us</a></li>
-                </ul>
-            </div>
-
-      
-            <div class="col-lg-2 col-md-6">
-                <h3>Our Services</h3>
-
-                <ul class="list-unstyled">
-                    <li><a href="pregnancycare">Pregnancy Care</a></li>
-                    <li>High-Risk Pregnancy</li>
-                    <li>PCOS / PCOD</li>
-                    <li>Menstrual Disorders</li>
-                    <li>Infertility Consultation</li>
-                    <li>Ovarian Cysts</li>
-                    <li>Uterine Fibroids</li>
-                    <li>Menopause Care</li>
-                </ul>
-            </div>
-
-            <!-- Contact Details -->
-            <div class="col-lg-3 col-md-6">
-                <h3>Contact Us</h3>
-
-                <p>
-                    <strong>Address:</strong><br>
-                    Shop No,6,7,RPG Galleria<br>
-                    GP Pocket,Ganga Nagar,<br>
-                    Meerut,Uttar Pradesh-250001
-                </p>
-
-                <p>
-                    <strong>Phone:</strong><br>
-                        +91-9286197331,+91-01214567142
-                </p>
-
-                <p>
-                    <strong>Email:</strong><br>
-                        drparidhichaudhary@gmail.com
-                </p>
-
             </div>
 
         </div>
 
-    
-        <div class="footer-bottom">
+        <!-- Dashed Divider -->
+        <div class="footer-divider"></div>
+
+        <!-- Middle Columns -->
+        <div class="row g-4 footer-main">
+
+            <!-- About Us -->
+            <div class="col-md-6 col-lg-3">
+                <h3>About Us</h3>
+
+                <p>
+                    Dr. Paridhi Chaudhary believes Obstetrics &amp; Gynecology
+                    is an important and sensitive field of medicine that
+                    requires dedication, empathy, and compassion. Every woman
+                    deserves to be heard, understood, and treated with respect.
+                </p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-6 col-lg-3">
+                <h3>Contact Info</h3>
+
+                <ul class="footer-contact-list">
+                    <li>
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>
+                            <strong>Address :</strong>
+                           <br> Shop No,6,7,RPG Galleria GP Pocket,Ganga Nagar,
+                            Meerut,Uttar Pradesh-250001
+                        </span>
+                    </li>
+
+                    <li>
+                        <i class="bi bi-telephone-fill"></i>
+                        <span>
+                            <strong>Phone No. :</strong>
+                           <br> <a href="tel:+919286197331">+91-9286197331 <br> +91-01214567142</a>
+                        </span>
+                    </li>
+
+                    <li>
+                        <i class="bi bi-envelope-fill"></i>
+                        <span>
+                            <strong>Email :</strong>
+                            <a href="mailto:drparidhichaudhary@gmail.com">drparidhichaudhary@gmail.com</a>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Other Pages -->
+            <div class="col-md-6 col-lg-3">
+                <h3>Other Pages</h3>
+
+                <div class="footer-pages">
+                    <ul>
+                        <li><a href="default">Home</a></li>
+                        <li><a href="about">About Us</a></li>
+                        <li><a href="specialities">Specialities</a></li>
+               
+
+                 
+                        <li><a href="blogs">Latest Blogs</a></li>
+                        <li><a href="gallery">Gallery</a></li>
+                        <li><a href="contact">Contact Us</a></li>
+                 
+                </div>
+            </div>
+
+            <!-- Our Services -->
+            <div class="col-md-6 col-lg-3">
+                <h3>Our Services</h3>
+
+                <ul class="footer-services">
+                    <li><a href="pregnancycare">Pregnancy Care</a></li>
+                    <li>Antenatal Screening, Pregnancy Treatment Including High Risk Pregnancy</li>
+                    <li>Delivery-Normal and C-Section</li>
+                    <li>Infertility Problem</li>
+                    <li>Treatment of itching,pain and other Infection of female genital tract,PCOS Treatment</li>
+                    <li>Period Related Problem</li>
+                    <li>Adolescent girls health related problem</li>
+                    <li>Cancer Screening and Prevention</li>
+                     <li>Laparascopic Hysterectomy and Open Surgical Hysterectomy</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="footer-bottom-bar">
+        <div class="footer-bottom container">
+
             <p class="copyright-text">
-                &copy; <?php echo date('Y'); ?>
-                Dr. Paridhi Chaudhary. All Rights Reserved.
+                &copy; <?php echo date('Y'); ?> Dr. Paridhi Chaudhary. All Rights Reserved.
             </p>
 
             <p class="footer-credit">
                 Designed &amp; Developed by
                 <a href="https://promotionparadise.in"
-                target="_blank"
-                rel="noopener noreferrer">
+                   target="_blank"
+                   rel="noopener noreferrer">
                     Promotion Paradise
                 </a>
             </p>
+
         </div>
-
-
     </div>
 
 </footer>

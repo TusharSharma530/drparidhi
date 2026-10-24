@@ -18,6 +18,7 @@
 
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
+                            <a href="pregnancycare" class="condition-card">
                             <img src="branch/assets/csection.webp" alt="Menstrual Disorders">
                             <h3 class="condition-name">
                                Delivery-Normal and C-Section
@@ -25,11 +26,14 @@
                              <p class="condition-text">
                               Provides safe normal and C-section deliveries with proper medical care for mother and baby.
                             </p>
+                             <span class="read-more">Read More →</span>
+                           </a>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
+                            <a href="pregnancycare" class="condition-card">
                             <img src="branch/assets/infertilityproblem.webp" alt="PCOS / PCOD">
                             <h3 class="condition-name">
                                 Infertility Problem
@@ -37,52 +41,70 @@
                             <p class="condition-text">
                               Provides diagnosis and treatment to help couples overcome infertility and achieve pregnancy.
                             </p>
+                             <span class="read-more">Read More →</span>
+                           </a> 
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
+                            <a href="pregnancycare" class="condition-card">
                             <img src="branch/assets/pcostreatment.webp" alt="Uterine Fibroids">
                             <h3 class="condition-name">Treatment of itching,pain and other Infection of female genital tract,PCOS Treatment</h3>
                             <p class="condition-text">
                                 Provides effective treatment for female genital infections, itching, pain, and PCOS management.
                             </p>
+                             <span class="read-more">Read More →</span>
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
+                            <a href="pregnancycare" class="condition-card">
                             <img src="branch/assets/periodrelated.webp" alt="Uterine Fibroids">
                             <h3 class="condition-name">Period Related Problem</h3>
                             <p class="condition-text">
                                 Provides diagnosis and treatment for irregular, painful, and heavy periods.
                             </p>
+                             <span class="read-more">Read More →</span>
+                           </a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
+                       
                         <div class="condition-card">
+                             <a href="pregnancycare" class="condition-card">
                             <img src="branch/assets/adolscent.webp" alt="Uterine Fibroids">
                             <h3 class="condition-name">Adolescent girls health related problem</h3>
                            <p class="condition-text">
                                 Provides care and guidance for adolescent girls’ health, menstrual issues, and hormonal changes.
                             </p>
+                             <span class="read-more">Read More →</span>
+                           </a> 
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
+                            <a href="pregnancycare" class="condition-card">
                             <img src="branch/assets/cancerscreening1.webp" alt="Infertility & Reproductive Health Issues">
                             <h3 class="condition-name">Cancer Screening and Prevention</h3>
                            <p class="condition-text">
                                 Provides early cancer screening, detection, and preventive care for better health.
                             </p>
+                             <span class="read-more">Read More →</span>
+                           </a> 
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="condition-card">
+                            <a href="pregnancycare" class="condition-card">
                             <img src="branch/assets/laparascopic.webp" alt="Ovarian Cysts">
                             <h3 class="condition-name">Laparascopic Hysterectomy and Open Surgical Hysterectomy</h3>
                             <p class="condition-text">
                               Provides laparoscopic and open surgical hysterectomy with expert care and safe treatment.
                             </p>
+                             <span class="read-more">Read More →</span>
+                             </a> 
                         </div>
                     </div>
 

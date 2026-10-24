@@ -130,9 +130,9 @@ a {
 
 .site-header .logo-tagline {
     margin-top: 3px;
-    color: #7a7a7a;
+    color: black;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.3px;
     white-space: nowrap;
 }
@@ -229,10 +229,14 @@ a {
 
 /* Breadcrumb Section */
 .breadcrumb-section {
+     position: static;
     width: 100%;
     padding: 12px 0;
     border-bottom: 1px solid #eee5e9;
     background-color: var(--white);
+    
+    
+    
 }
 
 .breadcrumb-section .breadcrumb {
@@ -242,6 +246,7 @@ a {
     padding: 0 0 0 11px;
     font-size: 14px;
     font-weight: 500;
+    
 }
 
 .breadcrumb-section .breadcrumb-item a {
@@ -384,6 +389,191 @@ a {
     height: 500px;
 }
 
+/* ============================================
+   Pregnancy Care Section
+   (Antenatal Screening & High-Risk Pregnancy)
+   ============================================ */
+.pregnancy-care-section {
+    padding: 40px;
+    background: var(--white);
+}
+
+.pregnancy-care-image {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #f8f0f4;
+}
+
+.pregnancy-care-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.pregnancy-care-content .section-tag {
+    display: inline-block;
+    padding: 0;
+    margin-bottom: 6px;
+}
+
+.pregnancy-care-content .section-title {
+    margin: 0 0 22px;
+    line-height: 1.4;
+}
+
+.pregnancy-care-content p {
+    color: #666666;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+.pregnancy-care-content h3 {
+    color: #333333;
+    font-size: 19px;
+    font-weight: 600;
+    margin: 24px 0 16px;
+}
+
+.pregnancy-care-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+}
+
+.pregnancy-care-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.pregnancy-care-list i {
+    color: var(--primary-color);
+    font-size: 17px;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 991.98px) {
+    .pregnancy-care-section {
+        padding: 30px 15px;
+    }
+
+    .pregnancy-care-image,
+    .pregnancy-care-image img {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .pregnancy-care-section {
+        padding: 25px 12px;
+        margin-bottom: 25px;
+    }
+
+    .pregnancy-care-image,
+    .pregnancy-care-image img {
+        min-height: 260px;
+    }
+}
+
+/* ============================================
+   Blogs List Page (blogs.php)
+   - container properly center rehta hai, aur
+     vertical spacing yahan scoped hai
+   ============================================ */
+.blogs-list-page {
+    margin-top: 40px;
+    margin-bottom: 55px;
+}
+
+@media (max-width: 767.98px) {
+    .blogs-list-page {
+        margin-top: 25px;
+        margin-bottom: 35px;
+    }
+}
+
+/* ============================================
+   Pregnancy Care Blog Page
+   (pregnancycareblog - scoped, taaki
+   .testimonial-heading / .section-text ka
+   effect baaki pages par na pade)
+   ============================================ */
+.pregnancy-blog-page {
+    margin-top: 40px;
+    margin-bottom: 55px;
+}
+
+.pregnancy-blog-page .pregnancy-blog-banner {
+    margin-bottom: 28px;
+}
+
+.pregnancy-blog-page .pregnancy-blog-banner img {
+    display: block;
+    width: 100%;
+    /* height: 420px; */
+    object-fit: cover;
+    object-position: center;
+    border-radius: 14px;
+}
+
+.pregnancy-blog-page .blog-content {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.pregnancy-blog-page .blog-content .section-tag {
+    display: block;
+    padding: 0;
+    margin: 0 0 6px;
+}
+
+.pregnancy-blog-page .blog-content .section-title {
+    margin: 0 0 18px;
+    line-height: 1.4;
+}
+
+.pregnancy-blog-page .blog-content .testimonial-heading {
+    margin: 26px 0 8px;
+    color: var(--heading-color);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.pregnancy-blog-page .blog-content .section-text {
+    margin: 0 0 10px;
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.pregnancy-blog-page .blog-content .section-text strong {
+    color: var(--heading-color);
+}
+
+@media (max-width: 767.98px) {
+    .pregnancy-blog-page {
+        margin-top: 25px;
+        margin-bottom: 35px;
+    }
+
+    .pregnancy-blog-page .pregnancy-blog-banner img {
+        height: 240px;
+    }
+}
+
 .gallery-section {
     width: 100%;
     background-color: var(--white);
@@ -479,7 +669,7 @@ a {
     border: 1px solid #e9e9e9;
     border-radius: 12px;
     text-align: center;
-    transition: var(--transition);
+    /* transition: var(--transition); */
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -519,7 +709,7 @@ a {
 
 .conditions-section .condition-card:hover {
     border-color: var(--primary-color);
-    transform: translateY(-4px);
+    /* transform: translateY(-4px); */
 }
 
 .conditions-section .condition-card .read-more {
@@ -902,11 +1092,13 @@ a.consult-section .consult-value:hover {
     color: var(--primary-color);
 }
 
+/* ===== Site Footer (white theme, accent = #25949c) ===== */
 .site-footer {
-    background: #25949c;
-    color: #ffffff;
-    padding: 50px 0 0;
+    background: var(--white);
+    color: var(--text-color);
+    padding: 45px 0 0;
     font-family: 'Poppins', sans-serif;
+    border-top: 1px solid var(--border-color);
 }
 
 .site-footer .row {
@@ -914,36 +1106,37 @@ a.consult-section .consult-value:hover {
 }
 
 .site-footer h3 {
-    color: #ffffff;
-    font-size: 20px;
+    color: var(--primary-color);
+    font-size: 18px;
     font-weight: 600;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     line-height: 1.3;
 }
 
 .site-footer p {
-    color: #d5e0e1;
-    font-size: 14px;
+    color: #4b5563;
+    font-size: 15px;
     font-weight: 400;
-    line-height: 1.9;
-    /* margin-bottom: 16px; */
+    line-height: 1.85;
+    margin: 0;
 }
 
 .site-footer ul {
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 
 .site-footer ul li {
-    color: #d5e0e1;
-    font-size: 14px;
-    line-height: 1.8;
+    color: #374151;
+    font-size: 15px;
+    line-height: 1.7;
     margin-bottom: 10px;
 }
 
 .site-footer a {
-    color: #d5e0e1;
+    color: #374151;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -953,19 +1146,67 @@ a.consult-section .consult-value:hover {
 }
 
 .site-footer a:hover {
-    color: #ffffff;
+    color: var(--primary-color);
 }
 
 .site-footer strong {
-    color: #ffffff;
+    color: #111827;
     font-weight: 600;
 }
 
-.site-footer hr {
-    border: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    margin: 35px 0 0;
-    opacity: 1;
+/* Footer Top Row - logo left, Follow Us right */
+.site-footer .footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px 30px;
+    padding-bottom: 26px;
+}
+
+.site-footer .footer-follow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.site-footer .footer-follow-title {
+    color: #111827;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Dashed Divider */
+.site-footer .footer-divider {
+    border-top: 2px dashed var(--primary-color);
+    margin-bottom: 32px;
+}
+
+/* Contact Info list - icon + text */
+.site-footer .footer-contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.site-footer .footer-contact-list li i {
+    color: var(--primary-color);
+    font-size: 17px;
+    line-height: 1.6;
+    flex-shrink: 0;
+}
+
+.site-footer .footer-contact-list li span {
+    color: #374151;
+}
+
+/* Other Pages - 2 column link grid */
+.site-footer .footer-pages {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 16px;
 }
 
 /* ===== Blog cards & images ===== */
@@ -1040,7 +1281,7 @@ a.consult-section .consult-value:hover {
 }
 
 .blog-card .blog-content .read-more {
-    margin-top: auto;
+    /* margin-top: auto; */
     margin-left: 0;
     margin-bottom: 4px;
     padding: 0;
@@ -1116,62 +1357,62 @@ a.consult-section .consult-value:hover {
     background-color: var(--btn-maroon-dark);
 }
 
+/* Bottom Copyright Bar */
+.site-footer .footer-bottom-bar {
+    margin-top: 10px;
+    background-color: var(--primary-color);
+}
+
 .site-footer .footer-bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
-    padding: 22px 0;
-    margin-top: 35px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    gap: 4px 22px;
+    padding: 15px 0;
+    margin-top: 0;
+    border-top: 0;
 }
 
 .site-footer .footer-bottom p {
     margin: 0;
-    font-size: 13px;
-    color: #d5e0e1;
+    font-size: 14px;
+    color: #ffffff;
 }
 
-/* Appointment Link */
-.site-footer a[href*="appointment.php"] {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 11px 18px;
-    background: #ffffff;
-    color: #102d32;
-    border-radius: 5px;
-    font-size: 13px;
+.site-footer .footer-bottom .footer-credit a {
+    color: #ffffff;
     font-weight: 600;
+    text-decoration: underline;
 }
 
-.site-footer a[href*="appointment.php"]:hover {
-    background: #25949c;
-    color: #102d32;
+.site-footer .footer-bottom .footer-credit a:hover {
+    color: #dff3f4;
+    text-decoration: underline;
 }
 
-/* Footer Doctor Logo and Branding */
+/* Footer Doctor Logo and Branding (top row) */
 .site-footer .footer-doctor-brand {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 22px;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    text-decoration: none;
 }
 
 .site-footer .footer-doctor-logo {
     display: inline-flex;
-    align-items: flex-start;
+    align-items: center;
     flex-shrink: 0;
     margin: 0;
-    padding-top: 2px;
 }
 
 .site-footer .footer-doctor-logo img {
     display: block;
-    height: 75px;
+    height: 66px;
     width: auto;
     object-fit: contain;
-    object-position: left top;
+    object-position: left center;
 }
 
 .site-footer .footer-doctor-info {
@@ -1180,33 +1421,19 @@ a.consult-section .consult-value:hover {
 }
 
 .site-footer .footer-doctor-info .footer-doctor-name {
-    margin: 0 0 6px 0;
+    margin: 0 0 4px 0;
     padding: 0;
-    color: #ffffff;
+    color: var(--primary-color);
     font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.site-footer .footer-doctor-tagline {
+    color: #111827;
+    font-size: 12.5px;
     font-weight: 600;
-    line-height: 1.3;
-}
-
-.site-footer .footer-doctor-info p {
-    margin: 0;
-    padding: 0;
-    color: #d5e0e1;
-    font-size: 13.5px;
-    line-height: 1.6;
-}
-
-/* Extra gap between Doctor branding and Follow Us column */
-@media (min-width: 768px) {
-    .site-footer .footer-col-follow {
-        padding-left: 25px;
-    }
-}
-
-@media (min-width: 992px) {
-    .site-footer .footer-col-follow {
-        padding-left: 45px;
-    }
+    line-height: 1.5;
 }
 
 /* Footer Social Media Icons */
@@ -1214,25 +1441,36 @@ a.consult-section .consult-value:hover {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 3px;
+    gap: 10px;
 }
 
 .site-footer .footer-social-icons a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    width: 40px;
+    height: 40px;
+    border: 0;
     border-radius: 50%;
     color: #ffffff;
     font-size: 19px;
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
+.site-footer .footer-social-icons .social-youtube {
+    background-color: #ff0000;
+}
+
+.site-footer .footer-social-icons .social-instagram {
+    background-color: #e1306c;
+}
+
+.site-footer .footer-social-icons .social-facebook {
+    background-color: #1877f2;
+}
+
 .site-footer .footer-social-icons a:hover {
-    background: #ffffff;
-    color: #102d32;
+    color: #ffffff;
     transform: translateY(-3px);
 }
 
@@ -1288,6 +1526,4 @@ a.consult-section .consult-value:hover {
         opacity: 1;
     }
 }
-.custom-margin {
-    margin: 30px;
-}
+
