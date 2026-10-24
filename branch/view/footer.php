@@ -2,39 +2,38 @@
 <!-- Footer Section -->
 <footer class="site-footer">
 
-    <div class="container px-4">
+    <div class="container">
         <div class="row g-4">
 
-           
-            
             <!-- About Doctor -->
-            <div class="col-md-4 col-lg-3">
+            <div class="col-md-4 col-lg-3 footer-col-doctor">
 
-                <div class="">
+                <div class="footer-doctor-brand">
 
-                    <!-- Logo above Doctor Name -->
-                    <a href="default.php" class="footer-doctor-logo">
+                    <a href="default" class="footer-doctor-logo">
                         <img
                             src="./branch/assets/logo.png"
                             alt="Dr. Paridhi Chaudhary Logo"
                         >
                     </a>
 
-                    <h3 class="footer-doctor-name">
-                        Dr. Paridhi Chaudhary
-                    </h3>
+                    <div class="footer-doctor-info">
+                        <h3 class="footer-doctor-name">
+                            Dr. Paridhi Chaudhary
+                        </h3>
 
-                    <p>
-                        Obstetrician &amp; Gynecologist Laparascopic
-                        <br>Surgeon and Infertility Specialist
-                    </p>
+                        <p>
+                            Obstetrician &amp; Gynecologist Laparascopic
+                            <br>Surgeon and Infertility Specialist
+                        </p>
+                    </div>
 
                 </div>
 
             </div>
 
             <!-- Social Media Icons -->
-            <div class="col-md-4 col-lg-2">
+            <div class="col-md-4 col-lg-2 footer-col-follow">
 
                 <h3>Follow Us</h3>
 

@@ -21,13 +21,6 @@
             </div>
         </section>
 
-        <!-- Lightbox -->
-        <div class="lightbox" id="lightbox">
-            <button class="lightbox-close" id="lightboxClose"
-                aria-label="Close image">&times;</button>
-            <img src="" alt="Enlarged gallery image" id="lightboxImage">
-        </div>
-
 </main>
 
 <?php include __DIR__ . '/footer.php'; ?>

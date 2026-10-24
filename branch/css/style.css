@@ -182,6 +182,89 @@ a {
     transform: translateY(-2px);
 }
 
+/* Appointment Modal */
+.appointment-modal {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.appointment-modal .modal-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 16px 24px;
+    border-bottom: none;
+}
+
+.appointment-modal .modal-title {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.appointment-modal .appointment-submit {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--white);
+    font-family: var(--font-family);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.appointment-modal .appointment-submit:hover,
+.appointment-modal .appointment-submit:focus {
+    background-color: var(--btn-maroon-dark);
+    border-color: var(--btn-maroon-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.appointment-modal .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(37, 148, 156, 0.25);
+}
+
+/* Breadcrumb Section */
+.breadcrumb-section {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee5e9;
+    background-color: var(--white);
+}
+
+.breadcrumb-section .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0 0 0 11px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.breadcrumb-section .breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.breadcrumb-section .breadcrumb-item a:hover,
+.breadcrumb-section .breadcrumb-item a:focus {
+    color: var(--btn-maroon-dark);
+    text-decoration: none;
+}
+
+.breadcrumb-section .breadcrumb-item.active {
+    color: #555555;
+    font-weight: 500;
+}
+
+.breadcrumb-section .breadcrumb-item + .breadcrumb-item::before {
+    color: #999999;
+}
+
 .home-banner {
     position: relative;
     width: 100%;
@@ -199,13 +282,23 @@ a {
 
 .about-doctor-section {
     background-color: var(--white);
-    margin: 34px;
+    margin-top: 45px;
+    margin-bottom: 55px;
 }
 
 .about-doctor-section.container {
-    margin-top: 34px;
-    margin-bottom: 34px;
-    margin-inline: auto; }
+    margin-top: 45px;
+    margin-bottom: 55px;
+    margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+    .about-doctor-section,
+    .about-doctor-section.container {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+}
 
 .about-doctor-section .about-row {
     display: flex;
@@ -239,6 +332,7 @@ a {
     display: flex;
     align-items: center;
     gap: 45px;
+    margin: 15px 10px 10px;
 }
 
 .about-doctor-section .about-btn, .pregnancy-care-section .about-btn {
@@ -293,16 +387,23 @@ a {
 .gallery-section {
     width: 100%;
     background-color: var(--white);
-    margin: 40px;
+    margin-top: 45px;
+    margin-bottom: 55px;
 }
 
-/* Container wale gallery section me left/right auto margin restore karo -
-   warna margin: 40px Bootstrap ke margin-inline: auto ko override kar deta
-   hai aur left/right space unequal ho jata hai */
 .gallery-section.container {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-inline: auto; }
+    margin-top: 45px;
+    margin-bottom: 55px;
+    margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+    .gallery-section,
+    .gallery-section.container {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+}
 
 .section-head {
     max-width: 1100px;
@@ -345,10 +446,31 @@ a {
     height: 330px;
     object-fit: cover;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .gallery-section .gallery-item:hover img {
     transform: scale(1.06);
+}
+
+.conditions-section {
+    width: 100%;
+    margin-top: 45px;
+    margin-bottom: 55px;
+}
+
+.conditions-section.container {
+    margin-top: 45px;
+    margin-bottom: 55px;
+    margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+    .conditions-section,
+    .conditions-section.container {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
 }
 
 .conditions-section .condition-card {
@@ -359,10 +481,13 @@ a {
     text-align: center;
     transition: var(--transition);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .conditions-section a.condition-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
     color: inherit;
 }
@@ -395,6 +520,33 @@ a {
 .conditions-section .condition-card:hover {
     border-color: var(--primary-color);
     transform: translateY(-4px);
+}
+
+.conditions-section .condition-card .read-more {
+    margin-top: auto;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+/* Reusable Read More Button / Link */
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary-color) !important;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.read-more:hover,
+a:hover .read-more,
+.condition-card:hover .read-more,
+.blog-card:hover .read-more {
+    color: var(--btn-maroon-dark) !important;
+    transform: translateX(4px);
 }
 
 /* Symptoms List Item */
@@ -704,26 +856,45 @@ a.consult-section .consult-value:hover {
     padding: 28px 24px;
     background: #ffffff;
     border: 1px solid #e8e8e8;
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
+    transition: var(--transition);
 }
 
-.testimonial-stars {
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.testimonial-card .testimonial-stars {
     color: #f5a623;
-    font-size: 22px;
+    font-size: 20px;
     letter-spacing: 3px;
-    margin-bottom: 12px;
+    margin: 0 0 12px 0;
+    padding: 0;
+    line-height: 1;
 }
 
-.testimonial-heading {
-    font-size: 15px;
+.testimonial-card .testimonial-heading {
+    font-size: 17px;
     font-weight: 600;
-    margin-bottom: 12px;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+    padding: 0;
     color: #000000;
+    min-height: 28px;
 }
 
-.testimonial-name {
+.testimonial-card .section-text {
+    margin: 0 !important;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444444;
+}
+
+.testimonial-card .testimonial-name {
     margin-top: auto;
     padding-top: 18px;
     font-size: 16px;
@@ -738,10 +909,6 @@ a.consult-section .consult-value:hover {
     font-family: 'Poppins', sans-serif;
 }
 
-.site-footer .container {
-    max-width: 1200px;
-}
-
 .site-footer .row {
     row-gap: 35px;
 }
@@ -750,8 +917,9 @@ a.consult-section .consult-value:hover {
     color: #ffffff;
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 22px;
-    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.3;
 }
 
 .site-footer p {
@@ -785,7 +953,7 @@ a.consult-section .consult-value:hover {
 }
 
 .site-footer a:hover {
-    color: #25949c;
+    color: #ffffff;
 }
 
 .site-footer strong {
@@ -800,18 +968,83 @@ a.consult-section .consult-value:hover {
     opacity: 1;
 }
 
-/* ===== Blog cards (ye rules bhi 03c886b commit me delete ho gaye the - wapas restore) ===== */
-.blog-content img, .blogs-section a.blog-card {
-    display: block;
+/* ===== Blog cards & images ===== */
+.blogs-section a.blog-card,
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--white);
+    border: 1px solid #e9e9e9;
+    border-radius: 12px;
+    overflow: hidden;
     text-decoration: none;
     color: inherit;
+    transition: var(--transition);
 }
 
-.blog-card {
+.blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.blog-card img,
+.blog-card .img-fluid {
     display: block;
-    text-decoration: none;
-    color: inherit;
-    border-radius: 10px;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    object-position: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    transition: var(--transition);
+}
+
+.blog-card:hover img {
+    transform: scale(1.03);
+}
+
+.blog-card .blog-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px !important;
+}
+
+/* Reset tag, heading, and text so they align in a straight vertical line */
+.blog-card .blog-content .section-tag {
+    display: block;
+    padding: 0;
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--primary-color);
+}
+
+.blog-card .blog-content .testimonial-heading {
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--heading-color);
+    min-height: 48px;
+}
+
+.blog-card .blog-content .section-text {
+    margin: 0 0 16px 0 !important;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444444;
+}
+
+.blog-card .blog-content .read-more {
+    margin-top: auto;
+    margin-left: 0;
+    margin-bottom: 4px;
+    padding: 0;
 }
 
 /* ===== Floating Call + WhatsApp buttons (git commit 03c886b me galti se delete ho gaye the, wapas restore kiye) ===== */
@@ -885,7 +1118,14 @@ a.consult-section .consult-value:hover {
 }
 
 .site-footer .footer-bottom {
-    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 22px 0;
+    margin-top: 35px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .site-footer .footer-bottom p {
@@ -913,32 +1153,61 @@ a.consult-section .consult-value:hover {
 
 /* Footer Doctor Logo and Branding */
 .site-footer .footer-doctor-brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
     margin-bottom: 22px;
 }
 
 .site-footer .footer-doctor-logo {
-    display: block;
-    width: 95px;
-    margin-bottom: 12px;
+    display: inline-flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+    margin: 0;
+    padding-top: 2px;
 }
 
 .site-footer .footer-doctor-logo img {
     display: block;
-    width: 100%;
     height: 75px;
+    width: auto;
     object-fit: contain;
-    object-position: left center;
+    object-position: left top;
 }
 
-.site-footer .footer-doctor-name {
-    margin-bottom: 6px;
-    font-size: 21px;
+.site-footer .footer-doctor-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-footer .footer-doctor-info .footer-doctor-name {
+    margin: 0 0 6px 0;
+    padding: 0;
+    color: #ffffff;
+    font-size: 19px;
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
-.site-footer .footer-doctor-brand p {
-    /* margin-bottom: 12px; */
+.site-footer .footer-doctor-info p {
+    margin: 0;
+    padding: 0;
+    color: #d5e0e1;
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+/* Extra gap between Doctor branding and Follow Us column */
+@media (min-width: 768px) {
+    .site-footer .footer-col-follow {
+        padding-left: 25px;
+    }
+}
+
+@media (min-width: 992px) {
+    .site-footer .footer-col-follow {
+        padding-left: 45px;
+    }
 }
 
 /* Footer Social Media Icons */
@@ -966,4 +1235,57 @@ a.consult-section .consult-value:hover {
     background: #ffffff;
     color: #102d32;
     transform: translateY(-3px);
+}
+
+/* Lightbox Overlay */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Show Lightbox */
+.lightbox.active {
+    display: flex;
+}
+
+/* Enlarged Image */
+.lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    animation: lightboxZoom 0.3s ease;
+}
+
+/* Close Button */
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #fff;
+    font-size: 42px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Zoom Animation */
+@keyframes lightboxZoom {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

@@ -3,7 +3,7 @@
 
 <main>
     <section class="consult-section">
-        <div class="container px-4">
+        <div class="container">
             <div class="row g-4 align-items-start">
 
                 <!-- Clinic Information -->

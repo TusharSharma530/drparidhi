@@ -184,12 +184,12 @@
         if (isset($pages[$currentPage])):
         ?>
 
-        <div class="breadcrumb-section container">
+        <div class="breadcrumb-section">
             <div class="container">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0">
                         <li class="breadcrumb-item">
-                            <a href="default">Home</a>
+                            <a href="default" class="text-decoration-none">Home</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
                             <?= htmlspecialchars($pages[$currentPage], ENT_QUOTES, 'UTF-8') ?>
@@ -218,7 +218,7 @@
                     Book an Appointment
                 </h5>
 
-                <button type="button" class="btn-close"
+                <button type="button" class="btn-close btn-close-white"
                         data-bs-dismiss="modal"
                         aria-label="Close"></button>
             </div>

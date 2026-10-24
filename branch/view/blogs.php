@@ -2,11 +2,7 @@
 
 <main>
     <section class="blogs-section">
-        <div class="container px-4">
-
-            <div class="section-head text-center">
-               
-            </div>
+        <div class="container">
 
             <div class="row g-4">
 
