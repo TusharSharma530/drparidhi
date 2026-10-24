@@ -21,6 +21,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="branch/css/style.css">
+    <link rel="stylesheet" href="branch/css/responsiveness.css">
 </head>
 
 <body>
@@ -30,6 +31,7 @@
     <!-- Header Top Section -->
     <div class="header-top">
         <div class="container">
+            
             <div class="header-top-inner">
 
                 <!-- Logo -->
@@ -98,11 +100,22 @@
                     </span>
                 </span>
             </a>
-
+ <!-- Mobile Hamburger Button -->
+<button
+    class="navbar-toggler d-lg-none"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#mobileSidebar"
+    aria-controls="mobileSidebar"
+    aria-label="Open navigation menu"
+>
+    <span class="navbar-toggler-icon"></span>
+</button>
             <!-- Navigation Links -->
-            <div class="collapse navbar-collapse" id="mainNavbar">
+            <div class="collapse navbar-collapse d-none d-lg-flex" id="desktopNavbar">
 
                 <ul class="navbar-nav me-auto align-items-lg-center">
+                    
 
                     <li class="nav-item">
                         <a class="nav-link active" href="default">
@@ -159,6 +172,105 @@
 
         </div>
     </nav>
+    <!-- Mobile Sidebar -->
+<div
+    class="offcanvas offcanvas-end mobile-sidebar d-lg-none"
+    tabindex="-1"
+    id="mobileSidebar"
+    aria-labelledby="mobileSidebarLabel"
+>
+    <!-- Sidebar Header -->
+   
+<!-- Sidebar Header with Logo -->
+<div class="offcanvas-header mobile-sidebar-header">
+
+    <a href="default" class="sidebar-brand-link">
+        <img
+            src="./branch/assets/logo.png"
+            alt="Dr. Paridhi Chaudhary Logo"
+            class="sidebar-logo"
+        >
+
+        <span class="sidebar-brand-text">
+            <span class="sidebar-brand-name" id="mobileSidebarLabel">
+                Dr. Paridhi Chaudhary
+            </span>
+
+            <span class="sidebar-brand-tagline">
+                Obstetrician &amp; Gynecologist
+            </span>
+        </span>
+    </a>
+
+    <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close menu"
+    ></button>
+
+</div>
+
+
+    <!-- Sidebar Navigation -->
+    <div class="offcanvas-body">
+        
+        <ul class="navbar-nav">
+            
+            
+
+            <li class="nav-item">
+                <a class="nav-link" href="default">
+                    <i class="bi bi-house-door me-2"></i>Home
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="about">
+                    <i class="bi bi-person me-2"></i>About Us
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="specialities">
+                    <i class="bi bi-heart-pulse me-2"></i>Specialities
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="blogs">
+                    <i class="bi bi-journal-text me-2"></i>Blogs
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="gallery">
+                    <i class="bi bi-images me-2"></i>Gallery
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="contact">
+                    <i class="bi bi-telephone me-2"></i>Contact Us
+                </a>
+            </li>
+
+        </ul>
+
+        <!-- Appointment Button -->
+        <div class="mt-4">
+            <button
+                type="button"
+                class="btn appointment-btn w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#appointmentModal"
+                data-bs-dismiss="offcanvas"
+            >
+                Book an Appointment
+            </button>
+        </div>
+    </div>
+</div>
 
 </header>
 
