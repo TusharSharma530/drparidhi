@@ -37,13 +37,12 @@ a {
 }
 
 .header-top-inner {
-    min-height: 84px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 15px 30px;
-    padding: 14px 0;
+    padding: 8px 0;
 }
 
 .header-contact {
@@ -94,9 +93,8 @@ a {
 }
 
 .site-header .navbar {
-    min-height: 84px;
-    padding: 8px 0;
-    background-color: #87ceeb0d;
+    padding: 5px 0;
+    background-color: #87ceeb30;
 }
 
 .site-header .site-logo {
@@ -230,13 +228,10 @@ a {
 /* Breadcrumb Section */
 .breadcrumb-section {
      position: static;
-    width: 100%;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee5e9;
-    background-color: var(--white);
-    
-    
-    
+     width: 100%;
+     padding: 12px 0;
+     border-bottom: 1px solid #eee5e9;
+     background-color: var(--primary-color);
 }
 
 .breadcrumb-section .breadcrumb {
@@ -249,8 +244,12 @@ a {
     
 }
 
+.breadcrumb-section .breadcrumb li {
+    color: #000;
+}
+
 .breadcrumb-section .breadcrumb-item a {
-    color: var(--primary-color);
+    color: #fff;
     text-decoration: none;
     transition: var(--transition);
 }
@@ -262,12 +261,12 @@ a {
 }
 
 .breadcrumb-section .breadcrumb-item.active {
-    color: #555555;
+    color: #eee;
     font-weight: 500;
 }
 
 .breadcrumb-section .breadcrumb-item + .breadcrumb-item::before {
-    color: #999999;
+    color: #eee;
 }
 
 .home-banner {
@@ -321,9 +320,7 @@ a {
 
 /* section-tag (padding: 10px) aur section-text (margin: 10px) ke left edge
    ke sath title ko bhi vertically align karo - 10px spacing same rakho */
-.about-doctor-section .about-left .section-title {
-    margin: 10px;
-}
+.about-doctor-section .about-left .section-title {margin: 0 10px;}
 
 /* Reusable paragraph class - kisi bhi section me lagao, UI same rahega */
 .section-text {
@@ -529,7 +526,6 @@ a {
 }
 
 .pregnancy-blog-page .blog-content {
-    max-width: 950px;
     margin: 0 auto;
 }
 
@@ -608,15 +604,15 @@ a {
     color: var(--primary-color);
     font-size: 16px;
     font-weight: 700;
-    padding: 10px;
+    padding: 5px 10px;
 }
 
 .section-title {
     margin: 0;
     color: #000000;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 600;
-    line-height: 1.3;
+    line-height: unset;
 }
 
 .gallery-section .gallery-grid {
@@ -785,12 +781,7 @@ a:hover .read-more,
 }
 
 /* Schedule Consultation Section (Clinic / Hospital info + Appointment form) */
-.consult-section {
-
-    width: 100%;
-    padding: 40px;
-    background-color: #87ceeb0d;
-}
+.consult-section {width: 100%;padding: 40px 0;}
 
 .consult-section .section-title {
     margin-bottom: 45px;
@@ -943,7 +934,7 @@ a.consult-section .consult-value:hover {
     background-color: var(--white);
     border: 1px solid #f0f0f0;
     border-radius: 16px;
-    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 34px rgb(0 0 0 / 15%);
 }
 
 .consult-section .consult-field {
@@ -1029,7 +1020,8 @@ a.consult-section .consult-value:hover {
 /* Patient Testimonials */
 .testimonials-section {
     padding: 60px 0;
-    background: #25949c0a;
+    background: #25949c1a;
+    border: 1px solid #eee;
 }
 
 .testimonials-flex {
@@ -1092,9 +1084,13 @@ a.consult-section .consult-value:hover {
     color: var(--primary-color);
 }
 
+.blogs-section {
+    padding: 50px 0;
+}
+
 /* ===== Site Footer (white theme, accent = #25949c) ===== */
 .site-footer {
-    background: var(--white);
+    background: #e8f6fb;
     color: var(--text-color);
     padding: 45px 0 0;
     font-family: 'Poppins', sans-serif;

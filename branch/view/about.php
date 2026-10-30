@@ -6,7 +6,7 @@
         <div class="about-row">
 
             <div class="about-left">
-                <span class="section-tag">About Us</span>
+                <!--<span class="section-tag">About Us</span>-->
                 <span class="section-tag">Dr. Paridhi Chaudhary</span>
 
                 <h2 class="section-title">

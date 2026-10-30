@@ -59,8 +59,8 @@
                         <i class="bi bi-envelope"></i>
 
                         <span class="contact-info">
-                            <strong>drparidhichaudhary@gmail.com</strong>
                             <small>Mail Us</small>
+                            <strong>drparidhichaudhary@gmail.com</strong>
                         </span>
                     </a>
 
@@ -68,8 +68,8 @@
                         <i class="bi bi-telephone"></i>
 
                         <span class="contact-info">
-                            <strong>+91-9286197331 , +91-01214567142</strong>
                             <small>Contact Us</small>
+                            <strong>+91-9286197331 , +91-01214567142</strong>
                         </span>
                     </a>
 
