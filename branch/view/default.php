@@ -44,13 +44,28 @@
                         </div>
                     <?php } ?>
 
+                    
                     <div class="about-actions">
-                        <a class="about-btn" href="about">Know More</a>
 
-                        <a class="about-helpline" href="tel:+919286197331">
-                            Helpline! +91-9286197331 , +91-01214567142
+                        <a class="about-btn" href="<?= rtrim($path, '/') ?>/about">
+                            Know More
                         </a>
+
+                        <?php if (!empty($contactno)) { ?>
+                            <a class="about-helpline"
+                            href="tel:<?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>">
+
+                                Helpline! <?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>
+
+                                <?php if (!empty($alternateno)) { ?>
+                                    , <?= htmlspecialchars($alternateno, ENT_QUOTES, 'UTF-8') ?>
+                                <?php } ?>
+
+                            </a>
+                        <?php } ?>
+
                     </div>
+
                 </div>
 
                 <!-- Right Side Image -->
