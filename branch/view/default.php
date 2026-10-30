@@ -537,11 +537,12 @@
 
         
 
+        
         <section class="blogs-section">
 
             <div class="container px-4">
 
-                <div class="section-head text-center ">
+                <div class="section-head text-center">
                     <span class="section-tag">Health Articles</span>
 
                     <h2 class="section-title">
@@ -554,111 +555,61 @@
                     </p>
                 </div>
 
+                <?php
+                $blogQuery = mysqli_query($con, "
+                    SELECT title, sdesc, `file`
+                    FROM blogs
+                    WHERE status = 1
+                    ORDER BY id DESC
+                    LIMIT 3
+                ");
+                ?>
+
                 <div class="row g-4">
 
-                   
-                       <div class="col-md-6 col-lg-4">
-                    <a href="pregnancycareblog" class="blog-card h-100">
+                    <?php while ($blogData = mysqli_fetch_assoc($blogQuery)) { ?>
 
-                        <img src="branch/assets/blog1.webp"
-                             alt="Pregnancy care and maternal health"
-                             class="img-fluid"
-                             loading="lazy">
+                        <div class="col-md-6 col-lg-4">
 
-                        <div class="blog-content p-3">
-                            <span class="section-tag">Pregnancy Care</span>
-
-                            <h3 class="testimonial-heading">
-                                Tips for a Healthy Pregnancy
-                            </h3>
-
-                            <p class="section-text mt-3">
-                                Learn about prenatal checkups, healthy habits,
-                                nutrition, and important precautions during pregnancy.
-                            </p>
-
-                            <span class="read-more">Read More →</span>
-                        </div>
-                    </a>
-                </div>
-
-                
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-card h-100">
                             <a href="pregnancycareblog" class="blog-card h-100">
 
-                            <img
-                                src="branch/assets/blog2.png"
-                                alt="Women's menstrual health awareness"
-                                class="img-fluid"
-                                loading="lazy"
-                            >
+                                <img
+                                    src="<?= htmlspecialchars($blogData['file'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                                    alt="<?= htmlspecialchars($blogData['title'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                                    class="img-fluid"
+                                    loading="lazy"
+        >
 
-                            <div class="blog-content p-3">
+                                <div class="blog-content p-3">
 
-                                <span class="section-tag">
-                                    Women's Health
-                                </span>
+                                    <span class="section-tag">
+                                        Pregnancy Care
+                                    </span>
 
-                                <h3 class="testimonial-heading">
-                                    Understanding Irregular Periods
-                                </h3>
+                                    <h3 class="testimonial-heading">
+                                        <?= htmlspecialchars($blogData['title'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                                    </h3>
 
-                                <p class="section-text mt-3">
-                                    Discover common reasons for irregular
-                                    menstrual cycles and when to consult
-                                    a gynecologist.
-                                </p>
-                                <span class="read-more">Read More →</span>
+                                    <p class="section-text mt-3">
+                                        <?= htmlspecialchars($blogData['sdesc'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                                    </p>
 
-                            </div>
-                        </a>
+                                    <span class="read-more">Read More →</span>
+
+                                </div>
+
+                            </a>
+
                         </div>
-                    </div>
 
-              
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-card h-100">
-                            <a href="pregnancycareblog" class="blog-card h-100">
-
-                            <img
-                                src="branch/assets/blog3.png"
-                                alt="PCOS and hormonal health awareness"
-                                class="img-fluid"
-                                loading="lazy"
-                            >
-
-                            <div class="blog-content p-3">
-
-                                <span class="section-tag">
-                                    PCOS / PCOD
-                                </span>
-
-                                <h3 class="testimonial-heading">
-                                    PCOS: Symptoms and Treatment Options
-                                </h3>
-
-                                <p class="section-text mt-3">
-                                    Understand common PCOS symptoms,
-                                    diagnosis, and how individualized
-                                    treatment can help manage this condition.
-                                </p>
-                                <span class="read-more">Read More →</span>
-
-                                <!-- <a href="../view/blog-pcos-treatment.php">
-                                    Read More
-                                </a> -->
-
-                            </div>
-                        </a>
-                        </div>
-                    </div>
+                    <?php } ?>
 
                 </div>
 
             </div>
 
         </section>
+
 <!-- End Latest Blogs Section -->
 
 <!-- End Patient Testimonials Section -->

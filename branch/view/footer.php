@@ -5,61 +5,71 @@
     <div class="container">
 
         <!-- Top Row: Logo + Follow Us -->
+       
         <div class="footer-top">
 
             <a href="default" class="footer-doctor-brand">
+
                 <span class="footer-doctor-logo">
                     <img
-                        src="./branch/assets/logo.png"
-                        alt="Dr. Paridhi Chaudhary Logo"
+                        src="<?= htmlspecialchars($logo ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                        alt="<?= htmlspecialchars($websitename ?? '', ENT_QUOTES, 'UTF-8') ?> Logo"
                     >
                 </span>
 
                 <span class="footer-doctor-info">
+
                     <span class="footer-doctor-name">
-                        Dr. Paridhi Chaudhary
+                        <?= htmlspecialchars($websitename ?? '', ENT_QUOTES, 'UTF-8') ?>
                     </span>
 
-                    <span class="footer-doctor-tagline">
-                        Obstetrician &amp; Gynecologist Laparascopic
-                        <br>Surgeon and Infertility Specialist
+                <span class="footer-doctor-tagline">
+                        <?= htmlspecialchars($headercenterline ?? '', ENT_QUOTES, 'UTF-8') ?>
                     </span>
                 </span>
             </a>
 
             <div class="footer-follow">
+
                 <span class="footer-follow-title">Follow Us On</span>
 
                 <div class="footer-social-icons">
 
-                    <a href="https://www.youtube.com/@paridhichaudharyshaurya6955"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="social-youtube"
-                       aria-label="YouTube">
-                        <i class="bi bi-youtube"></i>
-                    </a>
+                    <?php if (!empty($youtube)) { ?>
+                        <a href="<?= htmlspecialchars($youtube, ENT_QUOTES, 'UTF-8') ?>"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-youtube"
+                        aria-label="YouTube">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    <?php } ?>
 
-                    <a href="https://www.instagram.com/drparidhigyne/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="social-instagram"
-                       aria-label="Instagram">
-                        <i class="bi bi-instagram"></i>
-                    </a>
+                    <?php if (!empty($instagram)) { ?>
+                        <a href="<?= htmlspecialchars($instagram, ENT_QUOTES, 'UTF-8') ?>"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-instagram"
+                        aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    <?php } ?>
 
-                    <a href="https://www.facebook.com/Dr.Paridhi.chaudhary"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="social-facebook"
-                       aria-label="Facebook">
-                        <i class="bi bi-facebook"></i>
-                    </a>
+                    <?php if (!empty($facebook)) { ?>
+                        <a href="<?= htmlspecialchars($facebook, ENT_QUOTES, 'UTF-8') ?>"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-facebook"
+                        aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                    <?php } ?>
 
                 </div>
             </div>
 
         </div>
+
 
         <!-- Dashed Divider -->
         <div class="footer-divider"></div>
@@ -68,28 +78,28 @@
         <div class="row g-4 footer-main">
 
             <!-- About Us -->
+            <!-- About Us -->
             <div class="col-md-6 col-lg-3">
                 <h3>About Us</h3>
 
                 <p>
-                    Dr. Paridhi Chaudhary believes Obstetrics &amp; Gynecology
-                    is an important and sensitive field of medicine that
-                    requires dedication, empathy, and compassion. Every woman
-                    deserves to be heard, understood, and treated with respect.
+                    <?= htmlspecialchars($footerdesc ?? '', ENT_QUOTES, 'UTF-8') ?>
                 </p>
             </div>
 
             <!-- Contact Info -->
+           
             <div class="col-md-6 col-lg-3">
                 <h3>Contact Info</h3>
 
                 <ul class="footer-contact-list">
+
                     <li>
                         <i class="bi bi-geo-alt-fill"></i>
                         <span>
                             <strong>Address :</strong>
-                           <br> Shop No,6,7,RPG Galleria GP Pocket,Ganga Nagar,
-                            Meerut,Uttar Pradesh-250001
+                            <br>
+                            <?= htmlspecialchars($address ?? '', ENT_QUOTES, 'UTF-8') ?>
                         </span>
                     </li>
 
@@ -97,7 +107,21 @@
                         <i class="bi bi-telephone-fill"></i>
                         <span>
                             <strong>Phone No. :</strong>
-                           <br> <a href="tel:+919286197331">+91-9286197331 <br> +91-01214567142</a>
+                            <br>
+
+                            <?php if (!empty($contactno)) { ?>
+                                <a href="tel:<?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>">
+                                    <?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>
+                                </a>
+                            <?php } ?>
+
+                            <?php if (!empty($alternateno)) { ?>
+                                <br>
+                                <a href="tel:<?= htmlspecialchars($alternateno, ENT_QUOTES, 'UTF-8') ?>">
+                                    <?= htmlspecialchars($alternateno, ENT_QUOTES, 'UTF-8') ?>
+                                </a>
+                            <?php } ?>
+
                         </span>
                     </li>
 
@@ -105,11 +129,27 @@
                         <i class="bi bi-envelope-fill"></i>
                         <span>
                             <strong>Email :</strong>
-                            <a href="mailto:drparidhichaudhary@gmail.com">drparidhichaudhary@gmail.com</a>
+                            <br>
+
+                            <?php if (!empty($emailid)) { ?>
+                                <a href="mailto:<?= htmlspecialchars($emailid, ENT_QUOTES, 'UTF-8') ?>">
+                                    <?= htmlspecialchars($emailid, ENT_QUOTES, 'UTF-8') ?>
+                                </a>
+                            <?php } ?>
+
+                            <?php if (!empty($alternateemailid)) { ?>
+                                <br>
+                                <a href="mailto:<?= htmlspecialchars($alternateemailid, ENT_QUOTES, 'UTF-8') ?>">
+                                    <?= htmlspecialchars($alternateemailid, ENT_QUOTES, 'UTF-8') ?>
+                                </a>
+                            <?php } ?>
+
                         </span>
                     </li>
+
                 </ul>
             </div>
+
 
             <!-- Other Pages -->
             <div class="col-md-6 col-lg-3">
@@ -173,19 +213,31 @@
 
 </footer>
 
-<div class="float-contact">
-    <a href="tel:+919286197331" class="float-call" aria-label="Call us">
-        <i class="bi bi-telephone-fill"></i>
-    </a>
 
-    <a href="https://wa.me/919286197331"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="float-whatsapp"
-       aria-label="Chat on WhatsApp">
-        <i class="bi bi-whatsapp"></i>
-    </a>
+<div class="float-contact">
+
+    <?php if (!empty($contactno)) { ?>
+        <a href="tel:<?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>"
+           class="float-call"
+           aria-label="Call us">
+            <i class="bi bi-telephone-fill"></i>
+        </a>
+    <?php } ?>
+
+    <?php if (!empty($whatsapp)) {
+        $whatsappNumber = preg_replace('/[^0-9]/', '', $whatsapp);
+    ?>
+        <a href="https://wa.me/<?= htmlspecialchars($whatsappNumber, ENT_QUOTES, 'UTF-8') ?>"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="float-whatsapp"
+           aria-label="Chat on WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+    <?php } ?>
+
 </div>
+
 
 <!-- Back to Top Button (right side) -->
 <button type="button" class="back-to-top" aria-label="Back to top">
