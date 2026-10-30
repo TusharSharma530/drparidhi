@@ -12,7 +12,7 @@
 
                 <span class="footer-doctor-logo">
                     <img
-                        src="<?= htmlspecialchars($logo ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                        src="<?= htmlspecialchars(($path ?? '') . ($logo ?? ''), ENT_QUOTES, 'UTF-8') ?>"
                         alt="<?= htmlspecialchars($websitename ?? '', ENT_QUOTES, 'UTF-8') ?> Logo"
                     >
                 </span>
@@ -150,42 +150,65 @@
                 </ul>
             </div>
 
+            
+        <!-- Other Pages -->
+        <div class="col-md-6 col-lg-3">
+            <h3>Other Pages</h3>
 
-            <!-- Other Pages -->
-            <div class="col-md-6 col-lg-3">
-                <h3>Other Pages</h3>
+            <div class="footer-pages">
+                <ul>
+                    <?php
+                    $sql = "SELECT c_name FROM category WHERE status = 1 AND c_type = 1";
+                    $result = mysqli_query($con, $sql);
 
-                <div class="footer-pages">
-                    <ul>
-                        <li><a href="default">Home</a></li>
-                        <li><a href="about">About Us</a></li>
-                        <li><a href="specialities">Specialities</a></li>
-               
+                    if ($result && mysqli_num_rows($result) > 0) {
 
-                 
-                        <li><a href="blogs">Latest Blogs</a></li>
-                        <li><a href="gallery">Gallery</a></li>
-                        <li><a href="contact">Contact Us</a></li>
-                 
-                </div>
-            </div>
+                        while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
 
-            <!-- Our Services -->
-            <div class="col-md-6 col-lg-3">
-                <h3>Our Services</h3>
+                            <li>
+                                <?= htmlspecialchars($row['c_name'], ENT_QUOTES, 'UTF-8') ?>
+                            </li>
 
-                <ul class="footer-services">
-                    <li><a href="pregnancycare">Pregnancy Care</a></li>
-                    <li>Antenatal Screening, Pregnancy Treatment Including High Risk Pregnancy</li>
-                    <li>Delivery-Normal and C-Section</li>
-                    <li>Infertility Problem</li>
-                    <li>Treatment of itching,pain and other Infection of female genital tract,PCOS Treatment</li>
-                    <li>Period Related Problem</li>
-                    <li>Adolescent girls health related problem</li>
-                    <li>Cancer Screening and Prevention</li>
-                     <li>Laparascopic Hysterectomy and Open Surgical Hysterectomy</li>
+                    <?php
+                        }
+
+                    }
+                    ?>
                 </ul>
             </div>
+        </div>
+
+
+            <!-- Our Services -->
+           
+        <!-- Our Services -->
+        <div class="col-md-6 col-lg-3">
+            <h3>Our Services</h3>
+
+            <ul class="footer-services">
+
+                <?php
+                $sql = "SELECT sc_name FROM sub_cat WHERE status = 1 ORDER BY id ASC";
+                $result = mysqli_query($con, $sql);
+
+                if ($result && mysqli_num_rows($result) > 0) {
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+
+                        <li>
+                            <?= htmlspecialchars($row['sc_name'], ENT_QUOTES, 'UTF-8') ?>
+                        </li>
+
+                <?php
+                    }
+
+                }
+                ?>
+
+            </ul>
+        </div>
 
         </div>
 

@@ -180,37 +180,6 @@ function __cfg($value, $fallback = ''){
 }
 
 
-//if page meta title not exist
-if(!function_exists('pageMeta')){
-	function pageMeta() {
-		static $cache = null;
-		if($cache !== null){ return $cache; }
-
-		$cache = array('title' => '', 'desc' => '');
-
-		$slug = !empty($GLOBALS['currentSlug']) ? (string)$GLOBALS['currentSlug'] : '';
-		if($slug === '' || $slug === 'home'){ return $cache; }
-
-		global $con;
-		$sql = mysqli_query($con, "SELECT `c_name`, `meta_title`, `meta_desc`
-			FROM `category`
-			WHERE `c_url` = '".mysqli_real_escape_string($con, $slug)."'
-			AND `c_type` = 1 AND `status` = 1 LIMIT 1");
-
-		if($sql && mysqli_num_rows($sql)){
-			$rw   = mysqli_fetch_assoc($sql);
-			$name = trim((string)$rw['c_name']);
-			// Category names are stored in caps (ROOMS & SUITES).
-			$cache['title'] = trim((string)$rw['meta_title']) !== ''
-				? trim($rw['meta_title'])
-				: ($name !== '' ? ucwords(strtolower($name)) : '');
-			$cache['desc'] = trim((string)$rw['meta_desc']);
-		}
-
-		return $cache;
-	}
-}
-
 if(!function_exists('imageUrl')){
 	function imageUrl($folder, $filename) {
 		return IMAGES_URL . $folder . '/' . $filename;

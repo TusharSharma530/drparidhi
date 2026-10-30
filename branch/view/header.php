@@ -31,49 +31,68 @@ require_once __DIR__ . '/../../manager/database/db.php';
 <header class="site-header">
 
     <!-- Header Top Section -->
+   
     <div class="header-top">
         <div class="container">
-            
+
             <div class="header-top-inner">
 
                 <!-- Logo -->
                 <a class="site-logo" href="default">
-                    <img
-                        src="branch/assets/logo.png"
-                        alt="Dr.Paridhi Chaudhary Logo"
-                        class="site-logo-img"
-                    >
+
+                    <img src="<?=$path.$logo;?>" alt="<?=$websitename;?> Logo" class="site-logo-img">
 
                     <span class="logo-text">
-                        <span class="logo-name">Dr.Paridhi Chaudhary</span>
-                        <span class="logo-tagline">
-                            Obstetrician &amp; Gynecologist Laparascopic
-                            <br>
-                            Surgeon and Infertility Specialist
+
+                        <span class="logo-name">
+                            <?= htmlspecialchars($websitename ?? '', ENT_QUOTES, 'UTF-8') ?>
                         </span>
+
+                        <span class="logo-tagline">
+                            <?= htmlspecialchars($headercenterline ?? '', ENT_QUOTES, 'UTF-8') ?>
+                        </span>
+
                     </span>
                 </a>
 
                 <!-- Contact Information -->
                 <div class="header-contact">
 
-                    <a href="mailto:drparidhi80@gmail.com" class="contact-item">
-                        <i class="bi bi-envelope"></i>
+                    <?php if (!empty($emailid)) { ?>
+                        <a href="mailto:<?= htmlspecialchars($emailid, ENT_QUOTES, 'UTF-8') ?>"
+                        class="contact-item">
 
-                        <span class="contact-info">
-                            <small>Mail Us</small>
-                            <strong>drparidhichaudhary@gmail.com</strong>
-                        </span>
-                    </a>
+                            <i class="bi bi-envelope"></i>
 
-                    <a href="tel:+919286197331" class="contact-item">
-                        <i class="bi bi-telephone"></i>
+                            <span class="contact-info">
+                                <small>Mail Us</small>
+                                <strong>
+                                    <?= htmlspecialchars($emailid, ENT_QUOTES, 'UTF-8') ?>
+                                </strong>
+                            </span>
 
-                        <span class="contact-info">
-                            <small>Contact Us</small>
-                            <strong>+91-9286197331 , +91-01214567142</strong>
-                        </span>
-                    </a>
+                        </a>
+                    <?php } ?>
+
+                    <?php if (!empty($contactno)) { ?>
+                        <a href="tel:<?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>"
+                        class="contact-item">
+
+                            <i class="bi bi-telephone"></i>
+
+                            <span class="contact-info">
+                                <small>Contact Us</small>
+                                <strong>
+                                    <?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>
+
+                                    <?php if (!empty($alternateno)) { ?>
+                                        , <?= htmlspecialchars($alternateno, ENT_QUOTES, 'UTF-8') ?>
+                                    <?php } ?>
+                                </strong>
+                            </span>
+
+                        </a>
+                    <?php } ?>
 
                 </div>
 
@@ -81,17 +100,14 @@ require_once __DIR__ . '/../../manager/database/db.php';
         </div>
     </div>
 
+
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
 
             <!-- Mobile Brand -->
             <a class="navbar-brand d-lg-none" href="default">
-                <img
-                    src="branch/assets/logo.png"
-                    alt="Dr.Paridhi Chaudhary Logo"
-                    class="site-logo-img"
-                >
+                <img src="<?=$path.$logo;?>" alt="<?=$websitename;?> Logo" class="site-logo-img">
 
                 <span class="logo-text">
                     <span class="logo-name">Dr. Paridhi</span>
@@ -103,16 +119,16 @@ require_once __DIR__ . '/../../manager/database/db.php';
                 </span>
             </a>
  <!-- Mobile Hamburger Button -->
-<button
-    class="navbar-toggler d-lg-none"
-    type="button"
-    data-bs-toggle="offcanvas"
-    data-bs-target="#mobileSidebar"
-    aria-controls="mobileSidebar"
-    aria-label="Open navigation menu"
->
-    <span class="navbar-toggler-icon"></span>
-</button>
+            <button
+                class="navbar-toggler d-lg-none"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileSidebar"
+                aria-controls="mobileSidebar"
+                aria-label="Open navigation menu"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <!-- Navigation Links -->
             <div class="collapse navbar-collapse d-none d-lg-flex" id="desktopNavbar">
 
@@ -187,11 +203,7 @@ require_once __DIR__ . '/../../manager/database/db.php';
 <div class="offcanvas-header mobile-sidebar-header">
 
     <a href="default" class="sidebar-brand-link">
-        <img
-            src="./branch/assets/logo.png"
-            alt="Dr. Paridhi Chaudhary Logo"
-            class="sidebar-logo"
-        >
+        <img src="<?=$path.$logo;?>" alt="<?=$websitename;?> Logo" class="sidebar-logo">
 
         <span class="sidebar-brand-text">
             <span class="sidebar-brand-name" id="mobileSidebarLabel">
@@ -280,21 +292,16 @@ require_once __DIR__ . '/../../manager/database/db.php';
 <!-- Breadcrumb Section: Outside Sticky Header -->
 <?php
 
-$currentPage = basename(
-    parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
-);
+$currentPage = $geturl1 ?? '';
 
-$pages = [
-    'about'        => 'About Us',
-    'specialities' => 'Specialities',
-    'blogs'        => 'Blogs',
-    'gallery'      => 'Gallery',
-    'contact'      => 'Contact Us'
-];
+if (!empty($currentPage) && $currentPage !== 'default'):
 
-if (isset($pages[$currentPage])):
+    $pageTitle = ucwords(
+        str_replace(['-', '_'], ' ', $currentPage)
+    );
 
 ?>
+
 
 <div class="breadcrumb-section">
     <div class="container">
@@ -309,11 +316,7 @@ if (isset($pages[$currentPage])):
                 </li>
 
                 <li class="breadcrumb-item active" aria-current="page">
-                    <?= htmlspecialchars(
-                        $pages[$currentPage],
-                        ENT_QUOTES,
-                        'UTF-8'
-                    ) ?>
+                    <?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?>
                 </li>
 
             </ol>

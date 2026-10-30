@@ -194,6 +194,7 @@
 
         </section>
         <!-- Appointment Section -->
+        
         <section class="about-doctor-section appointment-section">
             <div class="container px-4">
                 <div class="row">
@@ -205,14 +206,20 @@
                         </h2>
 
                         <div class="row g-4 mb-4">
+
                             <div class="col-sm-6">
                                 <div class="d-flex align-items-center gap-3 mb-2">
                                     <i class="bi bi-telephone text-white fs-4"></i>
                                     <span class="text-white fw-bold fs-4">Call Us:</span>
                                 </div>
-                                <a href="tel:+919286197331"
-                                   class="text-white text-decoration-none fs-5">
-                                    +91-9286197331 , 0121 4567142
+
+                                <a href="tel:<?= htmlspecialchars($contactno ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                                class="text-white text-decoration-none fs-5">
+                                    <?= htmlspecialchars($contactno ?? '', ENT_QUOTES, 'UTF-8') ?>
+
+                                    <?php if (!empty($alternateno)) { ?>
+                                        , <?= htmlspecialchars($alternateno, ENT_QUOTES, 'UTF-8') ?>
+                                    <?php } ?>
                                 </a>
                             </div>
 
@@ -221,11 +228,13 @@
                                     <i class="bi bi-envelope text-white fs-4"></i>
                                     <span class="text-white fw-bold fs-4">E-mail Us:</span>
                                 </div>
-                                <a href="mailto:drparidhichaudhary@gmail.com"
-                                   class="text-white text-decoration-none fs-5">
-                                    drparidhichaudhary@gmail.com
+
+                                <a href="mailto:<?= htmlspecialchars($emailid ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                                class="text-white text-decoration-none fs-5">
+                                    <?= htmlspecialchars($emailid ?? '', ENT_QUOTES, 'UTF-8') ?>
                                 </a>
                             </div>
+
                         </div>
 
                         <div class="mb-5">
@@ -233,15 +242,14 @@
                                 <i class="bi bi-geo-alt text-white fs-4"></i>
                                 <span class="text-white fw-bold fs-4">Visit Us:</span>
                             </div>
+
                             <span class="text-white fs-5">
-                               Shop No,6,7,RPG Galleria,
-                               GP Packet,Ganga Nagar,
-                               Meerut,Uttar Pradesh 250001
+                                <?= htmlspecialchars($address ?? '', ENT_QUOTES, 'UTF-8') ?>
                             </span>
                         </div>
 
                         <a class="about-btn bg-white text-dark border-0"
-                           href="contact">
+                        href="contact">
                             Book an Appointment
                         </a>
 
@@ -249,6 +257,7 @@
                 </div>
             </div>
         </section>
+
 
         <!-- Symptoms Section -->
          
@@ -591,7 +600,7 @@
                                     </h3>
 
                                     <p class="section-text mt-3">
-                                        <?= htmlspecialchars($blogData['sdesc'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                                        <?= htmlspecialchars(strip_tags($blogData['sdesc'] ?? ''), ENT_QUOTES, 'UTF-8') ?>
                                     </p>
 
                                     <span class="read-more">Read More →</span>
