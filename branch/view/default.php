@@ -14,9 +14,7 @@
         <section class="home-banner">
             <?php if (!empty($bannerData['featured_img'])) { ?>
                 <img
-                    src="<?= htmlspecialchars($bannerData['featured_img']) ?>"
-                    alt="Dr. Paridhi Chaudhary - Obstetrician and Gynecologist"
-                    fetchpriority="high"
+                    src="<?= htmlspecialchars(($path ?? '') . ($bannerData['featured_img'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
                 >
             <?php } ?>
         </section>
@@ -58,10 +56,9 @@
                 <!-- Right Side Image -->
                 <div class="why-choose">
                     <?php if (!empty($aboutData['featured_img'])) { ?>
-                        <img
-                            src="<?= htmlspecialchars($aboutData['featured_img']) ?>"
-                            alt="Dr. Paridhi Chaudhary"
-                        >
+                    <img
+                        src="<?= htmlspecialchars(($path ?? '') . ($aboutData['featured_img'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
+                        />
                     <?php } ?>
                 </div>
 
@@ -100,8 +97,7 @@
 
                             <?php if (!empty($conditionData['featured_img'])) { ?>
                                 <img
-                                    src="<?= htmlspecialchars($conditionData['featured_img']) ?>"
-                                    alt="<?= htmlspecialchars($conditionData['sc_name']) ?>"
+                                   src="<?= htmlspecialchars(($path ?? '') . ($conditionData['featured_img'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
                                 >
                             <?php } ?>
 
@@ -141,8 +137,7 @@
                     <?php if (!empty($galleryData['file'])) { ?>
                         <div class="gallery-item">
                             <img
-                                src="<?= htmlspecialchars($galleryData['file']) ?>"
-                                alt="Gallery Image"
+                                src="<?= htmlspecialchars(($path ?? '') . ($galleryData['file'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
                             >
                         </div>
                     <?php } ?>
@@ -169,8 +164,7 @@
                 <div class="commitment-image">
                     <?php if (!empty($commitmentData['featured_img'])) { ?>
                         <img
-                            src="<?= htmlspecialchars($commitmentData['featured_img']) ?>"
-                            alt="Dr. Paridhi Chaudhary - Commitment to Patients"
+                            src="<?= htmlspecialchars(($path ?? '') . ($commitmentData['featured_img'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
                         >
                     <?php } ?>
                 </div>
@@ -583,8 +577,7 @@
                             <a href="pregnancycareblog" class="blog-card h-100">
 
                                 <img
-                                    src="<?= htmlspecialchars($blogData['file'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
-                                    alt="<?= htmlspecialchars($blogData['title'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                                    src="<?= htmlspecialchars(($path ?? '') . ($blogData['file'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
                                     class="img-fluid"
                                     loading="lazy"
         >
@@ -618,10 +611,6 @@
             </div>
 
         </section>
-
-<!-- End Latest Blogs Section -->
-
-<!-- End Patient Testimonials Section -->
 
 
     </main>
