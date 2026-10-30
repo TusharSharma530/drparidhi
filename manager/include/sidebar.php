@@ -50,9 +50,7 @@
 <!-- sub menu start here -->
 <div class="submenu orders" id="child-menu">
 <ul class="submenu-list">
-<li class="submenu-item">
-<a href="banner.php" class="submenu-link">Banner</a>
-</li>
+
 </ul>
 </div>
 <!-- sub menu end here -->
@@ -75,6 +73,7 @@
 <!-- <li class="submenu-item">
 <a href="halls.php" class="submenu-link">Halls</a>
 </li> -->
+
 <li class="submenu-item">
 <a href="gallery.php" class="submenu-link">Gallery</a>
 </li>

@@ -1618,3 +1618,21 @@
     }
 }
 
+@media (max-width: 991px) {
+    .symptom-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .symptom-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .symptom-grid p {
+        font-size: 15px;
+    }
+}

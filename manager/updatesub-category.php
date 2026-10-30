@@ -115,7 +115,7 @@
 
             <div class="mb-3 col-md-12">
                 <label for="sdesc" class="form-label">Short Description</label>
-                <textarea class="form-control" name="sdesc" id="sdesc"><?php echo $rwsc['sdesc']; ?></textarea>
+                <textarea class="form-control " name="sdesc" id="sdesc"><?php echo $rwsc['sdesc']; ?></textarea>
             </div>
 
             <div class="mb-3 col-md-12">

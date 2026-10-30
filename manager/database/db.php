@@ -1,8 +1,8 @@
 <?php session_start();
 error_reporting(0);
-define('BASE_PATH',"//localhost/drdinesh/");
+define('BASE_PATH',"//localhost/drparidhi/");
 define('DB_HOST', 'localhost');
-define('DB_NAME','drdinesh');
+define('DB_NAME','drparidhi');
 define('DB_USER','root');
 define('DB_PASSWORD','');
 // session_destroy();

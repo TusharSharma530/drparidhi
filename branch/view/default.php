@@ -6,13 +6,26 @@
 
     <!-- Homepage Banner -->
     <main>
+        <?php
+        $bannerQuery = mysqli_query($con, "SELECT c_name, featured_img FROM category WHERE id = 99 AND status = 1 LIMIT 1");
+        $bannerData = mysqli_fetch_assoc($bannerQuery);
+        ?>
+
         <section class="home-banner">
-            <img
-                src="branch/assets/bannerimg3.jpeg"
-                alt="Dr. Paridhi Chaudhary - Obstetrician and Gynecologist"
-                fetchpriority="high"
-            >
+            <?php if (!empty($bannerData['featured_img'])) { ?>
+                <img
+                    src="<?= htmlspecialchars($bannerData['featured_img']) ?>"
+                    alt="Dr. Paridhi Chaudhary - Obstetrician and Gynecologist"
+                    fetchpriority="high"
+                >
+            <?php } ?>
         </section>
+
+        <!-- About / Why Choose Section -->
+        <?php
+        $aboutQuery = mysqli_query($con, "SELECT sdesc,c_name, featured_img FROM category WHERE id = 101 AND status = 1 LIMIT 1");
+        $aboutData = mysqli_fetch_assoc($aboutQuery);
+        ?>
 
         <!-- About / Why Choose Section -->
         <section class="about-doctor-section container">
@@ -23,26 +36,15 @@
                     <span class="section-tag">Dr. Paridhi Chaudhary</span>
 
                     <h2 class="section-title">
-                        Meet Our Gynecologist in Meerut
-                        <br>MBBS,MS,DNB
+                        <?= htmlspecialchars($aboutData['c_name'] ?? '') ?>
+                        <br>MBBS, MS, DNB
                     </h2>
 
-                    <p class="section-text">
-                            I believe Obstetrics &amp; Gynecology is an important and sensitive
-                            field of medicine that requires dedication, empathy, and compassion.
-                            Every woman deserves to be heard, understood, and treated with
-                            respect. My goal is to provide a comfortable environment where
-                            patients can openly discuss their concerns and receive personalized
-                            care according to their needs.
-                        </p>
-
-                        <p class="section-text">
-                            My approach focuses on supporting women through every stage of life,
-                            from routine gynecological care and pregnancy to reproductive health
-                            and menopause. I strive to provide clear guidance, compassionate
-                            support, and quality medical care while helping every patient make
-                            informed decisions about her health and well-being.
-                        </p>
+                    <?php if (!empty($aboutData['sdesc'])) { ?>
+                        <div class="section-text">
+                            <?= $aboutData['sdesc'] ?>
+                        </div>
+                    <?php } ?>
 
                     <div class="about-actions">
                         <a class="about-btn" href="about">Know More</a>
@@ -55,10 +57,12 @@
 
                 <!-- Right Side Image -->
                 <div class="why-choose">
-                    <img
-                        src="branch/assets/drparidhi.jpeg"
-                        alt="Dr. Paridhi Chaudhary"
-                    >
+                    <?php if (!empty($aboutData['featured_img'])) { ?>
+                        <img
+                            src="<?= htmlspecialchars($aboutData['featured_img']) ?>"
+                            alt="Dr. Paridhi Chaudhary"
+                        >
+                    <?php } ?>
                 </div>
 
             </div>
@@ -66,123 +70,65 @@
 
        <section class="conditions-section container">
 
+            <?php
+            $titleQuery = mysqli_query($con, "SELECT sdesc FROM category WHERE id = 102 AND status = 1 LIMIT 1");
+            $titleData = mysqli_fetch_assoc($titleQuery);
+            ?>
+
             <div class="section-head">
                 <span class="section-tag">Condition We Treat</span>
+
                 <h2 class="section-title">
-                    Conditions Treated By Dr. Paridhi Chaudhary -
-                    Gynecologist In Meerut
+                    <?= htmlspecialchars(strip_tags($titleData['sdesc'] ?? '')) ?>
                 </h2>
             </div>
+           <div class="row g-4">
 
-            <div class="row g-4">
+                <?php
+                $conditionQuery = mysqli_query($con, "
+                    SELECT id, sc_name, sdesc, featured_img
+                    FROM sub_cat
+                    WHERE status = 1
+                    ORDER BY id ASC
+                ");
+
+                while ($conditionData = mysqli_fetch_assoc($conditionQuery)) {
+                ?>
 
                     <div class="col-md-6 col-lg-3">
                         <a href="pregnancycare" class="condition-card">
-                            <img src="branch/assets/highriskpregnancycare.webp" alt="Pregnancy Care">
-                            <h3 class="condition-name">Antenatal Screening, Pregnancy Treatment Including High Risk Pregnancy</h3>
+
+                            <?php if (!empty($conditionData['featured_img'])) { ?>
+                                <img
+                                    src="<?= htmlspecialchars($conditionData['featured_img']) ?>"
+                                    alt="<?= htmlspecialchars($conditionData['sc_name']) ?>"
+                                >
+                            <?php } ?>
+
+                            <h3 class="condition-name">
+                                <?= htmlspecialchars($conditionData['sc_name']) ?>
+                            </h3>
+
                             <p class="condition-text">
-                                Antenatal screening detects complications early, while high-risk pregnancy care ensures maternal and fetal safety.
+                                <?= htmlspecialchars($conditionData['sdesc']) ?>
                             </p>
+
                             <span class="read-more">Read More →</span>
+
                         </a>
                     </div>
 
-                    <div class="col-md-6 col-lg-3">
-                        <div class="condition-card">
-                         <a href="pregnancycare" class="condition-card">
-                            <img src="branch/assets/csection.webp" alt="Menstrual Disorders">
-                            <h3 class="condition-name">
-                               Delivery-Normal and C-Section
-                             </h3>
-                             <p class="condition-text">
-                              Provides safe normal and C-section deliveries with proper medical care for mother and baby.
-                            </p>
-                             <span class="read-more">Read More →</span>
-                            </a> 
-                        </div>
-                    </div>
+                <?php } ?>
 
-                    <div class="col-md-6 col-lg-3">
-                        <div class="condition-card">
-                           <a href="pregnancycare" class="condition-card"> 
-                            <img src="branch/assets/infertilityproblem.webp" alt="PCOS / PCOD">
-                            <h3 class="condition-name">
-                                Infertility Problem
-                            </h3>
-                            <p class="condition-text">
-                              Provides diagnosis and treatment to help couples overcome infertility and achieve pregnancy.
-                            </p>
-                             <span class="read-more">Read More →</span>
-                            </a> 
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3">
-                        <div class="condition-card">
-                          <a href="pregnancycare" class="condition-card">   
-                            <img src="branch/assets/pcostreatment.webp" alt="Uterine Fibroids">
-                            <h3 class="condition-name">Treatment of itching,pain and other Infection of female genital tract,PCOS Treatment</h3>
-                            <p class="condition-text">
-                                Provides effective treatment for female genital infections, itching, pain, and PCOS management.
-                            </p>
-                            <span class="read-more">Read More →</span>
-                          </a>  
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="condition-card">
-                         <a href="pregnancycare" class="condition-card">   
-                            <img src="branch/assets/periodrelated.webp" alt="Uterine Fibroids">
-                            <h3 class="condition-name">Period Related Problem</h3>
-                            <p class="condition-text">
-                                Provides diagnosis and treatment for irregular, painful, and heavy periods.
-                            </p>
-                            <span class="read-more">Read More →</span>
-                          </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="condition-card">
-                          <a href="pregnancycare" class="condition-card">   
-                            <img src="branch/assets/adolscent.webp" alt="Uterine Fibroids">
-                            <h3 class="condition-name">Adolescent girls health related problem</h3>
-                           <p class="condition-text">
-                                Provides care and guidance for adolescent girls’ health, menstrual issues, and hormonal changes.
-                            </p>
-                            <span class="read-more">Read More →</span>
-                           </a> 
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="condition-card">
-                          <a href="pregnancycare" class="condition-card">    
-                            <img src="branch/assets/cancerscreening1.webp" alt="Infertility & Reproductive Health Issues">
-                            <h3 class="condition-name">Cancer Screening and Prevention</h3>
-                           <p class="condition-text">
-                                Provides early cancer screening, detection, and preventive care for better health.
-                            </p>
-                             <span class="read-more">Read More →</span>
-                          </a> 
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">   
-                        <div class="condition-card">
-                          <a href="pregnancycare" class="condition-card">    
-                            <img src="branch/assets/laparascopic.webp" alt="Ovarian Cysts">
-                            <h3 class="condition-name">Laparascopic Hysterectomy and Open Surgical Hysterectomy</h3>
-                            <p class="condition-text">
-                              Provides laparoscopic and open surgical hysterectomy with expert care and safe treatment.
-                            </p>
-                             <span class="read-more">Read More →</span>
-                         </a>    
-                        </div>
-                    </div>
-
-                </div>
-
+            </div>
         </section>
 
       <!-- Gallery Section -->
+       <?php
+        $galleryQuery = mysqli_query($con, "SELECT * FROM gallery_imgs WHERE status = 1");
+        ?>
+
+        <!-- Gallery Section -->
         <section class="gallery-section container">
             <div class="section-head">
                 <span class="section-tag">Our Clinic</span>
@@ -190,61 +136,63 @@
             </div>
 
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="branch/assets/gallery1.jpeg" alt="Gallery Image 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="branch/assets/gallery2.jpeg" alt="Gallery Image 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="branch/assets/gallery3.jpeg" alt="Gallery Image 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="branch/assets/gallery4.jpeg" alt="Gallery Image 4">
-                </div>
+
+                <?php while ($galleryData = mysqli_fetch_assoc($galleryQuery)) { ?>
+                    <?php if (!empty($galleryData['file'])) { ?>
+                        <div class="gallery-item">
+                            <img
+                                src="<?= htmlspecialchars($galleryData['file']) ?>"
+                                alt="Gallery Image"
+                            >
+                        </div>
+                    <?php } ?>
+                <?php } ?>
+
             </div>
         </section>
         
         
+        <?php
+        $commitmentQuery = mysqli_query($con, "
+            SELECT c_name, sdesc, featured_img
+            FROM category
+            WHERE id = 105 AND status = 1
+            LIMIT 1
+        ");
+        $commitmentData = mysqli_fetch_assoc($commitmentQuery);
+        ?>
+
         <section class="about-doctor-section commitment-section container">
 
             <div class="about-row">
 
                 <div class="commitment-image">
-                    <img
-                        src="branch/assets/mertinitycouple1.png"
-                        alt="Dr. Paridhi Chaudhary - Commitment to Patients"
-                    >
+                    <?php if (!empty($commitmentData['featured_img'])) { ?>
+                        <img
+                            src="<?= htmlspecialchars($commitmentData['featured_img']) ?>"
+                            alt="Dr. Paridhi Chaudhary - Commitment to Patients"
+                        >
+                    <?php } ?>
                 </div>
 
                 <div class="about-left">
                     <span class="section-tag">My Commitment</span>
 
                     <h2 class="section-title">
-                        Commitment To Every Patient&rsquo;s Health &amp; Well-Being
+                        <?= htmlspecialchars(strip_tags($commitmentData['c_name'] ?? '')) ?>
                     </h2>
 
-                    <p class="section-text">
-                        I am committed to providing compassionate, ethical, and
-                        evidence-based gynecological care to every woman who walks
-                        into my clinic. From routine consultations to complex
-                        treatments, every patient receives complete attention,
-                        clear guidance, and honest advice at every step.
-                    </p>
-
-                    <p class="section-text">
-                        My priority is to build a comfortable and trusting
-                        relationship where women can openly discuss their health
-                        concerns without hesitation, and receive personalized care
-                        that suits their individual needs and stage of life.
-                    </p>
+                    <?php if (!empty($commitmentData['sdesc'])) { ?>
+                        <div class="section-text">
+                            <?= $commitmentData['sdesc'] ?>
+                        </div>
+                    <?php } ?>
 
                 </div>
 
             </div>
 
         </section>
-
         <!-- Appointment Section -->
         <section class="about-doctor-section appointment-section">
             <div class="container px-4">
@@ -303,82 +251,39 @@
         </section>
 
         <!-- Symptoms Section -->
+         
         <section class="conditions-section container">
 
             <div class="section-head">
-                    <h2 class="section-title">
-                        What Are The Symptoms Of Gynaecological Diseases?
-                    </h2>
+                <h2 class="section-title">
+                    <?php
+                    $symptomQuery = mysqli_query($con, "
+                        SELECT c_name,sdesc, c_desc FROM category
+                        WHERE id = 107 AND status = 1
+                        LIMIT 1
+                    ");
 
-                    <p class="section-text mt-4 mb-0">
-                        Gynecological conditions can often go unnoticed in the early stages.
-                        Recognizing the warning signs early is key to timely diagnosis and
-                        effective treatment. If you&rsquo;re experiencing any of the following
-                        symptoms, it may indicate an underlying gynecological issue:
-                    </p>
-                </div>
+                    $symptomData = mysqli_fetch_assoc($symptomQuery);
+                    ?>
 
-                <h3 class="section-tag text-center mb-5">
-                    Common Symptoms to Watch Out For:
-                </h3>
+                    <?= $symptomData['c_name'] ?? '' ?>
+                </h2>
 
-                <div class="row g-4">
+                <p class="section-text mt-4 mb-0">
+                    <?= $symptomData['sdesc'] ?? '' ?>
+                </p>
+            </div>
 
-                    <div class="col-md-4">
-                        <ul class="list-unstyled mb-0">
-                            <li class="symptom-item">
-                                <i class="bi bi-check2-circle fs-4"></i>
-                                <span class="condition-text">Abnormal vaginal discharge/bleeding</span>
-                            </li>
-                            <li class="symptom-item">
-                                <i class="bi bi-check2-circle fs-4"></i>
-                                <span class="condition-text">Pain or discomfort during intercourse.</span>
-                            </li>
-                            <li class="symptom-item">
-                                <i class="bi bi-check2-circle fs-4"></i>
-                                <span class="condition-text">Pain or pressure in your pelvis that differs from menstrual cramps</span>
-                            </li>
-                        </ul>
-                    </div>
+            <h3 class="section-tag text-center mb-5">
+                Common Symptoms to Watch Out For:
+            </h3>
 
-                    <div class="col-md-4">
-                        <ul class="list-unstyled mb-0">
-                            <li class="symptom-item">
-                                <i class="bi bi-check2-circle fs-4"></i>
-                                <span class="condition-text">Missed menstrual period</span>
-                            </li>
-                            <li class="symptom-item">
-                                <i class="bi bi-check2-circle fs-4"></i>
-                                <span class="condition-text">Vaginal Itching</span>
-                            </li>
-                            <li class="symptom-item">
-                                <i class="bi bi-check2-circle fs-4"></i>
-                                <span class="condition-text">Excessive bloating</span>
-                            </li>
-                           
-                        </ul>
-                    </div>
+            <div class="symptom-grid">
+                <?= $symptomData['c_desc'] ?? '' ?>
+            </div>
 
-                    <div class="col-md-4">
-                        <ul class="list-unstyled mb-0">
-                            <li class="symptom-item">
-                                <i class="bi bi-check2-circle fs-4"></i>
-                                <span class="condition-text">Irregular periods</span>
-                            </li>
-                            <li class="symptom-item">
-                                <i class="bi bi-check2-circle fs-4"></i>
-                                <span class="condition-text">Heavy menstrual bleeding</span>
-                            </li>
-                            <li class="symptom-item">
-                                <i class="bi bi-check2-circle fs-4"></i>
-                                <span class="condition-text">Breast changes</span>
-                            </li>
-                           
-                        </ul>
-                    </div>
-
-                </div>
         </section>
+
 
         <!-- Schedule Consultation / Appointment Section -->
 <!--        <section class="consult-section">-->
@@ -407,12 +312,12 @@
 <!--                            </button>-->
 
                             <!-- <button type="button"
-<!--                                    class="consult-tab active"-->
+<!-                                    class="consult-tab active"-->
 <!--                                    data-consult-tab="hospital"-->
 <!--                                    role="tab"-->
 <!--                                    aria-selected="true">-->
 <!--                                Hospital-->
-<!--                            </button> -->-->
+<!--                            </button> -->
 <!--                        </div>-->
 
                         
@@ -566,6 +471,7 @@
 <!--        </section>-->
         
 
+       
         <section class="testimonials-section">
 
             <div class="container px-4">
@@ -583,58 +489,52 @@
                     </p>
                 </div>
 
+                <?php
+                $testimonialQuery = mysqli_query($con, "
+                    SELECT `desc` FROM testimonials
+                    WHERE status = 1
+                ");
+                ?>
+
                 <div class="testimonials-flex">
 
-                    <!-- Review Box 1 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 stars">
-                            ★★★★★
+                    <?php
+                    $reviewHeadings = [
+                        'Excellent',
+                        'Very Caring',
+                        'Great Experience'
+                    ];
+
+                    $i = 0;
+
+                    while ($testimonialData = mysqli_fetch_assoc($testimonialQuery)) {
+                    ?>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars" aria-label="5 stars">
+                                ★★★★★
+                            </div>
+
+                            <h3 class="testimonial-heading">
+                                <?= $reviewHeadings[$i % 3] ?>
+                            </h3>
+
+                            <p class="section-text">
+                                <?= htmlspecialchars(strip_tags($testimonialData['desc'] ?? ''), ENT_QUOTES, 'UTF-8') ?>
+                            </p>
                         </div>
 
-                        <h3 class="testimonial-heading">Excellent</h3>
-
-                        <p class="section-text">
-                            Dr. Paridhi Chaudhary is very kind and supportive.
-                            She listens patiently and explains medical concerns
-                            clearly, making the consultation comfortable.
-                        </p>
-                    </div>
-
-                    <!-- Review Box 2 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 stars">
-                            ★★★★★
-                        </div>
-
-                        <h3 class="testimonial-heading">Very Caring</h3>
-
-                        <p class="section-text">
-                            The doctor takes time to understand concerns and
-                            provides clear guidance. Her respectful approach
-                            makes it easier to discuss women's health issues.
-                        </p>
-                    </div>
-
-                    <!-- Review Box 3 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-stars" aria-label="5 stars">
-                            ★★★★★
-                        </div>
-
-                        <h3 class="testimonial-heading">Great Experience</h3>
-
-                        <p class="section-text">
-                            The consultation was informative, and the doctor
-                            explained the available treatment options patiently.
-                            I appreciated the attention given to my concerns.
-                        </p>
-                    </div>
+                    <?php
+                        $i++;
+                    }
+                    ?>
 
                 </div>
 
             </div>
 
         </section>
+
         
 
         <section class="blogs-section">
