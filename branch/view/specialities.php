@@ -1,8 +1,5 @@
 <?php
-require_once __DIR__ . '/../../manager/database/db.php';
-
 include 'header.php';
-
 $condId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 ?>
 

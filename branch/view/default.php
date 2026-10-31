@@ -4,18 +4,27 @@
     <!-- Header / Navbar -->
     <?php include 'header.php'; ?>
 
-    <!-- Homepage Banner -->
+    <!-- Homepage Banner (web_banner table - slick slider) -->
     <main>
         <?php
-        $bannerQuery = mysqli_query($con, "SELECT c_name, featured_img FROM category WHERE id = 99 AND status = 1 LIMIT 1");
-        $bannerData = mysqli_fetch_assoc($bannerQuery);
+        $bannerQuery = mysqli_query($con, "SELECT wb_img FROM web_banner WHERE status = 1 ORDER BY wb_order ASC, id ASC");
         ?>
+        <link rel="stylesheet" href="slick/slick.css">
+        <link rel="stylesheet" href="slick/slick-theme.css">
 
         <section class="home-banner">
-            <?php if (!empty($bannerData['featured_img'])) { ?>
-                <img
-                    src="<?= htmlspecialchars(($path ?? '') . ($bannerData['featured_img'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
-                >
+            <?php if ($bannerQuery && mysqli_num_rows($bannerQuery) > 0) { ?>
+                <div class="my-slider">
+                    <?php while ($bannerData = mysqli_fetch_assoc($bannerQuery)) { ?>
+                        <?php if (!empty($bannerData['wb_img'])) { ?>
+                            <div class="my-slide">
+                                <img
+                                    src="<?= htmlspecialchars(($path ?? '') . ($bannerData['wb_img'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
+                                    alt="Banner">
+                            </div>
+                        <?php } ?>
+                    <?php } ?>
+                </div>
             <?php } ?>
         </section>
 
@@ -631,6 +640,26 @@
     </main>
    <?php include __DIR__ . '/footer.php'; ?>    
    
+
+<!-- Slick banner slider (web_banner) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="slick/slick.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    $('.my-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2500,
+        dots: false,
+        arrows: true,
+        infinite: true,
+        speed: 900
+    });
+
+});
+</script>
 
 </body>
 </html>

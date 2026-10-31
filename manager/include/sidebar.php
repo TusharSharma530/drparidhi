@@ -40,7 +40,7 @@
 	<span class="link-text"><i class="ri-group-line"></i> Rooms</span>
 	</a>
 </li> -->
-<!-- <li class="menu-item has-submenu">
+<li class="menu-item has-submenu">
 <a href="javascript:" class="menu-link orders" id="parent-menu">
 							
 <span class="link-text"><i class="ri-gallery-view"></i> Banners</span>
@@ -56,7 +56,7 @@
 </ul>
 </div>
 
-</li> -->
+</li>
 
 
 <li class="menu-item has-submenu">

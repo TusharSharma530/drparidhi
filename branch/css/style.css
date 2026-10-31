@@ -284,6 +284,20 @@ a {
     object-fit: cover;
 }
 
+/* Home banner slick slider (web_banner table) */
+.home-banner .my-slide {
+    padding: 0 5px;
+}
+
+.home-banner .slick-prev:before,
+.home-banner .slick-next:before {
+    color: #333333;
+}
+
+.home-banner .slick-dots {
+    bottom: -30px;
+}
+
 .about-doctor-section {
     background-color: var(--white);
     margin-top: 45px;
