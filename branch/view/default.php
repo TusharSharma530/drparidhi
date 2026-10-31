@@ -108,7 +108,7 @@
                 ?>
 
                     <div class="col-md-6 col-lg-3">
-                        <a href="pregnancycare" class="condition-card">
+                        <a href="specialities?id=<?= (int)($conditionData['id'] ?? 0) ?>" class="condition-card">
 
                             <?php if (!empty($conditionData['featured_img'])) { ?>
                                 <img
@@ -575,7 +575,7 @@
 
                 <?php
                 $blogQuery = mysqli_query($con, "
-                    SELECT title, sdesc, `file`
+                    SELECT id, title, sdesc, `file`
                     FROM blogs
                     WHERE status = 1
                     ORDER BY id DESC
@@ -589,7 +589,7 @@
 
                         <div class="col-md-6 col-lg-4">
 
-                            <a href="pregnancycareblog" class="blog-card h-100">
+                        <a href="blogs?id=<?= (int)($blogData['id'] ?? 0) ?>" class="blog-card h-100">
 
                                 <img
                                     src="<?= htmlspecialchars(($path ?? '') . ($blogData['file'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"

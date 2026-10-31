@@ -1,91 +1,118 @@
-<?php include 'header.php'; ?>
+
+<?php
+require_once __DIR__ . '/../../manager/database/db.php';
+
+include 'header.php';
+
+$blogId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+?>
 
 <main>
-    <section class="blogs-section blogs-list-page">
-        <div class="container">
 
-            <div class="row g-4">
+<?php if ($blogId > 0) {
 
-                <!-- Blog 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <a href="pregnancycareblog" class="blog-card h-100">
+    $blogSql = mysqli_query($con, "SELECT * FROM blogs WHERE id = $blogId AND status = 1 LIMIT 1");
 
-                        <img src="branch/assets/blog1.webp"
-                             alt="Pregnancy care and maternal health"
-                             class="img-fluid"
-                             loading="lazy">
+    if ($blogSql && mysqli_num_rows($blogSql) > 0) {
+        $blog = mysqli_fetch_assoc($blogSql);
+?>
 
-                        <div class="blog-content p-3">
-                            <span class="section-tag">Pregnancy Care</span>
+    <!-- Blog Detail -->
+    <section class=" pregnancy-blog-page">
+        <div class="container px-4">
 
-                            <h3 class="testimonial-heading">
-                                Tips for a Healthy Pregnancy
-                            </h3>
+            <div class="mb-4 pregnancy-blog-banner">
+                <img
+                    src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : 'branch/assets/blog1.webp'; ?>"
+                    alt="<?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                    class="img-fluid w-100"
+                    loading="lazy"
+                >
+            </div>
 
-                            <p class="section-text mt-3">
-                                Learn about prenatal checkups, healthy habits,
-                                nutrition, and important precautions during pregnancy.
-                            </p>
+            <div class="blog-content">
 
-                            <span class="read-more">Read More →</span>
-                        </div>
-                    </a>
-                </div>
+                <h1 class="section-title">
+                    <?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>
+                </h1>
 
-                <!-- Blog 2 -->
-                <div class="col-md-6 col-lg-4">
-                     <a href="pregnancycareblog" class="blog-card h-100">
-
-                        <img src="branch/assets/blog2.png"
-                             alt="Women's menstrual health awareness"
-                             class="img-fluid"
-                             loading="lazy">
-
-                        <div class="blog-content p-3">
-                            <span class="section-tag">Women's Health</span>
-
-                            <h3 class="testimonial-heading">
-                                Understanding Irregular Periods
-                            </h3>
-
-                            <p class="section-text mt-3">
-                                Discover common reasons for irregular menstrual
-                                cycles and when to consult a gynecologist.
-                            </p>
-                             <span class="read-more">Read More →</span>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Blog 3 -->
-                <div class="col-md-6 col-lg-4">
-                     <a href="pregnancycareblog" class="blog-card h-100">
-
-                        <img src="branch/assets/blog3.png"
-                             alt="PCOS and hormonal health awareness"
-                             class="img-fluid"
-                             loading="lazy">
-
-                        <div class="blog-content p-3">
-                            <span class="section-tag">PCOS / PCOD</span>
-
-                            <h3 class="testimonial-heading">
-                                PCOS: Symptoms and Treatment Options
-                            </h3>
-
-                            <p class="section-text mt-3">
-                                Understand common PCOS symptoms, diagnosis,
-                                and how individualized treatment can help
-                                manage this condition.
-                            </p>
-                             <span class="read-more">Read More →</span>
-                        </div>
-                    </a>
+                <div class="blog-desc">
+                    <?php echo !empty($blog['desc']) ? $blog['desc'] : $blog['sdesc']; ?>
                 </div>
 
             </div>
         </div>
     </section>
+
+<?php } else  ?>
+
+<?php } else { ?>
+
+    <!-- Blog Listing -->
+    <section class=" blogs-list-page">
+        <div class="container">
+
+            <div class="row g-4">
+
+                <?php
+                $sql = "SELECT * FROM blogs WHERE status = 1 ORDER BY id DESC";
+                $result = mysqli_query($con, $sql);
+
+                if ($result && mysqli_num_rows($result) > 0) {
+
+                    $tags = ['Pregnancy Care', "Women's Health", 'PCOS / PCOD'];
+                    $i = 0;
+
+                    while ($blog = mysqli_fetch_assoc($result)) {
+                ?>
+
+                    <div class="col-md-6 col-lg-4">
+
+                       <a href="?id=<?php echo (int)$blog['id']; ?>" class="blog-card h-100">
+
+                            <img
+                                src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : 'branch/assets/blog1.webp'; ?>"
+                                alt="<?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                                class="img-fluid"
+                                loading="lazy"
+                            >
+
+                            <div class="blog-content p-3">
+
+                                <span class="section-tag">
+                                    <?php echo $tags[$i % 3]; ?>
+                                </span>
+
+                                <h3 class="testimonial-heading">
+                                    <?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>
+                                </h3>
+
+                                <div class="section-text mt-3">
+                                    <?php echo $blog['sdesc']; ?>
+                                </div>
+
+                                <span class="read-more">Read More →</span>
+
+                            </div>
+                        </a>
+
+                    </div>
+
+                <?php
+                        $i++;
+                    }
+
+                } else {
+                ?>
+
+                <?php } ?>
+
+            </div>
+        </div>
+    </section>
+
+<?php } ?>
+
 </main>
 
 <?php include __DIR__ . '/footer.php'; ?>

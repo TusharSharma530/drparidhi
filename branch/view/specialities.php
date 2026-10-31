@@ -1,115 +1,120 @@
- <?php include 'header.php'; ?>
+<?php
+require_once __DIR__ . '/../../manager/database/db.php';
+
+include 'header.php';
+
+$condId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+?>
 
 <main>
- <section class="conditions-section container">
 
-            <div class="row g-4">
+<?php if ($condId > 0) {
 
-                    <div class="col-md-6 col-lg-3">
-                        <a href="pregnancycare" class="condition-card">
-                            <img src="branch/assets/highriskpregnancycare.webp" alt="Pregnancy Care">
-                            <h3 class="condition-name">Antenatal Screening, Pregnancy Treatment Including High Risk Pregnancy</h3>
-                            <p class="condition-text">
-                                Antenatal screening detects complications early, while high-risk pregnancy care ensures maternal and fetal safety.
-                            </p>
-                            <span class="read-more">Read More →</span>
-                        </a>
-                    </div>
+    $condSql = mysqli_query($con, "SELECT * FROM sub_cat WHERE id = $condId AND status = 1 LIMIT 1");
 
-                    <div class="col-md-6 col-lg-3">
-                        <div class="condition-card">
-                            <a href="pregnancycare" class="condition-card">
-                            <img src="branch/assets/csection.webp" alt="Menstrual Disorders">
-                            <h3 class="condition-name">
-                               Delivery-Normal and C-Section
-                             </h3>
-                             <p class="condition-text">
-                              Provides safe normal and C-section deliveries with proper medical care for mother and baby.
-                            </p>
-                             <span class="read-more">Read More →</span>
-                           </a>
-                        </div>
-                    </div>
+    if ($condSql && mysqli_num_rows($condSql) > 0) {
+        $conditionData = mysqli_fetch_assoc($condSql);
+?>
 
-                    <div class="col-md-6 col-lg-3">
-                        <div class="condition-card">
-                            <a href="pregnancycare" class="condition-card">
-                            <img src="branch/assets/infertilityproblem.webp" alt="PCOS / PCOD">
-                            <h3 class="condition-name">
-                                Infertility Problem
-                            </h3>
-                            <p class="condition-text">
-                              Provides diagnosis and treatment to help couples overcome infertility and achieve pregnancy.
-                            </p>
-                             <span class="read-more">Read More →</span>
-                           </a> 
-                        </div>
-                    </div>
+    <section class=" pregnancy-blog-page">
+        <div class="container px-4">
 
-                    <div class="col-md-6 col-lg-3">
-                        <div class="condition-card">
-                            <a href="pregnancycare" class="condition-card">
-                            <img src="branch/assets/pcostreatment.webp" alt="Uterine Fibroids">
-                            <h3 class="condition-name">Treatment of itching,pain and other Infection of female genital tract,PCOS Treatment</h3>
-                            <p class="condition-text">
-                                Provides effective treatment for female genital infections, itching, pain, and PCOS management.
-                            </p>
-                             <span class="read-more">Read More →</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="condition-card">
-                            <a href="pregnancycare" class="condition-card">
-                            <img src="branch/assets/periodrelated.webp" alt="Uterine Fibroids">
-                            <h3 class="condition-name">Period Related Problem</h3>
-                            <p class="condition-text">
-                                Provides diagnosis and treatment for irregular, painful, and heavy periods.
-                            </p>
-                             <span class="read-more">Read More →</span>
-                           </a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                       
-                        <div class="condition-card">
-                             <a href="pregnancycare" class="condition-card">
-                            <img src="branch/assets/adolscent.webp" alt="Uterine Fibroids">
-                            <h3 class="condition-name">Adolescent girls health related problem</h3>
-                           <p class="condition-text">
-                                Provides care and guidance for adolescent girls’ health, menstrual issues, and hormonal changes.
-                            </p>
-                             <span class="read-more">Read More →</span>
-                           </a> 
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="condition-card">
-                            <a href="pregnancycare" class="condition-card">
-                            <img src="branch/assets/cancerscreening1.webp" alt="Infertility & Reproductive Health Issues">
-                            <h3 class="condition-name">Cancer Screening and Prevention</h3>
-                           <p class="condition-text">
-                                Provides early cancer screening, detection, and preventive care for better health.
-                            </p>
-                             <span class="read-more">Read More →</span>
-                           </a> 
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="condition-card">
-                            <a href="pregnancycare" class="condition-card">
-                            <img src="branch/assets/laparascopic.webp" alt="Ovarian Cysts">
-                            <h3 class="condition-name">Laparascopic Hysterectomy and Open Surgical Hysterectomy</h3>
-                            <p class="condition-text">
-                              Provides laparoscopic and open surgical hysterectomy with expert care and safe treatment.
-                            </p>
-                             <span class="read-more">Read More →</span>
-                             </a> 
-                        </div>
-                    </div>
+            <div class="mb-4 pregnancy-blog-banner">
+                <img
+                    src="<?php echo !empty($conditionData['featured_img']) ? $path . $conditionData['featured_img'] : 'branch/assets/pregnancycare.webp'; ?>"
+                    alt="<?php echo htmlspecialchars($conditionData['sc_name'], ENT_QUOTES, 'UTF-8'); ?>"
+                    class="img-fluid w-100"
+                    loading="lazy"
+                >
+            </div>
 
+            <div class="blog-content">
+
+                <h1 class="section-title">
+                    <?php echo htmlspecialchars($conditionData['sc_name'], ENT_QUOTES, 'UTF-8'); ?>
+                </h1>
+
+                <!-- Detail Body (sc_desc column) -->
+                <div class="care-desc">
+                    <?php echo !empty($conditionData['sc_desc']) ? $conditionData['sc_desc'] : $conditionData['sdesc']; ?>
                 </div>
 
-        </section>
+                <button
+                    type="button"
+                    class="about-btn mt-3"
+                    data-bs-toggle="modal"
+                    data-bs-target="#appointmentModal">
+                    Book an Appointment
+                </button>
+
+            </div>
+        </div>
+    </section>
+
+<?php } else?>
+
+<?php } else { ?>
+
+    <!-- Specialities Listing -->
+    <section class="conditions-section container">
+
+        <div class="row g-4">
+
+            <?php
+            $conditionQuery = mysqli_query($con, "
+                SELECT id, sc_name, sdesc, featured_img
+                FROM sub_cat
+                WHERE status = 1
+                ORDER BY id ASC
+            ");
+
+            if ($conditionQuery && mysqli_num_rows($conditionQuery) > 0) {
+
+                while ($conditionData = mysqli_fetch_assoc($conditionQuery)) {
+            ?>
+
+                    <div class="col-md-6 col-lg-3">
+
+                        <a href="?id=<?php echo (int)$conditionData['id']; ?>" class="condition-card">
+
+                            <?php if (!empty($conditionData['featured_img'])) { ?>
+
+                                <img
+                                    src="<?= htmlspecialchars(($path ?? '') . ($conditionData['featured_img'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
+                                    alt="<?= htmlspecialchars($conditionData['sc_name'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                                    loading="lazy"
+                                >
+
+                            <?php } ?>
+
+                            <h3 class="condition-name">
+                                <?= htmlspecialchars($conditionData['sc_name'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                            </h3>
+
+                            <p class="condition-text">
+                                <?= htmlspecialchars($conditionData['sdesc'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                            </p>
+
+                            <span class="read-more">Read More →</span>
+
+                        </a>
+
+                    </div>
+
+            <?php
+                }
+
+            } else {
+                echo '<p>No conditions available.</p>';
+            }
+            ?>
+
+        </div>
+
+    </section>
+
+<?php } ?>
+
 </main>
+
 <?php include __DIR__ . '/footer.php'; ?>

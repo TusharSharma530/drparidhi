@@ -318,11 +318,10 @@ a {
     padding-top: 10px;
 }
 
-/* section-tag (padding: 10px) aur section-text (margin: 10px) ke left edge
-   ke sath title ko bhi vertically align karo - 10px spacing same rakho */
+
 .about-doctor-section .about-left .section-title {margin: 0 10px;}
 
-/* Reusable paragraph class - kisi bhi section me lagao, UI same rahega */
+
 .section-text {
     color: #1a1a1a;
     font-size: 16px;
@@ -337,7 +336,7 @@ a {
     margin: 15px 10px 10px;
 }
 
-.about-doctor-section .about-btn, .pregnancy-care-section .about-btn {
+.about-doctor-section .about-btn, .pregnancy-care-section .about-btn, .pregnancy-blog-page .blog-content .about-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -353,9 +352,10 @@ a {
     text-decoration: none;
     cursor: pointer;
     transition: var(--transition);
+    align-self: flex-start; /* blogs detail me flex column hai, button chhota hi rahe */
 }
 
-.about-doctor-section .about-btn:hover, .about-doctor-section .about-btn:focus, .pregnancy-care-section .about-btn:hover, .pregnancy-care-section .about-btn:focus {
+.about-doctor-section .about-btn:hover, .about-doctor-section .about-btn:focus, .pregnancy-care-section .about-btn:hover, .pregnancy-care-section .about-btn:focus, .pregnancy-blog-page .blog-content .about-btn:hover, .pregnancy-blog-page .blog-content .about-btn:focus {
     color: #ffffff;
     background-color: var( --primary-color);
     border-color: var( --primary-color);
@@ -386,10 +386,7 @@ a {
     height: 500px;
 }
 
-/* ============================================
-   Pregnancy Care Section
-   (Antenatal Screening & High-Risk Pregnancy)
-   ============================================ */
+
 .pregnancy-care-section {
     padding: 40px;
     background: var(--white);
@@ -438,6 +435,11 @@ a {
     margin: 24px 0 16px;
 }
 
+
+.pregnancy-blog-page .blog-content .section-tag {
+    order: -3; /* tag hamesha title ke upar */
+}
+
 .pregnancy-care-list {
     list-style: none;
     padding: 0;
@@ -484,11 +486,6 @@ a {
     }
 }
 
-/* ============================================
-   Blogs List Page (blogs.php)
-   - container properly center rehta hai, aur
-     vertical spacing yahan scoped hai
-   ============================================ */
 .blogs-list-page {
     margin-top: 40px;
     margin-bottom: 55px;
@@ -501,12 +498,7 @@ a {
     }
 }
 
-/* ============================================
-   Pregnancy Care Blog Page
-   (pregnancycareblog - scoped, taaki
-   .testimonial-heading / .section-text ka
-   effect baaki pages par na pade)
-   ============================================ */
+
 .pregnancy-blog-page {
     margin-top: 40px;
     margin-bottom: 55px;
@@ -525,8 +517,26 @@ a {
     border-radius: 14px;
 }
 
+
 .pregnancy-blog-page .blog-content {
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
+}
+
+.pregnancy-blog-page .blog-content .blog-desc,
+.pregnancy-blog-page .blog-content .care-desc {
+    display: contents;
+}
+
+/* tag */
+.pregnancy-blog-page .blog-content .blog-desc h1:first-of-type,
+.pregnancy-blog-page .blog-content .care-desc h1:first-of-type {
+    order: -3;
+}
+
+.pregnancy-blog-page .blog-content .section-title {
+    order: -2;
 }
 
 .pregnancy-blog-page .blog-content .section-tag {
@@ -568,6 +578,52 @@ a {
     .pregnancy-blog-page .pregnancy-blog-banner img {
         height: 240px;
     }
+}
+
+.pregnancy-blog-page .blog-content .blog-desc h1:first-of-type,
+.pregnancy-blog-page .blog-content .care-desc h1:first-of-type {
+    display: block;
+    padding: 0;
+    margin: 0 0 6px;
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.pregnancy-blog-page .blog-content .blog-desc h1:not(:first-of-type),
+.pregnancy-blog-page .blog-content .care-desc h1:not(:first-of-type) {
+    display: none;
+}
+
+.pregnancy-blog-page .blog-content .blog-desc h2,
+.pregnancy-blog-page .blog-content .blog-desc h3,
+.pregnancy-blog-page .blog-content .care-desc h2,
+.pregnancy-blog-page .blog-content .care-desc h3,
+.pregnancy-blog-page .blog-content .care-desc h4 {
+    /* margin: 26px 0 8px; */
+    color: var(--heading-color);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.pregnancy-blog-page .blog-content .blog-desc p,
+.pregnancy-blog-page .blog-content .blog-desc ul,
+.pregnancy-blog-page .blog-content .blog-desc ol,
+.pregnancy-blog-page .blog-content .care-desc p,
+.pregnancy-blog-page .blog-content .care-desc ul,
+.pregnancy-blog-page .blog-content .care-desc ol {
+    margin: 0 0 10px;
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.pregnancy-blog-page .blog-content .blog-desc p strong,
+.pregnancy-blog-page .blog-content .blog-desc li strong,
+.pregnancy-blog-page .blog-content .care-desc p strong,
+.pregnancy-blog-page .blog-content .care-desc li strong {
+    color: var(--heading-color);
 }
 
 .gallery-section {
