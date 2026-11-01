@@ -284,9 +284,9 @@ a {
     object-fit: cover;
 }
 
-/* Home banner slick slider (web_banner table) */
-.home-banner .slider-pad {
-    padding: 0 5px;
+/* Home banner slick slider (web_banner table) — full width, koi side space nahi */
+.home-banner .slider .slider-pad {
+    padding: 0;
 }
 
 .home-banner .slick-prev:before,
@@ -358,6 +358,29 @@ a {
 .slider .slick-next::before {
     color: #25949c;
     font-size: 26px;
+    opacity: 1;
+}
+
+/* White circle permanent — hover / focus / click (active) pe bhi same rahe.
+   (slick-theme.css :hover/:focus pe background transparent karta hai — ye usse jeetta hai) */
+.slider .slick-prev:hover,
+.slider .slick-prev:focus,
+.slider .slick-prev:active,
+.slider .slick-next:hover,
+.slider .slick-next:focus,
+.slider .slick-next:active {
+    background: rgba(255, 255, 255, 0.9);
+    outline: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+.slider .slick-prev:hover::before,
+.slider .slick-prev:focus::before,
+.slider .slick-prev:active::before,
+.slider .slick-next:hover::before,
+.slider .slick-next:focus::before,
+.slider .slick-next:active::before {
+    color: #25949c;
     opacity: 1;
 }
 
@@ -1196,7 +1219,8 @@ a.consult-section .consult-value:hover {
     line-height: 1;
 }
 
-.testimonial-card .testimonial-heading {
+.testimonial-card .testimonial-heading,
+.testimonial-card h4 {
     font-size: 17px;
     font-weight: 600;
     line-height: 1.4;
@@ -1206,7 +1230,8 @@ a.consult-section .consult-value:hover {
     min-height: 28px;
 }
 
-.testimonial-card .section-text {
+.testimonial-card .section-text,
+.testimonial-card p {
     margin: 0 !important;
     padding: 0;
     font-size: 14px;
