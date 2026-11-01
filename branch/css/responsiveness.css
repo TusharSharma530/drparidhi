@@ -2,7 +2,6 @@
 
 @media screen and (max-width: 767px) {
 
-    /* Prevent horizontal scrolling */
     html,
     body {
         width: 100%;
@@ -10,18 +9,9 @@
         overflow-x: hidden;
     }
 
-    /* =====================================
-       HEADER: HIDE DUPLICATE TOP LOGO
-       ===================================== */
-
     .header-top {
         display: none !important;
     }
-
-    /* =====================================
-       MOBILE NAVBAR BRAND
-       Keep the existing hamburger menu
-       ===================================== */
 
     .navbar {
         width: 100%;
@@ -73,9 +63,6 @@
         line-height: 1.4;
     }
 
-    /* =====================================
-       HOMEPAGE BANNER
-       ===================================== */
 
     main {
         width: 100%;
@@ -107,10 +94,6 @@
 }
 
 
-/* =====================================================
-   EXTRA SMALL MOBILE SCREENS
-   Devices up to 380px wide
-   ===================================================== */
 
 @media screen and (max-width: 380px) {
 
@@ -140,9 +123,6 @@
 
 }
 
-/* =========================================
-   MOBILE RESPONSIVENESS: ABOUT US SECTION
-   ========================================= */
 
 @media screen and (max-width: 767px) {
 
@@ -257,10 +237,6 @@
 
 }
 
-
-/* =========================================
-   EXTRA SMALL MOBILE SCREENS
-   ========================================= */
 
 @media screen and (max-width: 380px) {
 
@@ -536,10 +512,6 @@
 }
 
 
-/* =========================================
-   EXTRA SMALL MOBILE SCREENS
-   ========================================= */
-
 @media screen and (max-width: 380px) {
 
     .conditions-section {
@@ -779,9 +751,6 @@
 
 }
 
-/* =========================================
-   MOBILE: EQUAL SECTION SPACING
-   ========================================= */
 
 @media screen and (max-width: 767px) {
 
@@ -869,8 +838,8 @@
 @media screen and (max-width: 767px) {
 
     .consult-section .consult-tabs {
-        display: block !important;
-        width: 100% !important;
+        display: inline-flex !important;
+        width: fit-content !important;
     }
 
     .consult-section .consult-tabs .consult-tab {
@@ -885,11 +854,6 @@
         box-sizing: content-box !important;
     }
 
-
-
-/* =========================================
-   FOOTER - MOBILE RESPONSIVE SPACING
-   ========================================= */
 
 @media screen and (max-width: 767px) {
 
@@ -1634,5 +1598,12 @@
 
     .symptom-grid p {
         font-size: 15px;
+    }
+}
+
+/* Gallery page: small breathing room above the images (mobile only) */
+@media screen and (max-width: 767px) {
+    .gallery-section .gallery-grid {
+        margin-top: 20px !important;
     }
 }

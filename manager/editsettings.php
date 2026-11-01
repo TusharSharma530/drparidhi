@@ -151,37 +151,37 @@ if(isset($_POST['editRecord'])){
 
 		<div class="col-md-4 mb-3">
 			<label for="working_days" >Day Field (Working Days)</label>
-			<input type="text" id="working_days" name="working_days" class="form-control" placeholder="e.g. Monday – Saturday" value="<?php echo $rwpinfo['working_days'] ?? ''; ?>">
+			<input type="text" id="working_days" name="working_days" class="form-control" placeholder="" value="<?php echo $rwpinfo['working_days'] ?? ''; ?>">
 		</div>
 
 		<div class="col-md-4 mb-3">
 			<label for="receptiontime" >Reception Time</label>
-			<input type="text" id="receptiontime" name="reception_time" class="form-control" placeholder="e.g. 24 Hours / 10:00 AM - 6:00 PM" value="<?php echo $rwpinfo['reception_time']; ?>">
+			<input type="text" id="receptiontime" name="reception_time" class="form-control" placeholder="" value="<?php echo $rwpinfo['reception_time']; ?>">
 		</div>
 
 		<div class="col-md-4 mb-3">
 			<label for="closed_days" >Closed Day Field</label>
-			<input type="text" id="closed_days" name="closed_days" class="form-control" placeholder="e.g. Sunday : Closed" value="<?php echo $rwpinfo['closed_days'] ?? ''; ?>">
+			<input type="text" id="closed_days" name="closed_days" class="form-control" placeholder="" value="<?php echo $rwpinfo['closed_days'] ?? ''; ?>">
 		</div>
 
 		<div class="col-md-3 mb-3">
 			<label for="no_of_experience" >No. of Experience</label>
-			<input type="text" id="no_of_experience" name="no_of_experience" class="form-control" placeholder="e.g. 15+" value="<?php echo $rwpinfo['no_of_experience']; ?>">
+			<input type="text" id="no_of_experience" name="no_of_experience" class="form-control" placeholder=""<?php echo $rwpinfo['no_of_experience']; ?>">
 		</div>
 
 		<div class="col-md-3 mb-3">
 			<label for="surgeries" >Surgeries</label>
-			<input type="text" id="surgeries" name="surgeries" class="form-control" placeholder="e.g. 5,000+" value="<?php echo $rwpinfo['surgeries']; ?>">
+			<input type="text" id="surgeries" name="surgeries" class="form-control" placeholder="" value="<?php echo $rwpinfo['surgeries']; ?>">
 		</div>
 
 		<div class="col-md-3 mb-3">
 			<label for="no_of_patients" >No. of Patients</label>
-			<input type="text" id="no_of_patients" name="no_of_patients" class="form-control" placeholder="e.g. 10,000+" value="<?php echo $rwpinfo['no_of_patients'] ?? ''; ?>">
+			<input type="text" id="no_of_patients" name="no_of_patients" class="form-control" placeholder="" value="<?php echo $rwpinfo['no_of_patients'] ?? ''; ?>">
 		</div>
 
 		<div class="col-md-3 mb-3">
 			<label for="satisfied_patients" >Satisfied Patients</label>
-			<input type="text" id="satisfied_patients" name="satisfied_patients" class="form-control" placeholder="e.g. 99% / 10,000+" value="<?php echo $rwpinfo['satisfied_patients'] ?? ''; ?>">
+			<input type="text" id="satisfied_patients" name="satisfied_patients" class="form-control" placeholder="" value="<?php echo $rwpinfo['satisfied_patients'] ?? ''; ?>">
 		</div>
 
 		<div class="col-md-3 mb-3">

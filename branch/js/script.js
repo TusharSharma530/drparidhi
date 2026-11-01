@@ -1,17 +1,11 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-
-    // =========================================
     // MOBILE HAMBURGER SIDEBAR
-    // Bootstrap 5 Offcanvas
-    // =========================================
 
     const mobileSidebar = document.getElementById('mobileSidebar');
 
     if (mobileSidebar) {
 
-        // Close the sidebar after clicking a navigation link.
-        // Normal link navigation continues as usual.
         const sidebarLinks = mobileSidebar.querySelectorAll(
             '.mobile-sidebar-nav .nav-link'
         );
@@ -57,10 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-
-    // =========================================
     // GALLERY LIGHTBOX
-    // =========================================
+
 
     const images = document.querySelectorAll(
         '.gallery-section .gallery-item img'
@@ -123,10 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    // =========================================
-    // SHARED VALIDATION
-    // APPOINTMENT + CONSULTATION FORMS
-    // =========================================
+    // APPOINTMENT + CONSULTATION FORMS validation
 
     const forms = document.querySelectorAll(
         '#appointmentModal form, #consultForm'
@@ -196,10 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
-
-    // =========================================
     // RESET APPOINTMENT FORM WHEN MODAL CLOSES
-    // =========================================
 
     const appointmentForm = document.querySelector(
         '#appointmentModal form'
@@ -229,12 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
         );
 
     }
-
-
-    // =========================================
     // DATE PICKER
-    // Open when clicking the date field
-    // =========================================
 
     const dateInput = document.getElementById('appointmentDate');
 
@@ -247,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 try {
                     this.showPicker();
                 } catch (error) {
-                    // Browser handles the date picker automatically.
+                    
                 }
 
             }
@@ -256,10 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-
-    // =========================================
     // BACK TO TOP BUTTON
-    // =========================================
 
     const backToTop = document.querySelector('.back-to-top');
 
@@ -288,6 +266,41 @@ document.addEventListener('DOMContentLoaded', function () {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
+            });
+
+        });
+
+    }
+
+    if (window.jQuery && jQuery.fn.slick) {
+
+        jQuery('.slider').each(function () {
+
+            var $el     = jQuery(this);
+            var dSlides = parseInt($el.attr('data-slides-desktop'), 10);
+            var mSlides = parseInt($el.attr('data-slides-mobile'), 10);
+
+            if (isNaN(dSlides)) { dSlides = 1; }
+            if (isNaN(mSlides)) { mSlides = 1; }
+
+            $el.slick({
+                slidesToShow: dSlides,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2500,
+                dots: false,
+                arrows: true,
+                infinite: true,
+                speed: 900,
+                responsive: [
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: mSlides,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
             });
 
         });

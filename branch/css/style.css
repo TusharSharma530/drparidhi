@@ -285,7 +285,7 @@ a {
 }
 
 /* Home banner slick slider (web_banner table) */
-.home-banner .my-slide {
+.home-banner .slider-pad {
     padding: 0 5px;
 }
 
@@ -296,6 +296,74 @@ a {
 
 .home-banner .slick-dots {
     bottom: -30px;
+}
+
+.slider .slick-track {
+    display: flex;
+    align-items: stretch;
+}
+
+.slider .slick-track::before,
+.slider .slick-track::after {
+    display: none;
+}
+
+.slider .slick-slide {
+    height: auto;
+    flex-shrink: 0;
+}
+
+.slider .slider-item {
+    padding: 0;
+}
+
+.slider .slider-pad {
+    height: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+.slider .slider-pad > * {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+}
+
+/* Banner images keep their natural ratio */
+.home-banner .slider-pad > * {
+    height: auto;
+}
+
+/* Card slider arrows - visible circle buttons over the cards */
+.slider .slick-prev,
+.slider .slick-next {
+    z-index: 5;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+.slider .slick-prev {
+    left: 16px;
+}
+
+.slider .slick-next {
+    right: 16px;
+}
+
+.slider .slick-prev::before,
+.slider .slick-next::before {
+    color: #25949c;
+    font-size: 26px;
+    opacity: 1;
+}
+
+.slider .slider-pad > .testimonial-card {
+    flex: none;
+    max-width: none;
 }
 
 .about-doctor-section {

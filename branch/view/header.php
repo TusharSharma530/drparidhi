@@ -49,7 +49,7 @@ require_once __DIR__ . '/../../manager/database/db.php';
                         </span>
 
                         <span class="logo-tagline">
-                            <?= htmlspecialchars($headercenterline ?? '', ENT_QUOTES, 'UTF-8') ?>
+                            <?= str_replace('|', '<br>', htmlspecialchars($headercenterline ?? '', ENT_QUOTES, 'UTF-8')) ?>
                         </span>
 
                     </span>
@@ -504,6 +504,10 @@ if (!empty($currentPage) && $currentPage !== 'default'):
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- jQuery + Slick (used by the sliders initialised in script.js) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="slick/slick.min.js"></script>
 
 <!-- Main JavaScript -->
 <script src="branch/js/script.js"></script>

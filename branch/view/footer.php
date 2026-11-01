@@ -24,7 +24,7 @@
                     </span>
 
                 <span class="footer-doctor-tagline">
-                        <?= htmlspecialchars($headercenterline ?? '', ENT_QUOTES, 'UTF-8') ?>
+                        <?= str_replace('|', '<br>', htmlspecialchars($headercenterline ?? '', ENT_QUOTES, 'UTF-8')) ?>
                     </span>
                 </span>
             </a>

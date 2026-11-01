@@ -73,7 +73,14 @@
 				<tr id='remove<?php echo $tcid; ?>'>
 					<td><?php echo $serial; ?></td>									
 					<td><?=$rwtc['title'];?></td>
-					<td><?=substr($rwtc['desc'], 0, 80)."...";?></td>
+					<td><?php
+						$tcPlain = trim(strip_tags((string)($rwtc['desc'] ?? '')));
+						$tcShort = mb_substr($tcPlain, 0, 80, 'UTF-8');
+						if (mb_strlen($tcPlain, 'UTF-8') > 80) {
+							$tcShort .= '...';
+						}
+						echo htmlspecialchars($tcShort, ENT_QUOTES, 'UTF-8');
+					?></td>
 					<td><?=$rwtc['order'];?></td>
 					<td>
 						<div class="form-check form-switch">

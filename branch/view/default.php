@@ -14,13 +14,15 @@
 
         <section class="home-banner">
             <?php if ($bannerQuery && mysqli_num_rows($bannerQuery) > 0) { ?>
-                <div class="my-slider">
+                <div class="slider" data-slides-desktop="1" data-slides-mobile="1">
                     <?php while ($bannerData = mysqli_fetch_assoc($bannerQuery)) { ?>
                         <?php if (!empty($bannerData['wb_img'])) { ?>
-                            <div class="my-slide">
-                                <img
-                                    src="<?= htmlspecialchars(($path ?? '') . ($bannerData['wb_img'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
-                                    alt="Banner">
+                            <div class="slider-item">
+                                <div class="slider-pad">
+                                    <img
+                                        src="<?= htmlspecialchars(($path ?? '') . ($bannerData['wb_img'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
+                                        alt="Banner">
+                                </div>
                             </div>
                         <?php } ?>
                     <?php } ?>
@@ -103,7 +105,7 @@
                     <?= htmlspecialchars(strip_tags($titleData['sdesc'] ?? '')) ?>
                 </h2>
             </div>
-           <div class="row g-4">
+           <div class="slider" data-slides-desktop="4" data-slides-mobile="1">
 
                 <?php
                 $conditionQuery = mysqli_query($con, "
@@ -116,26 +118,28 @@
                 while ($conditionData = mysqli_fetch_assoc($conditionQuery)) {
                 ?>
 
-                    <div class="col-md-6 col-lg-3">
-                        <a href="specialities?id=<?= (int)($conditionData['id'] ?? 0) ?>" class="condition-card">
+                    <div class="slider-item">
+                        <div class="slider-pad">
+                            <a href="specialities?id=<?= (int)($conditionData['id'] ?? 0) ?>" class="condition-card">
 
-                            <?php if (!empty($conditionData['featured_img'])) { ?>
-                                <img
-                                   src="<?= htmlspecialchars(($path ?? '') . ($conditionData['featured_img'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
-                                >
-                            <?php } ?>
+                                <?php if (!empty($conditionData['featured_img'])) { ?>
+                                    <img
+                                       src="<?= htmlspecialchars(($path ?? '') . ($conditionData['featured_img'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
+                                    >
+                                <?php } ?>
 
-                            <h3 class="condition-name">
-                                <?= htmlspecialchars($conditionData['sc_name']) ?>
-                            </h3>
+                                <h3 class="condition-name">
+                                    <?= htmlspecialchars($conditionData['sc_name']) ?>
+                                </h3>
 
-                            <p class="condition-text">
-                                <?= htmlspecialchars($conditionData['sdesc']) ?>
-                            </p>
+                                <p class="condition-text">
+                                    <?= htmlspecialchars($conditionData['sdesc']) ?>
+                                </p>
 
-                            <span class="read-more">Read More →</span>
+                                <span class="read-more">Read More →</span>
 
-                        </a>
+                            </a>
+                        </div>
                     </div>
 
                 <?php } ?>
@@ -155,14 +159,18 @@
                 <h2 class="section-title">Gallery</h2>
             </div>
 
-            <div class="gallery-grid">
+            <div class="slider" data-slides-desktop="4" data-slides-mobile="2">
 
                 <?php while ($galleryData = mysqli_fetch_assoc($galleryQuery)) { ?>
                     <?php if (!empty($galleryData['file'])) { ?>
-                        <div class="gallery-item">
-                            <img
-                                src="<?= htmlspecialchars(($path ?? '') . ($galleryData['file'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
-                            >
+                        <div class="slider-item">
+                            <div class="slider-pad">
+                                <div class="gallery-item">
+                                    <img
+                                        src="<?= htmlspecialchars(($path ?? '') . ($galleryData['file'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
+                                    >
+                                </div>
+                            </div>
                         </div>
                     <?php } ?>
                 <?php } ?>
@@ -520,39 +528,33 @@
                 $testimonialQuery = mysqli_query($con, "
                     SELECT `desc` FROM testimonials
                     WHERE status = 1
+                    ORDER BY id ASC
                 ");
                 ?>
 
-                <div class="testimonials-flex">
+                <div class="slider" data-slides-desktop="3" data-slides-mobile="1">
 
                     <?php
-                    $reviewHeadings = [
-                        'Excellent',
-                        'Very Caring',
-                        'Great Experience'
-                    ];
+                while ($testimonialData = mysqli_fetch_assoc($testimonialQuery)) {
+                ?>
 
-                    $i = 0;
+                        <div class="slider-item">
+                            <div class="slider-pad">
+                                <div class="testimonial-card">
+                                    <div class="testimonial-stars" aria-label="5 stars">
+                                        ★★★★★
+                                    </div>
 
-                    while ($testimonialData = mysqli_fetch_assoc($testimonialQuery)) {
-                    ?>
-
-                        <div class="testimonial-card">
-                            <div class="testimonial-stars" aria-label="5 stars">
-                                ★★★★★
+                                    <?php /* allowed tags wali list mat hatana — warna <h4>/<p> cut ho jayenge */ ?>
+                                    <?= strip_tags(
+                                        $testimonialData['desc'] ?? '',
+                                        '<h4><p><br><strong><b><em><i><u>'
+                                    ) ?>
+                                </div>
                             </div>
-
-                            <h3 class="testimonial-heading">
-                                <?= $reviewHeadings[$i % 3] ?>
-                            </h3>
-
-                            <p class="section-text">
-                                <?= htmlspecialchars(strip_tags($testimonialData['desc'] ?? ''), ENT_QUOTES, 'UTF-8') ?>
-                            </p>
                         </div>
 
                     <?php
-                        $i++;
                     }
                     ?>
 
@@ -592,40 +594,42 @@
                 ");
                 ?>
 
-                <div class="row g-4">
+                <div class="slider" data-slides-desktop="3" data-slides-mobile="1">
 
                     <?php while ($blogData = mysqli_fetch_assoc($blogQuery)) { ?>
 
-                        <div class="col-md-6 col-lg-4">
+                        <div class="slider-item">
+                            <div class="slider-pad">
 
-                        <a href="blogs?id=<?= (int)($blogData['id'] ?? 0) ?>" class="blog-card h-100">
+                                <a href="blogs?id=<?= (int)($blogData['id'] ?? 0) ?>" class="blog-card h-100">
 
-                                <img
-                                    src="<?= htmlspecialchars(($path ?? '') . ($blogData['file'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
-                                    class="img-fluid"
-                                    loading="lazy"
-        >
+                                    <img
+                                        src="<?= htmlspecialchars(($path ?? '') . ($blogData['file'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
+                                        class="img-fluid"
+                                        loading="lazy"
+            >
 
-                                <div class="blog-content p-3">
+                                    <div class="blog-content p-3">
 
-                                    <span class="section-tag">
-                                        Pregnancy Care
-                                    </span>
+                                        <span class="section-tag">
+                                            Pregnancy Care
+                                        </span>
 
-                                    <h3 class="testimonial-heading">
-                                        <?= htmlspecialchars($blogData['title'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                                    </h3>
+                                        <h3 class="testimonial-heading">
+                                            <?= htmlspecialchars($blogData['title'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                                        </h3>
 
-                                    <p class="section-text mt-3">
-                                        <?= htmlspecialchars(strip_tags($blogData['sdesc'] ?? ''), ENT_QUOTES, 'UTF-8') ?>
-                                    </p>
+                                        <p class="section-text mt-3">
+                                            <?= htmlspecialchars(strip_tags($blogData['sdesc'] ?? ''), ENT_QUOTES, 'UTF-8') ?>
+                                        </p>
 
-                                    <span class="read-more">Read More →</span>
+                                        <span class="read-more">Read More →</span>
 
-                                </div>
+                                    </div>
 
-                            </a>
+                                </a>
 
+                            </div>
                         </div>
 
                     <?php } ?>
@@ -639,27 +643,6 @@
 
     </main>
    <?php include __DIR__ . '/footer.php'; ?>    
-   
-
-<!-- Slick banner slider (web_banner) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="slick/slick.min.js"></script>
-<script>
-$(document).ready(function(){
-
-    $('.my-slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2500,
-        dots: false,
-        arrows: true,
-        infinite: true,
-        speed: 900
-    });
-
-});
-</script>
 
 </body>
 </html>
