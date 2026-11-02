@@ -15,6 +15,8 @@ $blogId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
         $blog = mysqli_fetch_assoc($blogSql);
 ?>
 
+
+
     <!-- Blog Detail -->
     <section class=" pregnancy-blog-page">
         <div class="container px-4">
