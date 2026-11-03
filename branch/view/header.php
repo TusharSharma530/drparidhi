@@ -479,11 +479,6 @@ if (!empty($currentPage) && $currentPage !== 'default'):
 
             <?php } ?>
 
-                <p class="text-muted mb-4">
-                    Please fill in your details to request an appointment
-                    with Dr. Paridhi Chaudhary.
-                </p>
-
                 <form action="" method="POST">
 
                     <div class="row g-3">
