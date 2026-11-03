@@ -1,6 +1,96 @@
+
 <?php
 require_once __DIR__ . '/../../manager/database/db.php';
+require_once __DIR__ . '/recaptacha.php';
+
+$header_appointment_status = '';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['header_appointment'])) {
+
+    $full_name = trim($_POST['full_name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $phone = trim($_POST['phone'] ?? '');
+    $appointment_date = trim($_POST['appointment_date'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+
+    // Validate appointment date
+    $date_parts = explode('-', $appointment_date);
+
+    $valid_date = false;
+
+    if (count($date_parts) == 3) {
+        $valid_date = checkdate(
+            (int)$date_parts[1],
+            (int)$date_parts[2],
+            (int)$date_parts[0]
+        );
+    }
+
+    // Validate form data
+    if (
+        strlen($full_name) < 3 ||
+        strlen($full_name) > 60 ||
+        strlen($phone) != 10 ||
+        !ctype_digit($phone) ||
+        $phone[0] < '6' ||
+        $phone[0] > '9' ||
+        !$valid_date ||
+        ($email != '' && !filter_var($email, FILTER_VALIDATE_EMAIL))
+    ) {
+
+        $header_appointment_status = 'invalid';
+
+    } else {
+
+        // Prepare email data
+        $name = htmlspecialchars($full_name, ENT_QUOTES, 'UTF-8');
+        $email_safe = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+        $phone_safe = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
+        $date_safe = htmlspecialchars($appointment_date, ENT_QUOTES, 'UTF-8');
+        $message_safe = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
+
+        // Email subject
+        $subject = "New Appointment Request - " . SITE_NAME;
+
+        // Email body
+        $body = "
+            <h2>New Appointment Request</h2>
+
+            <p><strong>Full Name:</strong> $name</p>
+
+            <p><strong>Email:</strong> $email_safe</p>
+
+            <p><strong>Phone:</strong> $phone_safe</p>
+
+            <p><strong>Appointment Date:</strong> $date_safe</p>
+
+            <p><strong>Message:</strong> $message_safe</p>
+        ";
+
+        // Send email
+        // Verify Google reCAPTCHA v2
+$recaptcha_token = $_POST['g-recaptcha-response'] ?? '';
+
+if (!recaptchaVerify($recaptcha_token)) {
+
+    $header_appointment_status = 'captcha_failed';
+
+} else {
+
+    // Send email
+    if (SendEmailer('tusharsharma6868@gmail.com', $subject, $body)) {
+
+        $header_appointment_status = 'success';
+
+    } else {
+
+        $header_appointment_status = 'failed';
+    }
+}
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -358,14 +448,43 @@ if (!empty($currentPage) && $currentPage !== 'default'):
             </div>
 
             <!-- Modal Body -->
-            <div class="modal-body p-4">
+              <div class="modal-body p-4">
+                <input
+                type="hidden"
+                id="appointmentStatus"
+                value="<?= htmlspecialchars($header_appointment_status ?? '', ENT_QUOTES, 'UTF-8') ?>">
+            <?php if ($header_appointment_status == 'success') { ?>
+
+                <div class="alert alert-success">
+                    Your appointment request has been submitted successfully!
+                </div>
+
+            <?php } elseif ($header_appointment_status == 'failed') { ?>
+
+                <div class="alert alert-danger">
+                    Sorry! Unable to send your appointment request. Please try again.
+                </div>
+
+           <?php } elseif ($header_appointment_status == 'invalid') { ?>
+
+                <div class="alert alert-warning">
+                    Please enter valid appointment details.
+                </div>
+
+            <?php } elseif ($header_appointment_status == 'captcha_failed') { ?>
+
+                <div class="alert alert-warning">
+                    Please verify that you are not a robot.
+                </div>
+
+            <?php } ?>
 
                 <p class="text-muted mb-4">
                     Please fill in your details to request an appointment
                     with Dr. Paridhi Chaudhary.
                 </p>
 
-                <form action="../view/appointment.php" method="POST">
+                <form action="" method="POST">
 
                     <div class="row g-3">
 
@@ -479,12 +598,22 @@ if (!empty($currentPage) && $currentPage !== 'default'):
                             ></textarea>
 
                         </div>
+                        <!-- Google reCAPTCHA v2 -->
+                        <div class="col-12">
+
+                            <div class="g-recaptcha"
+                                data-sitekey="<?= htmlspecialchars(RECAPTCHA_SITE_KEY, ENT_QUOTES, 'UTF-8') ?>">
+                            </div>
+
+                        </div>
 
                         <!-- Submit Button -->
                         <div class="col-12">
 
-                            <button
+                           <button
                                 type="submit"
+                                name="header_appointment"
+                                value="1"
                                 class="btn appointment-submit w-100"
                             >
                                 Submit Appointment Request
@@ -510,6 +639,7 @@ if (!empty($currentPage) && $currentPage !== 'default'):
 <script src="slick/slick.min.js"></script>
 
 <!-- Main JavaScript -->
+ <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="branch/js/script.js"></script>
 
 </body>

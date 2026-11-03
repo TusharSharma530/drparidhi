@@ -194,6 +194,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const appointmentModal = document.getElementById(
         'appointmentModal'
     );
+    // REOPEN APPOINTMENT MODAL AFTER FORM SUBMISSION
+
+const appointmentStatus = document.getElementById(
+    'appointmentStatus'
+);
+
+if (appointmentStatus && appointmentStatus.value !== '') {
+
+    const modalElement = document.getElementById('appointmentModal');
+
+    if (modalElement && window.bootstrap) {
+
+        const modalInstance = new bootstrap.Modal(modalElement);
+
+        modalInstance.show();
+
+    }
+
+}
 
     if (appointmentForm && appointmentModal) {
 

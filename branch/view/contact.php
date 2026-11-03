@@ -1,4 +1,67 @@
-<?php include 'header.php'; ?>
+
+<?php
+include 'header.php'; 
+require_once __DIR__ . '/recaptacha.php';
+
+$appointment_status = '';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirm_appointment'])) {
+
+    $full_name = trim($_POST['full_name']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
+    $message = trim($_POST['message']);
+
+    // Validate form data
+    if (
+        strlen($full_name) < 3 ||
+        strlen($full_name) > 60 ||
+        strlen($phone) != 10 ||
+        !ctype_digit($phone) ||
+        $phone[0] < '6' ||
+        $phone[0] > '9' ||
+        ($email != '' && !filter_var($email, FILTER_VALIDATE_EMAIL))
+    ) {
+        $appointment_status = 'invalid';
+
+    } else {
+
+        $name = htmlspecialchars($full_name, ENT_QUOTES, 'UTF-8');
+        $email_safe = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+        $phone_safe = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
+        $message_safe = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
+
+        $subject = "New Appointment Request - " . SITE_NAME;
+
+        $body = "
+            <h2>New Appointment Request</h2>
+            <p><strong>Full Name:</strong> $name</p>
+            <p><strong>Email:</strong> $email_safe</p>
+            <p><strong>Phone:</strong> $phone_safe</p>
+            <p><strong>Message:</strong> $message_safe</p>
+        ";
+
+        $recaptcha_token = $_POST['g-recaptcha-response'] ?? '';
+
+if (!recaptchaVerify($recaptcha_token)) {
+
+    $appointment_status = 'captcha_failed';
+
+} else {
+
+    if (SendEmailer('tusharsharma6868@gmail.com', $subject, $body)) {
+        $appointment_status = 'success';
+    } else {
+        $appointment_status = 'failed';
+    }
+
+}
+    }
+}
+?>
+
+
+
 
 <main>
     <section class="consult-section">
@@ -171,9 +234,33 @@
 
                         <form class="consult-form"
                               id="consultForm"
-                              action="../view/appointment.php"
+                              action=""
                               method="POST">
+                           <?php if ($appointment_status == 'success') { ?>
 
+    <div class="alert alert-success">
+        Your appointment request has been sent successfully!
+    </div>
+
+<?php } elseif ($appointment_status == 'failed') { ?>
+
+    <div class="alert alert-danger">
+        Sorry! Unable to send your appointment request. Please try again.
+    </div>
+
+<?php } elseif ($appointment_status == 'invalid') { ?>
+
+    <div class="alert alert-warning">
+        Please enter valid details.
+    </div>
+
+<?php } elseif ($appointment_status == 'captcha_failed') { ?>
+
+    <div class="alert alert-warning">
+        Please verify that you are not a robot.
+    </div>
+
+<?php } ?>
                             <!-- Full Name -->
                             <div class="consult-field">
                                 <label for="consultName">Full Name</label>
@@ -246,11 +333,22 @@
                                         placeholder="Message"></textarea>
                                 </div>
                             </div>
+<div class="consult-field">
 
+    <div class="g-recaptcha"
+         data-sitekey="<?= htmlspecialchars(RECAPTCHA_SITE_KEY, ENT_QUOTES, 'UTF-8') ?>">
+    </div>
+
+</div>
                             <!-- Submit Button -->
-                            <button type="submit" class="consult-submit">
+                           <button type="submit"
+                                    name="confirm_appointment"
+                                    value="1"
+                                    class="consult-submit">
                                 Confirm Appointment
                             </button>
+                            <!-- Google reCAPTCHA v2 -->
+
 
                             <p class="consult-msg" id="consultMsg"></p>
 
@@ -263,5 +361,6 @@
         </div>
     </section>
 </main>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <?php include __DIR__ . '/footer.php'; ?>
