@@ -8,7 +8,7 @@
        
         <div class="footer-top">
 
-            <a href="default" class="footer-doctor-brand">
+            <a href="<?= $urlbase ?>default" class="footer-doctor-brand">
 
                 <span class="footer-doctor-logo">
                     <img

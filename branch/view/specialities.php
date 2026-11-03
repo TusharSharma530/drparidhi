@@ -1,24 +1,42 @@
 <?php
-include 'header.php';
-$condId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
-?>
+require_once __DIR__ . '/../../manager/database/db.php';
 
+$typeSegments = explode('/', trim($_GET['type'] ?? '', '/'));
+$condSlug = $typeSegments[1] ?? '';
+
+$conditionData = null;
+
+if ($condSlug !== '') {
+
+    $condSql = mysqli_query($con, "SELECT * FROM sub_cat WHERE status = 1");
+
+    if ($condSql) {
+        while ($row = mysqli_fetch_assoc($condSql)) {
+
+            $slug = !empty($row['sc_url'])
+                ? trim($row['sc_url'])
+                : seo_friendly_url($row['sc_name']);
+
+            if ($condSlug === $slug) {
+                $conditionData = $row;
+                break;
+            }
+        }
+    }
+}
+
+include 'header.php';
+?>
 <main>
 
-<?php if ($condId > 0) {
-
-    $condSql = mysqli_query($con, "SELECT * FROM sub_cat WHERE id = $condId AND status = 1 LIMIT 1");
-
-    if ($condSql && mysqli_num_rows($condSql) > 0) {
-        $conditionData = mysqli_fetch_assoc($condSql);
-?>
+<?php if (!empty($conditionData)) { ?>
 
     <section class=" pregnancy-blog-page">
         <div class="container px-4">
 
             <div class="mb-4 pregnancy-blog-banner">
                 <img
-                    src="<?php echo !empty($conditionData['featured_img']) ? $path . $conditionData['featured_img'] : 'branch/assets/pregnancycare.webp'; ?>"
+                    src="<?php echo !empty($conditionData['featured_img']) ? $path . $conditionData['featured_img'] : $urlbase . 'branch/assets/pregnancycare.webp'; ?>"
                     alt="<?php echo htmlspecialchars($conditionData['sc_name'], ENT_QUOTES, 'UTF-8'); ?>"
                     class="img-fluid w-100"
                     loading="lazy"
@@ -48,8 +66,6 @@ $condId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
         </div>
     </section>
 
-<?php } else?>
-
 <?php } else { ?>
 
     <!-- Specialities Listing -->
@@ -59,7 +75,7 @@ $condId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
             <?php
             $conditionQuery = mysqli_query($con, "
-                SELECT id, sc_name, sdesc, featured_img
+                SELECT id, sc_name, sc_url, sdesc, featured_img
                 FROM sub_cat
                 WHERE status = 1
                 ORDER BY id ASC
@@ -68,11 +84,15 @@ $condId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
             if ($conditionQuery && mysqli_num_rows($conditionQuery) > 0) {
 
                 while ($conditionData = mysqli_fetch_assoc($conditionQuery)) {
+
+                    $cardSlug = !empty($conditionData['sc_url'])
+                        ? trim($conditionData['sc_url'])
+                        : seo_friendly_url($conditionData['sc_name']);
             ?>
 
                     <div class="col-md-6 col-lg-3">
 
-                        <a href="?id=<?php echo (int)$conditionData['id']; ?>" class="condition-card">
+                        <a href="<?= htmlspecialchars($urlbase . 'specialities/' . $cardSlug, ENT_QUOTES, 'UTF-8') ?>" class="condition-card">
 
                             <?php if (!empty($conditionData['featured_img'])) { ?>
 

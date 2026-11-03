@@ -109,7 +109,7 @@
 
                 <?php
                 $conditionQuery = mysqli_query($con, "
-                    SELECT id, sc_name, sdesc, featured_img
+                    SELECT id, sc_name, sc_url, sdesc, featured_img
                     FROM sub_cat
                     WHERE status = 1
                     ORDER BY id ASC
@@ -120,7 +120,7 @@
 
                     <div class="slider-item">
                         <div class="slider-pad">
-                            <a href="specialities?id=<?= (int)($conditionData['id'] ?? 0) ?>" class="condition-card">
+                            <a href="<?= $urlbase ?>specialities/<?= htmlspecialchars($conditionData['sc_url'] ?? seo_friendly_url($conditionData['sc_name'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" class="condition-card">
 
                                 <?php if (!empty($conditionData['featured_img'])) { ?>
                                     <img
@@ -274,10 +274,13 @@
                             </span>
                         </div>
 
-                        <a class="about-btn bg-white text-dark border-0"
-                        href="contact">
+                        <button
+                            type="button"
+                            class="about-btn bg-white text-dark border-0"
+                            data-bs-toggle="modal"
+                            data-bs-target="#appointmentModal">
                             Book an Appointment
-                        </a>
+                        </button>
 
                     </div>
                 </div>
@@ -586,7 +589,7 @@
 
                 <?php
                 $blogQuery = mysqli_query($con, "
-                    SELECT id, title, sdesc, `file`
+                    SELECT id, title, url, sdesc, `file`
                     FROM blogs
                     WHERE status = 1
                     ORDER BY id DESC
@@ -601,7 +604,7 @@
                         <div class="slider-item">
                             <div class="slider-pad">
 
-                                <a href="blogs?id=<?= (int)($blogData['id'] ?? 0) ?>" class="blog-card h-100">
+                                <a href="<?= htmlspecialchars($urlbase . 'blogs/' . (!empty($blogData['url']) ? trim($blogData['url']) : seo_friendly_url($blogData['title'] ?? '')), ENT_QUOTES, 'UTF-8') ?>" class="blog-card h-100">
 
                                     <img
                                         src="<?= htmlspecialchars(($path ?? '') . ($blogData['file'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"

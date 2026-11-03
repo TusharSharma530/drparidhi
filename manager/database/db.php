@@ -8,6 +8,10 @@ define('DB_PASSWORD','');
 // session_destroy();
 date_default_timezone_set("Asia/Kolkata"); 
 $path = BASE_PATH;
+
+// Root relative base path for internal links & assets (e.g. "/drparidhi/")
+$urlbase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/') . '/';
+
 $con = mysqli_connect( DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 
@@ -195,5 +199,3 @@ if(!function_exists('imageUrl')){
 
 
 
-?>
- 

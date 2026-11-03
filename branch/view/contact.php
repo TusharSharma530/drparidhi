@@ -161,39 +161,8 @@ if (!recaptchaVerify($recaptcha_token)) {
                         </li>
                         <?php } ?>
 
-                        <!-- Working Days -->
-                        <?php if (!empty($working_days)) { ?>
-                        <li class="consult-item">
-                            <span class="consult-icon">
-                                <i class="bi bi-calendar-check"></i>
-                            </span>
 
-                            <span class="consult-detail">
-                                <span class="consult-label">Working Days</span>
-
-                                <span class="consult-value">
-                                    <?= htmlspecialchars($working_days, ENT_QUOTES, 'UTF-8') ?>
-                                </span>
-                            </span>
-                        </li>
-                        <?php } ?>
-
-                        <!-- Closed Days -->
-                        <?php if (!empty($closed_days)) { ?>
-                        <li class="consult-item">
-                            <span class="consult-icon">
-                                <i class="bi bi-calendar-x"></i>
-                            </span>
-
-                            <span class="consult-detail">
-                                <span class="consult-label">Closed Days</span>
-
-                                <span class="consult-value">
-                                    <?= htmlspecialchars($closed_days, ENT_QUOTES, 'UTF-8') ?>
-                                </span>
-                            </span>
-                        </li>
-                        <?php } ?>
+                      
 
                     </ul>
 

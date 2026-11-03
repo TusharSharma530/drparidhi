@@ -1,21 +1,37 @@
 
 <?php
-include 'header.php';
+require_once __DIR__ . '/../../manager/database/db.php';
 
-$blogId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+$typeSegments = explode('/', trim($_GET['type'] ?? '', '/'));
+$blogSlug = $typeSegments[1] ?? '';
+
+$blog = null;
+
+if ($blogSlug !== '') {
+
+    $blogSql = mysqli_query($con, "SELECT * FROM blogs WHERE status = 1 ORDER BY id DESC");
+
+    if ($blogSql) {
+        while ($row = mysqli_fetch_assoc($blogSql)) {
+
+            $slug = !empty($row['url'])
+                ? trim($row['url'])
+                : seo_friendly_url($row['title']);
+
+            if ($blogSlug === $slug) {
+                $blog = $row;
+                break;
+            }
+        }
+    }
+}
+
+include 'header.php';
 ?>
 
 <main>
 
-<?php if ($blogId > 0) {
-
-    $blogSql = mysqli_query($con, "SELECT * FROM blogs WHERE id = $blogId AND status = 1 LIMIT 1");
-
-    if ($blogSql && mysqli_num_rows($blogSql) > 0) {
-        $blog = mysqli_fetch_assoc($blogSql);
-?>
-
-
+<?php if (!empty($blog)) { ?>
 
     <!-- Blog Detail -->
     <section class=" pregnancy-blog-page">
@@ -23,7 +39,7 @@ $blogId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
             <div class="mb-4 pregnancy-blog-banner">
                 <img
-                    src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : 'branch/assets/blog1.webp'; ?>"
+                    src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : $urlbase . 'branch/assets/blog1.webp'; ?>"
                     alt="<?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>"
                     class="img-fluid w-100"
                     loading="lazy"
@@ -44,8 +60,6 @@ $blogId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
         </div>
     </section>
 
-<?php } else  ?>
-
 <?php } else { ?>
 
     <!-- Blog Listing -->
@@ -64,14 +78,18 @@ $blogId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
                     $i = 0;
 
                     while ($blog = mysqli_fetch_assoc($result)) {
+
+                        $blogCardSlug = !empty($blog['url'])
+                            ? trim($blog['url'])
+                            : seo_friendly_url($blog['title']);
                 ?>
 
                     <div class="col-md-6 col-lg-4">
 
-                       <a href="?id=<?php echo (int)$blog['id']; ?>" class="blog-card h-100">
+                       <a href="<?= htmlspecialchars($urlbase . 'blogs/' . $blogCardSlug, ENT_QUOTES, 'UTF-8') ?>" class="blog-card h-100">
 
                             <img
-                                src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : 'branch/assets/blog1.webp'; ?>"
+                                src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : $urlbase . 'branch/assets/blog1.webp'; ?>"
                                 alt="<?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>"
                                 class="img-fluid"
                                 loading="lazy"

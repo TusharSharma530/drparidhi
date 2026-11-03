@@ -112,8 +112,8 @@ if (!recaptchaVerify($recaptcha_token)) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="branch/css/style.css">
-    <link rel="stylesheet" href="branch/css/responsiveness.css">
+    <link rel="stylesheet" href="<?= $urlbase ?>branch/css/style.css">
+    <link rel="stylesheet" href="<?= $urlbase ?>branch/css/responsiveness.css">
 </head>
 
 <body>
@@ -128,7 +128,7 @@ if (!recaptchaVerify($recaptcha_token)) {
             <div class="header-top-inner">
 
                 <!-- Logo -->
-                <a class="site-logo" href="default">
+                <a class="site-logo" href="<?= $urlbase ?>default">
 
                     <img src="<?=$path.$logo;?>" alt="<?=$websitename;?> Logo" class="site-logo-img">
 
@@ -196,7 +196,7 @@ if (!recaptchaVerify($recaptcha_token)) {
         <div class="container">
 
             <!-- Mobile Brand -->
-            <a class="navbar-brand d-lg-none" href="default">
+            <a class="navbar-brand d-lg-none" href="<?= $urlbase ?>default">
                 <img src="<?=$path.$logo;?>" alt="<?=$websitename;?> Logo" class="site-logo-img">
 
                 <span class="logo-text">
@@ -226,39 +226,39 @@ if (!recaptchaVerify($recaptcha_token)) {
                     
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="default">
+                        <a class="nav-link active" href="<?= $urlbase ?>default">
                             Home
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="about">
+                        <a class="nav-link" href="<?= $urlbase ?>about">
                             About Us
                         </a>
                     </li>
 
                     <li class="nav-item dropdown speciality-dropdown">
                         <div class="speciality-nav-wrapper">
-                            <a class="nav-link" href="specialities">
+                            <a class="nav-link" href="<?= $urlbase ?>specialities">
                                 Specialities
                             </a>
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="blogs">
+                        <a class="nav-link" href="<?= $urlbase ?>blogs">
                             Blogs
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery">
+                        <a class="nav-link" href="<?= $urlbase ?>gallery">
                             Gallery
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contact">
+                        <a class="nav-link" href="<?= $urlbase ?>contact">
                             Contact Us
                         </a>
                     </li>
@@ -292,7 +292,7 @@ if (!recaptchaVerify($recaptcha_token)) {
 <!-- Sidebar Header with Logo -->
 <div class="offcanvas-header mobile-sidebar-header">
 
-    <a href="default" class="sidebar-brand-link">
+    <a href="<?= $urlbase ?>default" class="sidebar-brand-link">
         <img src="<?=$path.$logo;?>" alt="<?=$websitename;?> Logo" class="sidebar-logo">
 
         <span class="sidebar-brand-text">
@@ -324,37 +324,37 @@ if (!recaptchaVerify($recaptcha_token)) {
             
 
             <li class="nav-item">
-                <a class="nav-link" href="default">
+                <a class="nav-link" href="<?= $urlbase ?>default">
                     <i class="bi bi-house-door me-2"></i>Home
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="about">
+                <a class="nav-link" href="<?= $urlbase ?>about">
                     <i class="bi bi-person me-2"></i>About Us
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="specialities">
+                <a class="nav-link" href="<?= $urlbase ?>specialities">
                     <i class="bi bi-heart-pulse me-2"></i>Specialities
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="blogs">
+                <a class="nav-link" href="<?= $urlbase ?>blogs">
                     <i class="bi bi-journal-text me-2"></i>Blogs
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="gallery">
+                <a class="nav-link" href="<?= $urlbase ?>gallery">
                     <i class="bi bi-images me-2"></i>Gallery
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="contact">
+                <a class="nav-link" href="<?= $urlbase ?>contact">
                     <i class="bi bi-telephone me-2"></i>Contact Us
                 </a>
             </li>
@@ -400,7 +400,7 @@ if (!empty($currentPage) && $currentPage !== 'default'):
             <ol class="breadcrumb mb-0">
 
                 <li class="breadcrumb-item">
-                    <a href="default" class="text-decoration-none">
+                    <a href="<?= $urlbase ?>default" class="text-decoration-none">
                         Home
                     </a>
                 </li>
@@ -636,11 +636,11 @@ if (!empty($currentPage) && $currentPage !== 'default'):
 
 <!-- jQuery + Slick (used by the sliders initialised in script.js) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="slick/slick.min.js"></script>
+<script src="<?= $urlbase ?>slick/slick.min.js"></script>
 
 <!-- Main JavaScript -->
  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src="branch/js/script.js"></script>
+<script src="<?= $urlbase ?>branch/js/script.js"></script>
 
 </body>
 </html>

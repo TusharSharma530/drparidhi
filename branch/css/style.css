@@ -284,7 +284,7 @@ a {
     object-fit: cover;
 }
 
-/* Home banner slick slider (web_banner table) — full width, koi side space nahi */
+/* Home banner slick slider (web_banner table) ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â full width, koi side space nahi */
 .home-banner .slider .slider-pad {
     padding: 0;
 }
@@ -361,8 +361,8 @@ a {
     opacity: 1;
 }
 
-/* White circle permanent — hover / focus / click (active) pe bhi same rahe.
-   (slick-theme.css :hover/:focus pe background transparent karta hai — ye usse jeetta hai) */
+/* White circle permanent ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â hover / focus / click (active) pe bhi same rahe.
+   (slick-theme.css :hover/:focus pe background transparent karta hai ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â ye usse jeetta hai) */
 .slider .slick-prev:hover,
 .slider .slick-prev:focus,
 .slider .slick-prev:active,
@@ -707,8 +707,8 @@ a {
 .pregnancy-blog-page .blog-content .care-desc h4 {
     /* margin: 26px 0 8px; */
     color: var(--heading-color);
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 500;
     line-height: 1.4;
 }
 
@@ -742,6 +742,7 @@ a {
     margin-top: 45px;
     margin-bottom: 55px;
     margin-inline: auto;
+    background: #87ceeb0d;
 }
 
 @media (max-width: 768px) {
@@ -755,7 +756,7 @@ a {
 .section-head {
     max-width: 1100px;
     margin: 0 auto 30px;
-    padding: 0 20px;
+    padding: 20px;
     text-align: center;
 }
 
