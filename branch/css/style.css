@@ -1715,3 +1715,68 @@ a.consult-section .consult-value:hover {
     line-height: 1.5;
 }
 
+
+/* Blog Detail Sidebar */
+
+.other-blogs-sidebar {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e8a4ad;
+}
+
+.other-blog-item {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.other-blog-item:last-child {
+    border-bottom: none;
+}
+
+.other-blog-item img {
+    width: 95px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.other-blog-content h5 {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.other-blog-content span {
+    font-size: 13px;
+    color: #25949c;
+    font-weight: 600;
+}
+
+.other-blog-item:hover h5 {
+    color: #25949c;
+}
+
+@media(max-width: 991px) {
+    .other-blogs-sidebar {
+        position: static;
+        margin-top: 20px;
+    }
+}

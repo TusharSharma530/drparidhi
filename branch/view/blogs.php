@@ -34,31 +34,101 @@ include 'header.php';
 <?php if (!empty($blog)) { ?>
 
     <!-- Blog Detail -->
-    <section class=" pregnancy-blog-page">
-        <div class="container px-4">
+    
+<!-- Blog Detail -->
+<section class="pregnancy-blog-page">
+    <div class="container px-4">
+        <div class="row g-4">
 
-            <div class="mb-4 pregnancy-blog-banner">
-                <img
-                    src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : $urlbase . 'branch/assets/blog1.webp'; ?>"
-                    alt="<?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>"
-                    class="img-fluid w-100"
-                    loading="lazy"
-                >
-            </div>
+            <!-- Left Side: Blog Detail -->
+            <div class="col-lg-8">
 
-            <div class="blog-content">
+                <div class="pregnancy-blog-banner mb-4">
+                    <img
+                        src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : $urlbase . 'branch/assets/blog1.webp'; ?>"
+                        alt="<?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                        class="img-fluid w-100"
+                        loading="lazy"
+                    >
+                </div>
 
-                <h1 class="section-title">
-                    <?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>
-                </h1>
+                <div class="blog-content">
 
-                <div class="blog-desc">
-                    <?php echo !empty($blog['desc']) ? $blog['desc'] : $blog['sdesc']; ?>
+                    <h1 class="section-title">
+                        <?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>
+                    </h1>
+
+                    <div class="blog-desc">
+                        <?php echo !empty($blog['desc']) ? $blog['desc'] : $blog['sdesc']; ?>
+                    </div>
+
                 </div>
 
             </div>
+
+            <!-- Right Side: Other Blogs -->
+            <div class="col-lg-4">
+
+                <div class="other-blogs-sidebar">
+
+                    <h3 class="sidebar-title">Other Blogs</h3>
+
+                    <?php
+                    $currentBlogId = (int)$blog['id'];
+
+                    $otherSql = mysqli_query(
+                        $con,
+                        "SELECT * FROM blogs
+                         WHERE status = 1 AND id != $currentBlogId
+                         ORDER BY id DESC
+                         LIMIT 6"
+                    );
+
+                    if ($otherSql && mysqli_num_rows($otherSql) > 0) {
+
+                        while ($otherBlog = mysqli_fetch_assoc($otherSql)) {
+
+                            $otherSlug = !empty($otherBlog['url'])
+                                ? trim($otherBlog['url'])
+                                : seo_friendly_url($otherBlog['title']);
+                    ?>
+
+                        <a href="<?php echo htmlspecialchars($urlbase . 'blogs/' . $otherSlug, ENT_QUOTES, 'UTF-8'); ?>"
+                           class="other-blog-item">
+
+                            <img
+                                src="<?php echo !empty($otherBlog['file']) ? $path . $otherBlog['file'] : $urlbase . 'branch/assets/blog1.webp'; ?>"
+                                alt="<?php echo htmlspecialchars($otherBlog['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                                loading="lazy"
+                            >
+
+                            <div class="other-blog-content">
+
+                                <h5>
+                                    <?php echo htmlspecialchars($otherBlog['title'], ENT_QUOTES, 'UTF-8'); ?>
+                                </h5>
+
+                                <span>Read More →</span>
+
+                            </div>
+
+                        </a>
+
+                    <?php
+                        }
+                    } else {
+                        echo '<p>No other blogs available.</p>';
+                    }
+                    ?>
+
+                </div>
+
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+
 
 <?php } else { ?>
 
