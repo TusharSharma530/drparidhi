@@ -158,16 +158,38 @@
             <div class="footer-pages">
                 <ul>
                     <?php
-                    $sql = "SELECT c_name FROM category WHERE status = 1 AND c_type = 1";
+                    $sql = "SELECT c_name, c_url FROM category WHERE status = 1 AND c_type = 1";
                     $result = mysqli_query($con, $sql);
+
+                    // c_url slug -> front-end route (view file name)
+                    $footerPageRoutes = [
+                        'home'     => 'default',
+                        'about-us' => 'about',
+                    ];
 
                     if ($result && mysqli_num_rows($result) > 0) {
 
                         while ($row = mysqli_fetch_assoc($result)) {
+
+                            $pageSlug = trim($row['c_url'] ?? '');
+                            $pageRoute = $footerPageRoutes[$pageSlug] ?? $pageSlug;
+
+                            // Sirf valid route (view file exist karti ho) par link banao
+                            $pageLink = '';
+                            if (preg_match('/^[a-z0-9\-_]+$/i', $pageRoute)
+                                && file_exists(__DIR__ . '/' . $pageRoute . '.php')) {
+                                $pageLink = $urlbase . $pageRoute;
+                            }
                     ?>
 
                             <li>
-                                <?= htmlspecialchars($row['c_name'], ENT_QUOTES, 'UTF-8') ?>
+                                <?php if ($pageLink !== '') { ?>
+                                    <a href="<?= htmlspecialchars($pageLink, ENT_QUOTES, 'UTF-8') ?>">
+                                        <?= htmlspecialchars($row['c_name'], ENT_QUOTES, 'UTF-8') ?>
+                                    </a>
+                                <?php } else { ?>
+                                    <?= htmlspecialchars($row['c_name'], ENT_QUOTES, 'UTF-8') ?>
+                                <?php } ?>
                             </li>
 
                     <?php
@@ -189,16 +211,22 @@
             <ul class="footer-services">
 
                 <?php
-                $sql = "SELECT sc_name FROM sub_cat WHERE status = 1 ORDER BY id ASC";
+                $sql = "SELECT sc_name, sc_url FROM sub_cat WHERE status = 1 ORDER BY id ASC";
                 $result = mysqli_query($con, $sql);
 
                 if ($result && mysqli_num_rows($result) > 0) {
 
                     while ($row = mysqli_fetch_assoc($result)) {
+
+                        $serviceSlug = !empty($row['sc_url'])
+                            ? trim($row['sc_url'])
+                            : seo_friendly_url($row['sc_name']);
                 ?>
 
                         <li>
-                            <?= htmlspecialchars($row['sc_name'], ENT_QUOTES, 'UTF-8') ?>
+                            <a href="<?= htmlspecialchars($urlbase . 'specialities/' . $serviceSlug, ENT_QUOTES, 'UTF-8') ?>">
+                                <?= htmlspecialchars($row['sc_name'], ENT_QUOTES, 'UTF-8') ?>
+                            </a>
                         </li>
 
                 <?php

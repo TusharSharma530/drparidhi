@@ -37,8 +37,9 @@
         ?>
 
         <!-- About / Why Choose Section -->
-        <section class="about-doctor-section container">
-            <div class="about-row">
+        <section class="about-doctor-section home-about-section">
+            <div class="container">
+                <div class="about-row">
 
                 <!-- Left Content -->
                 <div class="about-left">
@@ -88,6 +89,7 @@
                     <?php } ?>
                 </div>
 
+                </div>
             </div>
         </section>
 
@@ -153,8 +155,9 @@
         ?>
 
         <!-- Gallery Section -->
-        <section class="gallery-section container">
-            <div class="section-head">
+        <section class="gallery-section home-gallery-section">
+            <div class="container">
+                <div class="section-head">
                 <span class="section-tag">Our Clinic</span>
                 <h2 class="section-title">Gallery</h2>
             </div>
@@ -175,6 +178,7 @@
                     <?php } ?>
                 <?php } ?>
 
+            </div>
             </div>
         </section>
         

@@ -150,7 +150,7 @@ if ($form_type != '') {
             <div class="header-top-inner">
 
                 <!-- Logo -->
-                <a class="site-logo" href="<?= $urlbase ?>default">
+                <a class="site-logo" href="<?= $urlbase ?>">
 
                     <img src="<?=$path.$logo;?>" alt="<?=$websitename;?> Logo" class="site-logo-img">
 
@@ -218,7 +218,7 @@ if ($form_type != '') {
         <div class="container">
 
             <!-- Mobile Brand -->
-            <a class="navbar-brand d-lg-none" href="<?= $urlbase ?>default">
+            <a class="navbar-brand d-lg-none" href="<?= $urlbase ?>">
                 <img src="<?=$path.$logo;?>" alt="<?=$websitename;?> Logo" class="site-logo-img">
 
                 <span class="logo-text">
@@ -248,7 +248,7 @@ if ($form_type != '') {
                     
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="<?= $urlbase ?>default">
+                        <a class="nav-link active" href="<?= $urlbase ?>">
                             Home
                         </a>
                     </li>
@@ -314,7 +314,7 @@ if ($form_type != '') {
 <!-- Sidebar Header with Logo -->
 <div class="offcanvas-header mobile-sidebar-header">
 
-    <a href="<?= $urlbase ?>default" class="sidebar-brand-link">
+    <a href="<?= $urlbase ?>" class="sidebar-brand-link">
         <img src="<?=$path.$logo;?>" alt="<?=$websitename;?> Logo" class="sidebar-logo">
 
         <span class="sidebar-brand-text">
@@ -346,7 +346,7 @@ if ($form_type != '') {
             
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= $urlbase ?>default">
+                <a class="nav-link" href="<?= $urlbase ?>">
                     <i class="bi bi-house-door me-2"></i>Home
                 </a>
             </li>

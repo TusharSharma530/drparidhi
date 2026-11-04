@@ -1613,3 +1613,57 @@
         margin-top: 20px !important;
     }
 }
+@media (max-width: 767px) {
+
+    .care-desc h1 {
+        font-size: 26px;
+    }
+
+    .care-desc h2 {
+        font-size: 22px;
+        margin-top: 25px;
+    }
+
+    .care-desc h3 {
+        font-size: 19px;
+    }
+
+    .care-desc p,
+    .care-desc ul li,
+    .care-desc ol li {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+}
+@media (max-width: 991px) {
+    .other-specialities {
+        position: static;
+        margin-bottom: 20px;
+    }
+}
+/* Responsive Styling */
+@media (max-width: 767px) {
+    .blog-content .section-title {
+        font-size: 20px;
+    }
+
+    .blog-desc h1 {
+        font-size: 26px;
+    }
+
+    .blog-desc h2 {
+        font-size: 22px;
+        margin-top: 25px;
+    }
+
+    .blog-desc h3 {
+        font-size: 19px;
+    }
+
+    .blog-desc p,
+    .blog-desc ul li,
+    .blog-desc ol li {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+}

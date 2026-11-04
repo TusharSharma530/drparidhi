@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // GALLERY LIGHTBOX
 
 
-    const images = document.querySelectorAll(
-        '.gallery-section .gallery-item img'
+    const images = Array.prototype.slice.call(
+        document.querySelectorAll('.gallery-section .gallery-item img')
     );
 
     if (images.length) {
@@ -64,6 +64,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         lightbox.className = 'lightbox';
 
+        // Slick clones (infinite slider) ko sequence se hata do,
+        // taaki same image baar baar na aaye
+        const galleryImages = images.filter(function (img) {
+            return !img.closest('.slick-cloned');
+        });
+
         lightbox.innerHTML = `
             <button
                 type="button"
@@ -71,31 +77,81 @@ document.addEventListener('DOMContentLoaded', function () {
                 aria-label="Close image"
             >&times;</button>
 
+            <button
+                type="button"
+                class="lightbox-nav lightbox-prev"
+                aria-label="Previous image"
+            >&#10094;</button>
+
             <img src="" alt="Gallery Image">
+
+            <button
+                type="button"
+                class="lightbox-nav lightbox-next"
+                aria-label="Next image"
+            >&#10095;</button>
         `;
 
         document.body.appendChild(lightbox);
 
         const lightboxImg = lightbox.querySelector('img');
+        const prevBtn = lightbox.querySelector('.lightbox-prev');
+        const nextBtn = lightbox.querySelector('.lightbox-next');
 
-        images.forEach(function (img) {
+        let currentIndex = 0;
 
-            img.addEventListener('click', function () {
+        // Ek hi image ho to arrows hide
+        if (galleryImages.length < 2) {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+        }
 
-                lightboxImg.src = img.src;
-                lightboxImg.alt = img.alt;
+        function showImage(index) {
+            currentIndex = (index + galleryImages.length) % galleryImages.length;
 
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
+            const img = galleryImages[currentIndex];
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+        }
 
-            });
-
-        });
+        function openLightbox(index) {
+            showImage(index);
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
         function closeLightbox() {
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
         }
+
+        function getImageIndex(img) {
+            const index = galleryImages.indexOf(img);
+            if (index !== -1) return index;
+
+            // Clone image par click ho to uske original image ka index lo
+            return galleryImages.findIndex(function (item) {
+                return item.src === img.src;
+            });
+        }
+
+        images.forEach(function (img) {
+
+            img.addEventListener('click', function () {
+                openLightbox(getImageIndex(img));
+            });
+
+        });
+
+        prevBtn.addEventListener('click', function (event) {
+            event.stopPropagation();
+            showImage(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', function (event) {
+            event.stopPropagation();
+            showImage(currentIndex + 1);
+        });
 
         lightbox.querySelector('.lightbox-close')
             .addEventListener('click', closeLightbox);
@@ -109,6 +165,15 @@ document.addEventListener('DOMContentLoaded', function () {
         document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
                 closeLightbox();
+                return;
+            }
+
+            if (!lightbox.classList.contains('active')) return;
+
+            if (event.key === 'ArrowLeft') {
+                showImage(currentIndex - 1);
+            } else if (event.key === 'ArrowRight') {
+                showImage(currentIndex + 1);
             }
         });
 
