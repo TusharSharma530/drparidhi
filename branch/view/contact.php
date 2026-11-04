@@ -1,10 +1,6 @@
 
 <?php
 include 'header.php'; 
-
-// Both the Contact Us form and the Appointment form are handled
-// by the single POST handler at the top of header.php
-// ($appointment_status is already set there).
 ?>
 
 
