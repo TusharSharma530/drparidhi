@@ -3,9 +3,24 @@
 require_once __DIR__ . '/../../manager/database/db.php';
 require_once __DIR__ . '/recaptacha.php';
 
+// Statuses used by each form (handled by this single block)
 $header_appointment_status = '';
+$appointment_status = '';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['header_appointment'])) {
+// Which form was submitted? "header_appointment" = Appointment modal,
+// "confirm_appointment" = Contact Us consultation form
+$form_type = '';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    if (isset($_POST['header_appointment'])) {
+        $form_type = 'appointment';
+    } elseif (isset($_POST['confirm_appointment'])) {
+        $form_type = 'contact';
+    }
+}
+
+if ($form_type != '') {
 
     $full_name = trim($_POST['full_name'] ?? '');
     $email = trim($_POST['email'] ?? '');
@@ -13,34 +28,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['header_appointment']))
     $appointment_date = trim($_POST['appointment_date'] ?? '');
     $message = trim($_POST['message'] ?? '');
 
-    // Validate appointment date
-    $date_parts = explode('-', $appointment_date);
+    // Validate appointment date (only the appointment form sends a date)
+    $valid_date = true;
 
-    $valid_date = false;
+    if ($form_type == 'appointment') {
 
-    if (count($date_parts) == 3) {
-        $valid_date = checkdate(
+        $date_parts = explode('-', $appointment_date);
+
+        $valid_date = count($date_parts) == 3 && checkdate(
             (int)$date_parts[1],
             (int)$date_parts[2],
             (int)$date_parts[0]
         );
     }
 
+    $status = 'invalid';
+
     // Validate form data
     if (
-        strlen($full_name) < 3 ||
-        strlen($full_name) > 60 ||
-        strlen($phone) != 10 ||
-        !ctype_digit($phone) ||
-        $phone[0] < '6' ||
-        $phone[0] > '9' ||
-        !$valid_date ||
-        ($email != '' && !filter_var($email, FILTER_VALIDATE_EMAIL))
+        strlen($full_name) >= 3 &&
+        strlen($full_name) <= 60 &&
+        strlen($phone) == 10 &&
+        ctype_digit($phone) &&
+        $phone[0] >= '6' &&
+        $phone[0] <= '9' &&
+        $valid_date &&
+        ($email == '' || filter_var($email, FILTER_VALIDATE_EMAIL))
     ) {
-
-        $header_appointment_status = 'invalid';
-
-    } else {
 
         // Prepare email data
         $name = htmlspecialchars($full_name, ENT_QUOTES, 'UTF-8');
@@ -61,32 +75,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['header_appointment']))
             <p><strong>Email:</strong> $email_safe</p>
 
             <p><strong>Phone:</strong> $phone_safe</p>
+        ";
 
+        if ($appointment_date != '') {
+            $body .= "
             <p><strong>Appointment Date:</strong> $date_safe</p>
+        ";
+        }
 
+        $body .= "
             <p><strong>Message:</strong> $message_safe</p>
         ";
 
-        // Send email
         // Verify Google reCAPTCHA v2
-$recaptcha_token = $_POST['g-recaptcha-response'] ?? '';
+        $recaptcha_token = $_POST['g-recaptcha-response'] ?? '';
 
-if (!recaptchaVerify($recaptcha_token)) {
+        if (!recaptchaVerify($recaptcha_token)) {
 
-    $header_appointment_status = 'captcha_failed';
+            $status = 'captcha_failed';
 
-} else {
+        } elseif (SendEmailer('tusharsharma6868@gmail.com', $subject, $body)) {
 
-    // Send email
-    if (SendEmailer('tusharsharma6868@gmail.com', $subject, $body)) {
+            $status = 'success';
 
-        $header_appointment_status = 'success';
+        } else {
 
-    } else {
-
-        $header_appointment_status = 'failed';
+            $status = 'failed';
+        }
     }
-}
+
+    // Save the status for the form that was submitted
+    if ($form_type == 'appointment') {
+        $header_appointment_status = $status;
+    } else {
+        $appointment_status = $status;
     }
 }
 ?>

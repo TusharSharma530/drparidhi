@@ -1,63 +1,10 @@
 
 <?php
 include 'header.php'; 
-require_once __DIR__ . '/recaptacha.php';
 
-$appointment_status = '';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirm_appointment'])) {
-
-    $full_name = trim($_POST['full_name']);
-    $email = trim($_POST['email']);
-    $phone = trim($_POST['phone']);
-    $message = trim($_POST['message']);
-
-    // Validate form data
-    if (
-        strlen($full_name) < 3 ||
-        strlen($full_name) > 60 ||
-        strlen($phone) != 10 ||
-        !ctype_digit($phone) ||
-        $phone[0] < '6' ||
-        $phone[0] > '9' ||
-        ($email != '' && !filter_var($email, FILTER_VALIDATE_EMAIL))
-    ) {
-        $appointment_status = 'invalid';
-
-    } else {
-
-        $name = htmlspecialchars($full_name, ENT_QUOTES, 'UTF-8');
-        $email_safe = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
-        $phone_safe = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
-        $message_safe = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
-
-        $subject = "New Appointment Request - " . SITE_NAME;
-
-        $body = "
-            <h2>New Appointment Request</h2>
-            <p><strong>Full Name:</strong> $name</p>
-            <p><strong>Email:</strong> $email_safe</p>
-            <p><strong>Phone:</strong> $phone_safe</p>
-            <p><strong>Message:</strong> $message_safe</p>
-        ";
-
-        $recaptcha_token = $_POST['g-recaptcha-response'] ?? '';
-
-if (!recaptchaVerify($recaptcha_token)) {
-
-    $appointment_status = 'captcha_failed';
-
-} else {
-
-    if (SendEmailer('tusharsharma6868@gmail.com', $subject, $body)) {
-        $appointment_status = 'success';
-    } else {
-        $appointment_status = 'failed';
-    }
-
-}
-    }
-}
+// Both the Contact Us form and the Appointment form are handled
+// by the single POST handler at the top of header.php
+// ($appointment_status is already set there).
 ?>
 
 
