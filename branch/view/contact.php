@@ -1,11 +1,3 @@
-
-<?php
-include '/../../index.php'; 
-?>
-
-
-
-
 <main>
     <section class="consult-section">
         <div class="container">
@@ -37,12 +29,12 @@ include '/../../index.php';
                                 <span class="consult-label">Call now</span>
 
                                 <a class="consult-value"
-                                   href="tel:<?= htmlspecialchars($contactno) ?>">
+                                   href="tel:<?= $contactno?>">
 
-                                    <?= htmlspecialchars($contactno) ?>
+                                    <?= $contactno?>
 
                                     <?php if (!empty($alternateno)) { ?>
-                                        , <?= htmlspecialchars($alternateno) ?>
+                                        , <?= $alternateno?>
                                     <?php } ?>
 
                                 </a>
@@ -61,9 +53,9 @@ include '/../../index.php';
                                 <span class="consult-label">Email</span>
 
                                 <a class="consult-value"
-                                   href="mailto:<?= htmlspecialchars($emailid) ?>">
+                                   href="mailto:<?= $emailid ?>">
 
-                                    <?= htmlspecialchars($emailid) ?>
+                                    <?= $emailid ?>
 
                                 </a>
                             </span>
@@ -150,29 +142,29 @@ include '/../../index.php';
                               method="POST">
                            <?php if ($appointment_status == 'success') { ?>
 
-    <div class="alert alert-success">
-        Your appointment request has been sent successfully!
-    </div>
+                                <div class="alert alert-success">
+                                    Your appointment request has been sent successfully!
+                                </div>
 
-<?php } elseif ($appointment_status == 'failed') { ?>
+                            <?php } elseif ($appointment_status == 'failed') { ?>
 
-    <div class="alert alert-danger">
-        Sorry! Unable to send your appointment request. Please try again.
-    </div>
+                                <div class="alert alert-danger">
+                                    Sorry! Unable to send your appointment request. Please try again.
+                                </div>
 
-<?php } elseif ($appointment_status == 'invalid') { ?>
+                            <?php } elseif ($appointment_status == 'invalid') { ?>
 
-    <div class="alert alert-warning">
-        Please enter valid details.
-    </div>
+                                <div class="alert alert-warning">
+                                    Please enter valid details.
+                                </div>
 
-<?php } elseif ($appointment_status == 'captcha_failed') { ?>
+                            <?php } elseif ($appointment_status == 'captcha_failed') { ?>
 
-    <div class="alert alert-warning">
-        Please verify that you are not a robot.
-    </div>
+                                <div class="alert alert-warning">
+                                    Please verify that you are not a robot.
+                                </div>
 
-<?php } ?>
+                            <?php } ?>
                             <!-- Full Name -->
                             <div class="consult-field">
                                 <label for="consultName">Full Name</label>
@@ -245,13 +237,13 @@ include '/../../index.php';
                                         placeholder="Message"></textarea>
                                 </div>
                             </div>
-<div class="consult-field">
+                            <div class="consult-field">
 
-    <div class="g-recaptcha"
-         data-sitekey="<?= htmlspecialchars(RECAPTCHA_SITE_KEY) ?>">
-    </div>
+                                <div class="g-recaptcha"
+                                    data-sitekey="<?= htmlspecialchars(RECAPTCHA_SITE_KEY) ?>">
+                                </div>
 
-</div>
+                            </div>
                             <!-- Submit Button -->
                            <button type="submit"
                                     name="confirm_appointment"

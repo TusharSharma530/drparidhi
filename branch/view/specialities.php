@@ -1,6 +1,4 @@
 <?php
-require_once __DIR__ . '/../../index.php';
-
 $typeSegments = explode('/', trim($_GET['type'] ?? '', '/'));
 $condSlug = $typeSegments[1] ?? '';
 
@@ -94,14 +92,7 @@ if ($condSlug !== '') {
 
                 <div class="pregnancy-blog-banner mb-4">
 
-                    <img
-                        src="<?= !empty($conditionData['featured_img'])
-                            ? htmlspecialchars($path . $conditionData['featured_img'])
-                            : htmlspecialchars($path . 'branch/assets/pregnancycare.webp') ?>"
-                        alt="<?= htmlspecialchars($conditionData['sc_name']) ?>"
-                        class="img-fluid w-100"
-                        loading="lazy"
-                    >
+                    <img src="<?= $path . $conditionData['featured_img'] ?>" class="img-fluid w-100" >
 
                 </div>
 
@@ -171,11 +162,7 @@ if ($condSlug !== '') {
 
                             <?php if (!empty($conditionData['featured_img'])) { ?>
 
-                                <img
-                                    src="<?= htmlspecialchars(($path ?? '') . ($conditionData['featured_img'] ?? '')) ?>"
-                                    alt="<?= htmlspecialchars($conditionData['sc_name'] ?? '') ?>"
-                                    loading="lazy"
-                                >
+                                <img src="<?= $path . $conditionData['featured_img'] ?>" >
 
                             <?php } ?>
 

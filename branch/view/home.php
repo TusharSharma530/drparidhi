@@ -1,18 +1,9 @@
-
-
-
-    <!-- Header / Navbar -->
-    <?php
-    include_once __DIR__ . '/../../index.php';
-    ?>
-
     <!-- Homepage Banner (web_banner table - slick slider) -->
     <main>
         <?php
         $bannerQuery = mysqli_query($con, "SELECT wb_img FROM web_banner WHERE status = 1 ORDER BY wb_order ASC, id ASC");
         ?>
-        <link rel="stylesheet" href="slick/slick.css">
-        <link rel="stylesheet" href="slick/slick-theme.css">
+       
 
         <section class="home-banner">
             <?php if ($bannerQuery && mysqli_num_rows($bannerQuery) > 0) { ?>
@@ -21,9 +12,7 @@
                         <?php if (!empty($bannerData['wb_img'])) { ?>
                             <div class="slider-item">
                                 <div class="slider-pad">
-                                    <img
-                                        src="<?= htmlspecialchars(($path ?? '') . ($bannerData['wb_img'] ?? '')) ?>"
-                                        alt="Banner">
+                                    <img src="<?= $path . $bannerData['wb_img'] ?>" >
                                 </div>
                             </div>
                         <?php } ?>
@@ -72,18 +61,18 @@
                     
                     <div class="about-actions">
 
-                        <a class="about-btn" href="<?= rtrim($path, '/') ?>/about-us">
+                        <a class="about-btn" href="<?=$path?>about-us">
                             Know More
                         </a>
 
                         <?php if (!empty($contactno)) { ?>
                             <a class="about-helpline"
-                            href="tel:<?= htmlspecialchars($contactno) ?>">
+                            href="tel:<?= $contactno ?>">
 
-                                Helpline! <?= htmlspecialchars($contactno) ?>
+                                Helpline! <?= $contactno?>
 
                                 <?php if (!empty($alternateno)) { ?>
-                                    , <?= htmlspecialchars($alternateno) ?>
+                                    , <?= $alternateno?>
                                 <?php } ?>
 
                             </a>
@@ -96,9 +85,7 @@
                 <!-- Right Side Image -->
                 <div class="why-choose">
                     <?php if (!empty($aboutData['featured_img'])) { ?>
-                    <img
-                        src="<?= htmlspecialchars(($path ?? '') . ($aboutData['featured_img'] ?? '')) ?>"
-                        />
+                    <img src="<?= $path . $aboutData['featured_img'] ?>" />
                     <?php } ?>
                 </div>
 
@@ -137,11 +124,7 @@
                         <div class="slider-pad">
                             <a href="<?= $path ?>specialities/<?= htmlspecialchars($conditionData['sc_url'] ?? seo_friendly_url($conditionData['sc_name'] ?? '')) ?>" class="condition-card">
 
-                                <?php if (!empty($conditionData['featured_img'])) { ?>
-                                    <img
-                                       src="<?= htmlspecialchars(($path ?? '') . ($conditionData['featured_img'] ?? '')) ?>"
-                                    >
-                                <?php } ?>
+                                 <img src="<?= $path . $conditionData['featured_img'] ?>">
 
                                 <h3 class="condition-name">
                                     <?= htmlspecialchars($conditionData['sc_name']) ?>
@@ -171,30 +154,35 @@
         <section class="gallery-section home-gallery-section">
             <div class="container">
                 <div class="section-head">
-                <span class="section-tag">Our Clinic</span>
-                <h2 class="section-title">Gallery</h2>
-            </div>
+                    <span class="section-tag">Our Clinic</span>
+                    <h2 class="section-title">Gallery</h2>
+                </div>
 
-            <div class="slider" data-slides-desktop="4" data-slides-mobile="2">
+                <div class="slider" data-slides-desktop="4" data-slides-mobile="2">
 
-                <?php while ($galleryData = mysqli_fetch_assoc($galleryQuery)) { ?>
-                    <?php if (!empty($galleryData['file'])) { ?>
-                        <div class="slider-item">
-                            <div class="slider-pad">
-                                <div class="gallery-item">
-                                    <img
-                                        src="<?= htmlspecialchars(($path ?? '') . ($galleryData['file'] ?? '')) ?>"
-                                    >
+                    <?php while ($galleryData = mysqli_fetch_assoc($galleryQuery)) { ?>
+                        <?php if (!empty($galleryData['file'])) { ?>
+                            <div class="slider-item">
+                                <div class="slider-pad">
+                                    <div class="gallery-item">
+                                        <a href="<?= $path . $galleryData['file'] ?>"
+                                        class="glightbox"
+                                        data-gallery="clinic-gallery">
+
+                                            <img src="<?= $path . $galleryData['file'] ?>"
+                                                alt="Clinic Gallery"
+                                                loading="lazy">
+
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php } ?>
                     <?php } ?>
-                <?php } ?>
 
-            </div>
+                </div>
             </div>
         </section>
-        
         
         <?php
         $commitmentQuery = mysqli_query($con, "
@@ -212,9 +200,7 @@
 
                 <div class="commitment-image">
                     <?php if (!empty($commitmentData['featured_img'])) { ?>
-                        <img
-                            src="<?= htmlspecialchars(($path ?? '') . ($commitmentData['featured_img'] ?? '')) ?>"
-                        >
+                        <img src="<?= $path . $commitmentData['featured_img'] ?>" >
                     <?php } ?>
                 </div>
 
@@ -256,12 +242,12 @@
                                     <span class="text-white fw-bold fs-4">Call Us:</span>
                                 </div>
 
-                                <a href="tel:<?= htmlspecialchars($contactno ?? '') ?>"
+                                <a href="tel:<?= $contactno ?>"
                                 class="text-white text-decoration-none fs-5">
-                                    <?= htmlspecialchars($contactno ?? '') ?>
+                                    <?= $contactno ?>
 
                                     <?php if (!empty($alternateno)) { ?>
-                                        , <?= htmlspecialchars($alternateno) ?>
+                                        , <?= $alternateno ?>
                                     <?php } ?>
                                 </a>
                             </div>
@@ -272,9 +258,9 @@
                                     <span class="text-white fw-bold fs-4">E-mail Us:</span>
                                 </div>
 
-                                <a href="mailto:<?= htmlspecialchars($emailid ?? '') ?>"
+                                <a href="mailto:<?= $emailid ?>"
                                 class="text-white text-decoration-none fs-5">
-                                    <?= htmlspecialchars($emailid ?? '') ?>
+                                    <?= $emailid ?>
                                 </a>
                             </div>
 
@@ -287,7 +273,7 @@
                             </div>
 
                             <span class="text-white fs-5">
-                                <?= htmlspecialchars($address ?? '') ?>
+                                <?= $address ?>
                             </span>
                         </div>
 
@@ -377,7 +363,7 @@
                                         ★★★★★
                                     </div>
 
-                                    <?php /* allowed tags wali list mat hatana — warna <h4>/<p> cut ho jayenge */ ?>
+                                    <?php ?>
                                     <?= strip_tags(
                                         $testimonialData['desc'] ?? '',
                                         '<h4><p><br><strong><b><em><i><u>'
@@ -435,11 +421,7 @@
 
                                 <a href="<?= htmlspecialchars($path . 'blogs/' . (!empty($blogData['url']) ? trim($blogData['url']) : seo_friendly_url($blogData['title'] ?? ''))) ?>" class="blog-card h-100">
 
-                                    <img
-                                        src="<?= htmlspecialchars(($path ?? '') . ($blogData['file'] ?? '')) ?>"
-                                        class="img-fluid"
-                                        loading="lazy"
-            >
+                                    <img src="<?= $path . $blogData['file']?>"class="img-fluid">
 
                                     <div class="blog-content p-3">
 

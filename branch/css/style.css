@@ -2245,3 +2245,10 @@ a.consult-section .consult-value:hover {
     margin: 25px 0;
 }
 
+.other-speciality-link span {
+    transition: color 0.3s ease;
+}
+
+.other-speciality-link:hover span {
+    color: #fff;
+}

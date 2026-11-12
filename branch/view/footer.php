@@ -1,7 +1,4 @@
-<?php
-    include_once __DIR__ . '/../../index.php';
-    ?>
-<!-- Footer Section -->
+
 <footer class="site-footer">
 
     <div class="container">
@@ -13,10 +10,7 @@
             <a href="<?= $path ?>" class="footer-doctor-brand">
 
                 <span class="footer-doctor-logo">
-                    <img
-                        src="<?= htmlspecialchars(($path ?? '') . ($logo ?? '')) ?>"
-                        alt="<?= htmlspecialchars($websitename ?? '') ?> Logo"
-                    >
+                    <img src="<?= $path  . $logo ?>" >
                 </span>
 
                 <span class="footer-doctor-info">
@@ -39,7 +33,6 @@
 
                     <?php if (!empty($youtube)) { ?>
                         <a href="<?= htmlspecialchars($youtube) ?>"
-                        target="_blank"
                         rel="noopener noreferrer"
                         class="social-youtube"
                         aria-label="YouTube">
@@ -110,15 +103,15 @@
                             <br>
 
                             <?php if (!empty($contactno)) { ?>
-                                <a href="tel:<?= htmlspecialchars($contactno) ?>">
-                                    <?= htmlspecialchars($contactno) ?>
+                                <a href="tel:<?= $contactno ?>">
+                                    <?= $contactno ?>
                                 </a>
                             <?php } ?>
 
                             <?php if (!empty($alternateno)) { ?>
                                 <br>
-                                <a href="tel:<?= htmlspecialchars($alternateno) ?>">
-                                    <?= htmlspecialchars($alternateno) ?>
+                                <a href="tel:<?= $alternateno ?>">
+                                    <?= $alternateno ?>
                                 </a>
                             <?php } ?>
 
@@ -181,7 +174,7 @@
 
                                 // Check valid route and view file
                                 if (
-                                    preg_match('/^[a-z0-9_-]+$/i', $pageRoute) &&
+                                    $pageRoute &&
                                     file_exists(__DIR__ . '/../view/' . $pageRoute . '.php')
                                 ) {
                                     $pageLink = rtrim($path, '/') . '/' . $pageRoute;
@@ -279,7 +272,7 @@
 <div class="float-contact">
 
     <?php if (!empty($contactno)) { ?>
-        <a href="tel:<?= htmlspecialchars($contactno) ?>"
+        <a href="tel:<?= $contactno ?>"
            class="float-call"
            aria-label="Call us">
             <i class="bi bi-telephone-fill"></i>
@@ -305,3 +298,23 @@
 <button type="button" class="back-to-top" aria-label="Back to top">
     <i class="bi bi-arrow-up"></i>
 </button>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Slick Slider -->
+<script src="<?= $path ?>slick/slick.min.js"></script>
+
+<!-- Google reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- Main JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script src="<?= $path ?>branch/js/script.js"></script>
+
+
+</body>
+</html>

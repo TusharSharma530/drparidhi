@@ -8,8 +8,6 @@ require_once __DIR__ . '/recaptacha.php';
 $header_appointment_status = '';
 $appointment_status = '';
 
-// Which form was submitted? "header_appointment" = Appointment modal,
-// "confirm_appointment" = Contact Us consultation form
 $form_type = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -137,6 +135,9 @@ if ($form_type != '') {
     <!-- Main CSS -->
     <link rel="stylesheet" href="<?= $path ?>branch/css/style.css">
     <link rel="stylesheet" href="<?= $path ?>branch/css/responsiveness.css">
+     <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 </head>
 
 <body>
@@ -649,18 +650,4 @@ if (!empty($currentPage) && $currentPage !== 'home'):
 </div>
 
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- jQuery + Slick (used by the sliders initialised in script.js) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="<?= $path ?>slick/slick.min.js"></script>
-
-<!-- Main JavaScript -->
- <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src="<?= $path ?>branch/js/script.js"></script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-
-</body>
-</html>

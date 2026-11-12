@@ -1,6 +1,5 @@
 
 <?php
-require_once __DIR__ . '/../../index.php';
 
 $typeSegments = explode('/', trim($_GET['type'] ?? '', '/'));
 $blogSlug = $typeSegments[1] ?? '';
@@ -43,12 +42,7 @@ if ($blogSlug !== '') {
             <div class="col-lg-8">
 
                 <div class="pregnancy-blog-banner mb-4">
-                    <img
-                        src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : $path . 'branch/assets/blog1.webp'; ?>"
-                        alt="<?php echo htmlspecialchars($blog['title']); ?>"
-                        class="img-fluid w-100"
-                        loading="lazy"
-                    >
+                    <img src="<?= $path .  $blog['file'] ?>"class="img-fluid w-100" >
                 </div>
 
                 <div class="blog-content">
@@ -95,11 +89,7 @@ if ($blogSlug !== '') {
                         <a href="<?php echo htmlspecialchars($path . 'blogs/' . $otherSlug); ?>"
                            class="other-blog-item">
 
-                            <img
-                                src="<?php echo !empty($otherBlog['file']) ? $path . $otherBlog['file'] : $path . 'branch/assets/blog1.webp'; ?>"
-                                alt="<?php echo htmlspecialchars($otherBlog['title']); ?>"
-                                loading="lazy"
-                            >
+                            <img src="<?= $path . $otherBlog['file'] ?>">
 
                             <div class="other-blog-content">
 
@@ -158,11 +148,7 @@ if ($blogSlug !== '') {
                        <a href="<?= htmlspecialchars($path . 'blogs/' . $blogCardSlug) ?>" class="blog-card h-100">
 
                             <img
-                                src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : $path . 'branch/assets/blog1.webp'; ?>"
-                                alt="<?php echo htmlspecialchars($blog['title']); ?>"
-                                class="img-fluid"
-                                loading="lazy"
-                            >
+                                src="<?= $path . $blog['file'] ?>"class="img-fluid">
 
                             <div class="blog-content p-3">
 
