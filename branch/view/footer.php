@@ -1,4 +1,6 @@
-
+<?php
+    include_once __DIR__ . '/../../index.php';
+    ?>
 <!-- Footer Section -->
 <footer class="site-footer">
 
@@ -8,23 +10,23 @@
        
         <div class="footer-top">
 
-            <a href="<?= $urlbase ?>default" class="footer-doctor-brand">
+            <a href="<?= $path ?>" class="footer-doctor-brand">
 
                 <span class="footer-doctor-logo">
                     <img
-                        src="<?= htmlspecialchars(($path ?? '') . ($logo ?? ''), ENT_QUOTES, 'UTF-8') ?>"
-                        alt="<?= htmlspecialchars($websitename ?? '', ENT_QUOTES, 'UTF-8') ?> Logo"
+                        src="<?= htmlspecialchars(($path ?? '') . ($logo ?? '')) ?>"
+                        alt="<?= htmlspecialchars($websitename ?? '') ?> Logo"
                     >
                 </span>
 
                 <span class="footer-doctor-info">
 
                     <span class="footer-doctor-name">
-                        <?= htmlspecialchars($websitename ?? '', ENT_QUOTES, 'UTF-8') ?>
+                        <?= htmlspecialchars($websitename ?? '') ?>
                     </span>
 
                 <span class="footer-doctor-tagline">
-                        <?= str_replace('|', '<br>', htmlspecialchars($headercenterline ?? '', ENT_QUOTES, 'UTF-8')) ?>
+                        <?= str_replace('|', '<br>', htmlspecialchars($headercenterline ?? '')) ?>
                     </span>
                 </span>
             </a>
@@ -36,7 +38,7 @@
                 <div class="footer-social-icons">
 
                     <?php if (!empty($youtube)) { ?>
-                        <a href="<?= htmlspecialchars($youtube, ENT_QUOTES, 'UTF-8') ?>"
+                        <a href="<?= htmlspecialchars($youtube) ?>"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="social-youtube"
@@ -46,7 +48,7 @@
                     <?php } ?>
 
                     <?php if (!empty($instagram)) { ?>
-                        <a href="<?= htmlspecialchars($instagram, ENT_QUOTES, 'UTF-8') ?>"
+                        <a href="<?= htmlspecialchars($instagram) ?>"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="social-instagram"
@@ -56,7 +58,7 @@
                     <?php } ?>
 
                     <?php if (!empty($facebook)) { ?>
-                        <a href="<?= htmlspecialchars($facebook, ENT_QUOTES, 'UTF-8') ?>"
+                        <a href="<?= htmlspecialchars($facebook) ?>"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="social-facebook"
@@ -77,13 +79,11 @@
         <!-- Middle Columns -->
         <div class="row g-4 footer-main">
 
-            <!-- About Us -->
-            <!-- About Us -->
             <div class="col-md-6 col-lg-3">
                 <h3>About Us</h3>
 
                 <p>
-                    <?= htmlspecialchars($footerdesc ?? '', ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($footerdesc ?? '') ?>
                 </p>
             </div>
 
@@ -99,7 +99,7 @@
                         <span>
                             <strong>Address :</strong>
                             <br>
-                            <?= htmlspecialchars($address ?? '', ENT_QUOTES, 'UTF-8') ?>
+                            <?= htmlspecialchars($address ?? '') ?>
                         </span>
                     </li>
 
@@ -110,15 +110,15 @@
                             <br>
 
                             <?php if (!empty($contactno)) { ?>
-                                <a href="tel:<?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>">
-                                    <?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>
+                                <a href="tel:<?= htmlspecialchars($contactno) ?>">
+                                    <?= htmlspecialchars($contactno) ?>
                                 </a>
                             <?php } ?>
 
                             <?php if (!empty($alternateno)) { ?>
                                 <br>
-                                <a href="tel:<?= htmlspecialchars($alternateno, ENT_QUOTES, 'UTF-8') ?>">
-                                    <?= htmlspecialchars($alternateno, ENT_QUOTES, 'UTF-8') ?>
+                                <a href="tel:<?= htmlspecialchars($alternateno) ?>">
+                                    <?= htmlspecialchars($alternateno) ?>
                                 </a>
                             <?php } ?>
 
@@ -132,15 +132,15 @@
                             <br>
 
                             <?php if (!empty($emailid)) { ?>
-                                <a href="mailto:<?= htmlspecialchars($emailid, ENT_QUOTES, 'UTF-8') ?>">
-                                    <?= htmlspecialchars($emailid, ENT_QUOTES, 'UTF-8') ?>
+                                <a href="mailto:<?= htmlspecialchars($emailid) ?>">
+                                    <?= htmlspecialchars($emailid) ?>
                                 </a>
                             <?php } ?>
 
                             <?php if (!empty($alternateemailid)) { ?>
                                 <br>
-                                <a href="mailto:<?= htmlspecialchars($alternateemailid, ENT_QUOTES, 'UTF-8') ?>">
-                                    <?= htmlspecialchars($alternateemailid, ENT_QUOTES, 'UTF-8') ?>
+                                <a href="mailto:<?= htmlspecialchars($alternateemailid) ?>">
+                                    <?= htmlspecialchars($alternateemailid) ?>
                                 </a>
                             <?php } ?>
 
@@ -151,6 +151,7 @@
             </div>
 
             
+       
         <!-- Other Pages -->
         <div class="col-md-6 col-lg-3">
             <h3>Other Pages</h3>
@@ -161,45 +162,55 @@
                     $sql = "SELECT c_name, c_url FROM category WHERE status = 1 AND c_type = 1";
                     $result = mysqli_query($con, $sql);
 
-                    // c_url slug -> front-end route (view file name)
-                    $footerPageRoutes = [
-                        'home'     => 'default',
-                        'about-us' => 'about',
-                    ];
-
                     if ($result && mysqli_num_rows($result) > 0) {
 
                         while ($row = mysqli_fetch_assoc($result)) {
 
                             $pageSlug = trim($row['c_url'] ?? '');
-                            $pageRoute = $footerPageRoutes[$pageSlug] ?? $pageSlug;
 
-                            // Sirf valid route (view file exist karti ho) par link banao
                             $pageLink = '';
-                            if (preg_match('/^[a-z0-9\-_]+$/i', $pageRoute)
-                                && file_exists(__DIR__ . '/' . $pageRoute . '.php')) {
-                                $pageLink = $urlbase . $pageRoute;
+
+                            // Home page: Open root URL without filename
+                            if ($pageSlug === 'home') {
+
+                                $pageLink = $path;
+
+                            } else {
+
+                                $pageRoute = $pageSlug;
+
+                                // Check valid route and view file
+                                if (
+                                    preg_match('/^[a-z0-9_-]+$/i', $pageRoute) &&
+                                    file_exists(__DIR__ . '/../view/' . $pageRoute . '.php')
+                                ) {
+                                    $pageLink = rtrim($path, '/') . '/' . $pageRoute;
+                                }
                             }
                     ?>
 
                             <li>
                                 <?php if ($pageLink !== '') { ?>
-                                    <a href="<?= htmlspecialchars($pageLink, ENT_QUOTES, 'UTF-8') ?>">
-                                        <?= htmlspecialchars($row['c_name'], ENT_QUOTES, 'UTF-8') ?>
+
+                                    <a href="<?= htmlspecialchars($pageLink) ?>">
+                                        <?= htmlspecialchars($row['c_name']) ?>
                                     </a>
+
                                 <?php } else { ?>
-                                    <?= htmlspecialchars($row['c_name'], ENT_QUOTES, 'UTF-8') ?>
+
+                                    <?= htmlspecialchars($row['c_name']) ?>
+
                                 <?php } ?>
                             </li>
 
                     <?php
                         }
-
                     }
                     ?>
                 </ul>
             </div>
         </div>
+
 
 
             <!-- Our Services -->
@@ -224,8 +235,8 @@
                 ?>
 
                         <li>
-                            <a href="<?= htmlspecialchars($urlbase . 'specialities/' . $serviceSlug, ENT_QUOTES, 'UTF-8') ?>">
-                                <?= htmlspecialchars($row['sc_name'], ENT_QUOTES, 'UTF-8') ?>
+                            <a href="<?= htmlspecialchars($path . 'specialities/' . $serviceSlug) ?>">
+                                <?= htmlspecialchars($row['sc_name']) ?>
                             </a>
                         </li>
 
@@ -268,7 +279,7 @@
 <div class="float-contact">
 
     <?php if (!empty($contactno)) { ?>
-        <a href="tel:<?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>"
+        <a href="tel:<?= htmlspecialchars($contactno) ?>"
            class="float-call"
            aria-label="Call us">
             <i class="bi bi-telephone-fill"></i>
@@ -278,7 +289,7 @@
     <?php if (!empty($whatsapp)) {
         $whatsappNumber = preg_replace('/[^0-9]/', '', $whatsapp);
     ?>
-        <a href="https://wa.me/<?= htmlspecialchars($whatsappNumber, ENT_QUOTES, 'UTF-8') ?>"
+        <a href="https://wa.me/<?= htmlspecialchars($whatsappNumber) ?>"
            target="_blank"
            rel="noopener noreferrer"
            class="float-whatsapp"

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../manager/database/db.php';
+require_once __DIR__ . '/../../index.php';
 
 $typeSegments = explode('/', trim($_GET['type'] ?? '', '/'));
 $condSlug = $typeSegments[1] ?? '';
@@ -25,7 +25,6 @@ if ($condSlug !== '') {
     }
 }
 
-include 'header.php';
 ?>
 <main>
 
@@ -69,15 +68,12 @@ include 'header.php';
                     ?>
 
                         <a href="<?= htmlspecialchars(
-                            $urlbase . 'specialities/' . $otherSlug,
-                            ENT_QUOTES,
-                            'UTF-8'
+                            $path . 'specialities/' . $otherSlug
+                          
                         ) ?>" class="other-speciality-link">
 
                             <?= htmlspecialchars(
-                                $other['sc_name'],
-                                ENT_QUOTES,
-                                'UTF-8'
+                                $other['sc_name']
                             ) ?>
 
                             <span>→</span>
@@ -100,9 +96,9 @@ include 'header.php';
 
                     <img
                         src="<?= !empty($conditionData['featured_img'])
-                            ? htmlspecialchars($path . $conditionData['featured_img'], ENT_QUOTES, 'UTF-8')
-                            : htmlspecialchars($urlbase . 'branch/assets/pregnancycare.webp', ENT_QUOTES, 'UTF-8') ?>"
-                        alt="<?= htmlspecialchars($conditionData['sc_name'], ENT_QUOTES, 'UTF-8') ?>"
+                            ? htmlspecialchars($path . $conditionData['featured_img'])
+                            : htmlspecialchars($path . 'branch/assets/pregnancycare.webp') ?>"
+                        alt="<?= htmlspecialchars($conditionData['sc_name']) ?>"
                         class="img-fluid w-100"
                         loading="lazy"
                     >
@@ -113,9 +109,7 @@ include 'header.php';
 
                     <h1 class="section-title">
                         <?= htmlspecialchars(
-                            $conditionData['sc_name'],
-                            ENT_QUOTES,
-                            'UTF-8'
+                            $conditionData['sc_name']
                         ) ?>
                     </h1>
 
@@ -173,24 +167,24 @@ include 'header.php';
 
                     <div class="col-md-6 col-lg-3">
 
-                        <a href="<?= htmlspecialchars($urlbase . 'specialities/' . $cardSlug, ENT_QUOTES, 'UTF-8') ?>" class="condition-card">
+                        <a href="<?= htmlspecialchars($path . 'specialities/' . $cardSlug) ?>" class="condition-card">
 
                             <?php if (!empty($conditionData['featured_img'])) { ?>
 
                                 <img
-                                    src="<?= htmlspecialchars(($path ?? '') . ($conditionData['featured_img'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
-                                    alt="<?= htmlspecialchars($conditionData['sc_name'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                                    src="<?= htmlspecialchars(($path ?? '') . ($conditionData['featured_img'] ?? '')) ?>"
+                                    alt="<?= htmlspecialchars($conditionData['sc_name'] ?? '') ?>"
                                     loading="lazy"
                                 >
 
                             <?php } ?>
 
                             <h3 class="condition-name">
-                                <?= htmlspecialchars($conditionData['sc_name'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                                <?= htmlspecialchars($conditionData['sc_name'] ?? '') ?>
                             </h3>
 
                             <p class="condition-text">
-                                <?= htmlspecialchars($conditionData['sdesc'] ?? '', ENT_QUOTES, 'UTF-8') ?>
+                                <?= htmlspecialchars($conditionData['sdesc'] ?? '') ?>
                             </p>
 
                             <span class="read-more">Read More →</span>
@@ -214,5 +208,3 @@ include 'header.php';
 <?php } ?>
 
 </main>
-
-<?php include __DIR__ . '/footer.php'; ?>

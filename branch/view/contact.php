@@ -1,6 +1,6 @@
 
 <?php
-include 'header.php'; 
+include '/../../index.php'; 
 ?>
 
 
@@ -37,12 +37,12 @@ include 'header.php';
                                 <span class="consult-label">Call now</span>
 
                                 <a class="consult-value"
-                                   href="tel:<?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>">
+                                   href="tel:<?= htmlspecialchars($contactno) ?>">
 
-                                    <?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>
+                                    <?= htmlspecialchars($contactno) ?>
 
                                     <?php if (!empty($alternateno)) { ?>
-                                        , <?= htmlspecialchars($alternateno, ENT_QUOTES, 'UTF-8') ?>
+                                        , <?= htmlspecialchars($alternateno) ?>
                                     <?php } ?>
 
                                 </a>
@@ -61,9 +61,9 @@ include 'header.php';
                                 <span class="consult-label">Email</span>
 
                                 <a class="consult-value"
-                                   href="mailto:<?= htmlspecialchars($emailid, ENT_QUOTES, 'UTF-8') ?>">
+                                   href="mailto:<?= htmlspecialchars($emailid) ?>">
 
-                                    <?= htmlspecialchars($emailid, ENT_QUOTES, 'UTF-8') ?>
+                                    <?= htmlspecialchars($emailid) ?>
 
                                 </a>
                             </span>
@@ -81,7 +81,7 @@ include 'header.php';
                                 <span class="consult-label">Address</span>
 
                                 <span class="consult-value" id="consultAddress">
-                                    <?= nl2br(htmlspecialchars($address, ENT_QUOTES, 'UTF-8')) ?>
+                                    <?= nl2br(htmlspecialchars($address)) ?>
                                 </span>
                             </span>
                         </li>
@@ -98,7 +98,7 @@ include 'header.php';
                                 <span class="consult-label">Timings</span>
 
                                 <span class="consult-value">
-                                    <?= htmlspecialchars($time, ENT_QUOTES, 'UTF-8') ?>
+                                    <?= htmlspecialchars($time) ?>
                                 </span>
                             </span>
                         </li>
@@ -119,7 +119,7 @@ include 'header.php';
                     <div class="consult-map">
 
                         <iframe
-                            src="<?= htmlspecialchars($mapiframe, ENT_QUOTES, 'UTF-8') ?>"
+                            src="<?= htmlspecialchars($mapiframe) ?>"
                             width="100%"
                             height="450"
                             style="border:0;"
@@ -130,7 +130,7 @@ include 'header.php';
 
                         <?php if (!empty($address)) { ?>
                         <div class="consult-map-address">
-                            <?= nl2br(htmlspecialchars($address, ENT_QUOTES, 'UTF-8')) ?>
+                            <?= nl2br(htmlspecialchars($address)) ?>
                         </div>
                         <?php } ?>
 
@@ -248,7 +248,7 @@ include 'header.php';
 <div class="consult-field">
 
     <div class="g-recaptcha"
-         data-sitekey="<?= htmlspecialchars(RECAPTCHA_SITE_KEY, ENT_QUOTES, 'UTF-8') ?>">
+         data-sitekey="<?= htmlspecialchars(RECAPTCHA_SITE_KEY) ?>">
     </div>
 
 </div>
@@ -273,6 +273,5 @@ include 'header.php';
         </div>
     </section>
 </main>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-<?php include __DIR__ . '/footer.php'; ?>
+

@@ -1,6 +1,6 @@
 
 <?php
-require_once __DIR__ . '/../../manager/database/db.php';
+require_once __DIR__ . '/../../index.php';
 
 $typeSegments = explode('/', trim($_GET['type'] ?? '', '/'));
 $blogSlug = $typeSegments[1] ?? '';
@@ -26,7 +26,6 @@ if ($blogSlug !== '') {
     }
 }
 
-include 'header.php';
 ?>
 
 <main>
@@ -45,8 +44,8 @@ include 'header.php';
 
                 <div class="pregnancy-blog-banner mb-4">
                     <img
-                        src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : $urlbase . 'branch/assets/blog1.webp'; ?>"
-                        alt="<?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                        src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : $path . 'branch/assets/blog1.webp'; ?>"
+                        alt="<?php echo htmlspecialchars($blog['title']); ?>"
                         class="img-fluid w-100"
                         loading="lazy"
                     >
@@ -55,7 +54,7 @@ include 'header.php';
                 <div class="blog-content">
 
                     <h1 class="section-title">
-                        <?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>
+                        <?php echo htmlspecialchars($blog['title']); ?>
                     </h1>
 
                     <div class="blog-desc">
@@ -93,19 +92,19 @@ include 'header.php';
                                 : seo_friendly_url($otherBlog['title']);
                     ?>
 
-                        <a href="<?php echo htmlspecialchars($urlbase . 'blogs/' . $otherSlug, ENT_QUOTES, 'UTF-8'); ?>"
+                        <a href="<?php echo htmlspecialchars($path . 'blogs/' . $otherSlug); ?>"
                            class="other-blog-item">
 
                             <img
-                                src="<?php echo !empty($otherBlog['file']) ? $path . $otherBlog['file'] : $urlbase . 'branch/assets/blog1.webp'; ?>"
-                                alt="<?php echo htmlspecialchars($otherBlog['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                                src="<?php echo !empty($otherBlog['file']) ? $path . $otherBlog['file'] : $path . 'branch/assets/blog1.webp'; ?>"
+                                alt="<?php echo htmlspecialchars($otherBlog['title']); ?>"
                                 loading="lazy"
                             >
 
                             <div class="other-blog-content">
 
                                 <h5>
-                                    <?php echo htmlspecialchars($otherBlog['title'], ENT_QUOTES, 'UTF-8'); ?>
+                                    <?php echo htmlspecialchars($otherBlog['title']); ?>
                                 </h5>
 
                                 <span>Read More →</span>
@@ -156,11 +155,11 @@ include 'header.php';
 
                     <div class="col-md-6 col-lg-4">
 
-                       <a href="<?= htmlspecialchars($urlbase . 'blogs/' . $blogCardSlug, ENT_QUOTES, 'UTF-8') ?>" class="blog-card h-100">
+                       <a href="<?= htmlspecialchars($path . 'blogs/' . $blogCardSlug) ?>" class="blog-card h-100">
 
                             <img
-                                src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : $urlbase . 'branch/assets/blog1.webp'; ?>"
-                                alt="<?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                                src="<?php echo !empty($blog['file']) ? $path . $blog['file'] : $path . 'branch/assets/blog1.webp'; ?>"
+                                alt="<?php echo htmlspecialchars($blog['title']); ?>"
                                 class="img-fluid"
                                 loading="lazy"
                             >
@@ -172,7 +171,7 @@ include 'header.php';
                                 </span>
 
                                 <h3 class="testimonial-heading">
-                                    <?php echo htmlspecialchars($blog['title'], ENT_QUOTES, 'UTF-8'); ?>
+                                    <?php echo htmlspecialchars($blog['title']); ?>
                                 </h3>
 
                                 <div class="section-text mt-3">
@@ -203,4 +202,3 @@ include 'header.php';
 
 </main>
 
-<?php include __DIR__ . '/footer.php'; ?>

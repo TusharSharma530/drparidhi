@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../../manager/database/db.php';
 require_once __DIR__ . '/recaptacha.php';
 
+
 // Statuses used by each form (handled by this single block)
 $header_appointment_status = '';
 $appointment_status = '';
@@ -57,11 +58,11 @@ if ($form_type != '') {
     ) {
 
         // Prepare email data
-        $name = htmlspecialchars($full_name, ENT_QUOTES, 'UTF-8');
-        $email_safe = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
-        $phone_safe = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
-        $date_safe = htmlspecialchars($appointment_date, ENT_QUOTES, 'UTF-8');
-        $message_safe = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
+        $name = htmlspecialchars($full_name);
+        $email_safe = htmlspecialchars($email);
+        $phone_safe = htmlspecialchars($phone);
+        $date_safe = htmlspecialchars($appointment_date);
+        $message_safe = nl2br(htmlspecialchars($message));
 
         // Email subject
         $subject = "New Appointment Request - " . SITE_NAME;
@@ -134,8 +135,8 @@ if ($form_type != '') {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="<?= $urlbase ?>branch/css/style.css">
-    <link rel="stylesheet" href="<?= $urlbase ?>branch/css/responsiveness.css">
+    <link rel="stylesheet" href="<?= $path ?>branch/css/style.css">
+    <link rel="stylesheet" href="<?= $path ?>branch/css/responsiveness.css">
 </head>
 
 <body>
@@ -150,18 +151,18 @@ if ($form_type != '') {
             <div class="header-top-inner">
 
                 <!-- Logo -->
-                <a class="site-logo" href="<?= $urlbase ?>">
+                <a class="site-logo" href="<?= $path ?>">
 
                     <img src="<?=$path.$logo;?>" alt="<?=$websitename;?> Logo" class="site-logo-img">
 
                     <span class="logo-text">
 
                         <span class="logo-name">
-                            <?= htmlspecialchars($websitename ?? '', ENT_QUOTES, 'UTF-8') ?>
+                            <?= htmlspecialchars($websitename ?? '') ?>
                         </span>
 
                         <span class="logo-tagline">
-                            <?= str_replace('|', '<br>', htmlspecialchars($headercenterline ?? '', ENT_QUOTES, 'UTF-8')) ?>
+                            <?= str_replace('|', '<br>', htmlspecialchars($headercenterline ?? '')) ?>
                         </span>
 
                     </span>
@@ -171,7 +172,7 @@ if ($form_type != '') {
                 <div class="header-contact">
 
                     <?php if (!empty($emailid)) { ?>
-                        <a href="mailto:<?= htmlspecialchars($emailid, ENT_QUOTES, 'UTF-8') ?>"
+                        <a href="mailto:<?= htmlspecialchars($emailid) ?>"
                         class="contact-item">
 
                             <i class="bi bi-envelope"></i>
@@ -179,7 +180,7 @@ if ($form_type != '') {
                             <span class="contact-info">
                                 <small>Mail Us</small>
                                 <strong>
-                                    <?= htmlspecialchars($emailid, ENT_QUOTES, 'UTF-8') ?>
+                                    <?= htmlspecialchars($emailid) ?>
                                 </strong>
                             </span>
 
@@ -187,7 +188,7 @@ if ($form_type != '') {
                     <?php } ?>
 
                     <?php if (!empty($contactno)) { ?>
-                        <a href="tel:<?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>"
+                        <a href="tel:<?= htmlspecialchars($contactno) ?>"
                         class="contact-item">
 
                             <i class="bi bi-telephone"></i>
@@ -195,10 +196,10 @@ if ($form_type != '') {
                             <span class="contact-info">
                                 <small>Contact Us</small>
                                 <strong>
-                                    <?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>
+                                    <?= htmlspecialchars($contactno) ?>
 
                                     <?php if (!empty($alternateno)) { ?>
-                                        , <?= htmlspecialchars($alternateno, ENT_QUOTES, 'UTF-8') ?>
+                                        , <?= htmlspecialchars($alternateno) ?>
                                     <?php } ?>
                                 </strong>
                             </span>
@@ -218,7 +219,7 @@ if ($form_type != '') {
         <div class="container">
 
             <!-- Mobile Brand -->
-            <a class="navbar-brand d-lg-none" href="<?= $urlbase ?>">
+            <a class="navbar-brand d-lg-none" href="<?= $path ?>">
                 <img src="<?=$path.$logo;?>" alt="<?=$websitename;?> Logo" class="site-logo-img">
 
                 <span class="logo-text">
@@ -248,39 +249,39 @@ if ($form_type != '') {
                     
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="<?= $urlbase ?>">
+                        <a class="nav-link active" href="<?= $path ?>">
                             Home
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $urlbase ?>about">
+                        <a class="nav-link" href="<?= $path ?>about-us">
                             About Us
                         </a>
                     </li>
 
                     <li class="nav-item dropdown speciality-dropdown">
                         <div class="speciality-nav-wrapper">
-                            <a class="nav-link" href="<?= $urlbase ?>specialities">
+                            <a class="nav-link" href="<?= $path ?>specialities">
                                 Specialities
                             </a>
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $urlbase ?>blogs">
+                        <a class="nav-link" href="<?= $path ?>blogs">
                             Blogs
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $urlbase ?>gallery">
+                        <a class="nav-link" href="<?= $path ?>gallery">
                             Gallery
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= $urlbase ?>contact">
+                        <a class="nav-link" href="<?= $path ?>contact">
                             Contact Us
                         </a>
                     </li>
@@ -314,7 +315,7 @@ if ($form_type != '') {
 <!-- Sidebar Header with Logo -->
 <div class="offcanvas-header mobile-sidebar-header">
 
-    <a href="<?= $urlbase ?>" class="sidebar-brand-link">
+    <a href="<?= $path ?>" class="sidebar-brand-link">
         <img src="<?=$path.$logo;?>" alt="<?=$websitename;?> Logo" class="sidebar-logo">
 
         <span class="sidebar-brand-text">
@@ -346,37 +347,37 @@ if ($form_type != '') {
             
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= $urlbase ?>">
+                <a class="nav-link" href="<?= $path ?>">
                     <i class="bi bi-house-door me-2"></i>Home
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= $urlbase ?>about">
+                <a class="nav-link" href="<?= $path ?>about-us">
                     <i class="bi bi-person me-2"></i>About Us
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= $urlbase ?>specialities">
+                <a class="nav-link" href="<?= $path ?>specialities">
                     <i class="bi bi-heart-pulse me-2"></i>Specialities
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= $urlbase ?>blogs">
+                <a class="nav-link" href="<?= $path ?>blogs">
                     <i class="bi bi-journal-text me-2"></i>Blogs
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= $urlbase ?>gallery">
+                <a class="nav-link" href="<?= $path ?>gallery">
                     <i class="bi bi-images me-2"></i>Gallery
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= $urlbase ?>contact">
+                <a class="nav-link" href="<?= $path ?>contact">
                     <i class="bi bi-telephone me-2"></i>Contact Us
                 </a>
             </li>
@@ -406,7 +407,7 @@ if ($form_type != '') {
 
 $currentPage = $geturl1 ?? '';
 
-if (!empty($currentPage) && $currentPage !== 'default'):
+if (!empty($currentPage) && $currentPage !== 'home'):
 
     $pageTitle = ucwords(
         str_replace(['-', '_'], ' ', $currentPage)
@@ -422,13 +423,13 @@ if (!empty($currentPage) && $currentPage !== 'default'):
             <ol class="breadcrumb mb-0">
 
                 <li class="breadcrumb-item">
-                    <a href="<?= $urlbase ?>default" class="text-decoration-none">
+                    <a href="<?= $path ?>home" class="text-decoration-none">
                         Home
                     </a>
                 </li>
 
                 <li class="breadcrumb-item active" aria-current="page">
-                    <?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?>
+                    <?= htmlspecialchars($pageTitle) ?>
                 </li>
 
             </ol>
@@ -474,7 +475,7 @@ if (!empty($currentPage) && $currentPage !== 'default'):
                 <input
                 type="hidden"
                 id="appointmentStatus"
-                value="<?= htmlspecialchars($header_appointment_status ?? '', ENT_QUOTES, 'UTF-8') ?>">
+                value="<?= htmlspecialchars($header_appointment_status ?? '') ?>">
             <?php if ($header_appointment_status == 'success') { ?>
 
                 <div class="alert alert-success">
@@ -619,7 +620,7 @@ if (!empty($currentPage) && $currentPage !== 'default'):
                         <div class="col-12">
 
                             <div class="g-recaptcha"
-                                data-sitekey="<?= htmlspecialchars(RECAPTCHA_SITE_KEY, ENT_QUOTES, 'UTF-8') ?>">
+                                data-sitekey="<?= htmlspecialchars(RECAPTCHA_SITE_KEY) ?>">
                             </div>
 
                         </div>
@@ -653,11 +654,13 @@ if (!empty($currentPage) && $currentPage !== 'default'):
 
 <!-- jQuery + Slick (used by the sliders initialised in script.js) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="<?= $urlbase ?>slick/slick.min.js"></script>
+<script src="<?= $path ?>slick/slick.min.js"></script>
 
 <!-- Main JavaScript -->
  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src="<?= $urlbase ?>branch/js/script.js"></script>
+<script src="<?= $path ?>branch/js/script.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
 </body>
 </html>

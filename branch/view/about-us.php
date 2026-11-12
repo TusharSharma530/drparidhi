@@ -1,5 +1,7 @@
 
-<?php include 'header.php'; ?>
+<?php
+include_once __DIR__ . '/../../index.php';
+?>
 
 <?php
 // Fetch About Us content from category table
@@ -28,8 +30,15 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
                 </span>
 
                 <h2 class="section-title">
-                    <?= htmlspecialchars($aboutData['c_name'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                    <br>MBBS, MS, DNB
+                    <?php
+                    $nameParts = explode('|', $aboutData['c_name'] ?? '');
+
+                    echo htmlspecialchars(trim($nameParts[0]), ENT_QUOTES, 'UTF-8');
+
+                    if (!empty($nameParts[1])) {
+                        echo '<br>' . htmlspecialchars(trim($nameParts[1]), ENT_QUOTES, 'UTF-8');
+                    }
+                    ?>
                 </h2>
 
                 <?php if (!empty($aboutData['c_desc'])) { ?>
@@ -43,13 +52,13 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
                     <?php if (!empty($contactno)) { ?>
 
                         <a class="about-helpline"
-                           href="tel:<?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>">
+                           href="tel:<?= htmlspecialchars($contactno) ?>">
 
                             Helpline!
-                            <?= htmlspecialchars($contactno, ENT_QUOTES, 'UTF-8') ?>
+                            <?= htmlspecialchars($contactno) ?>
 
                             <?php if (!empty($alternateno)) { ?>
-                                , <?= htmlspecialchars($alternateno, ENT_QUOTES, 'UTF-8') ?>
+                                , <?= htmlspecialchars($alternateno) ?>
                             <?php } ?>
 
                         </a>
@@ -66,7 +75,7 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
                 <?php if (!empty($aboutData['featured_img'])) { ?>
 
                     <img
-                        src="<?= htmlspecialchars(($path ?? '') . $aboutData['featured_img'], ENT_QUOTES, 'UTF-8') ?>"
+                        src="<?= htmlspecialchars(($path ?? '') . $aboutData['featured_img']) ?>"
                         alt="Dr. Paridhi Chaudhary - Gynecologist in Meerut"
                         loading="lazy"
                     >
@@ -80,8 +89,3 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
     </section>
 
 </main>
-
-<?php include __DIR__ . '/footer.php'; ?>
-
-</body>
-</html>

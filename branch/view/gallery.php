@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include '/../../index.php'; ?>
 
 <main>
     <section class="gallery-section container">
@@ -14,7 +14,7 @@
             ?>
 
                     <div class="gallery-item">
-                        <img src="<?= $path . htmlspecialchars($row['file'], ENT_QUOTES, 'UTF-8'); ?>"
+                        <img src="<?= $path . htmlspecialchars($row['file']); ?>"
                             alt="Gallery Image">
                     </div>
 
@@ -29,5 +29,3 @@
 
     </section>
 </main>
-
-<?php include __DIR__ . '/footer.php'; ?>

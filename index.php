@@ -5,9 +5,10 @@ $geturl = $_GET['type'] ?? '';
 $geturl = explode('/', $geturl);
 $geturl1 = $geturl[0];
 
+ include("branch/view/header.php"); 
 
 if(empty($_GET['type'])){
-    include("branch/view/default.php");
+    include("branch/view/home.php");
 }else{
     
     if(file_exists("branch/view/".$geturl1.".php")) {
@@ -16,5 +17,7 @@ if(empty($_GET['type'])){
         echo $geturl1;
     }
 }
+  include("branch/view/footer.php"); 
+
 
 ?>
