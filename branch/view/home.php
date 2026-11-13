@@ -355,21 +355,33 @@
                 while ($testimonialData = mysqli_fetch_assoc($testimonialQuery)) {
                 ?>
 
-                        <div class="slider-item">
-                            <div class="slider-pad">
-                                <div class="testimonial-card">
-                                    <div class="testimonial-stars" aria-label="5 stars">
-                                        ★★★★★
-                                    </div>
+                       <div class="slider-item">
+                        <div class="slider-pad">
+                            <div class="testimonial-card">
 
-                                    <?php ?>
-                                    <?= strip_tags(
-                                        $testimonialData['desc'] ?? '',
-                                        '<h4><p><br><strong><b><em><i><u>'
-                                    ) ?>
-                                </div>
+                                <?php
+                                $desc = $testimonialData['desc'] ?? '';
+
+                                // Get stars from first paragraph
+                                preg_match('/<p>\s*(★+)\s*<\/p>/u', $desc, $match);
+
+                                $stars = $match[1] ?? '';
+
+                                // Remove stars paragraph
+                                $desc = preg_replace('/<p>\s*★+\s*<\/p>/u', '', $desc, 1);
+                                ?>
+
+                                <?php if ($stars) { ?>
+                                    <div class="testimonial-stars">
+                                        <?= $stars ?>
+                                    </div>
+                                <?php } ?>
+
+                                <?= strip_tags($desc, '<h4><p><br><strong><b><em><i><u>') ?>
+
                             </div>
                         </div>
+                    </div>
 
                     <?php
                     }

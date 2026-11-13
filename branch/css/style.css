@@ -407,7 +407,6 @@ a {
     /* background: #87ceeb3b; */
 }
 
-/* Home page About Us ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ same bg color ab left / right edges tak bhi */
 .home-about-section {
     background-color: #87ceeb3b;
     margin-top: 0px;
@@ -713,7 +712,6 @@ a {
     margin-inline: auto;
 }
 
-/* Home page Gallery ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ same bg color ab left / right edges tak bhi */
 .home-gallery-section {
     background-color: #87ceeb57;
 }
@@ -903,7 +901,6 @@ a:hover .read-more,
     background: linear-gradient(rgb(37 148 156 / 38%), rgba(37, 148, 156, 0.88)), url(../assets/book-appointment.webp) center / cover no-repeat;
 }
 
-/* Schedule Consultation Section (Clinic / Hospital info + Appointment form) */
 .consult-section {width: 100%;padding: 40px 0;}
 
 .consult-section .section-title {
@@ -1213,7 +1210,7 @@ a.consult-section .consult-value:hover {
     padding: 50px 0;
 }
 
-/* ===== Site Footer (white theme, accent = #25949c) ===== */
+
 .site-footer {
     background: #e8f6fb;
     color: var(--text-color);
@@ -1773,12 +1770,6 @@ a.consult-section .consult-value:hover {
     color: #25949c;
 }
 
-
-
-/* Mobile: "Other Blogs" heading ke upar ka space thoda kam */
-
-
-/* Blog Content Styling */
 .blog-content {
     width: 100%;
 }
