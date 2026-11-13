@@ -1,8 +1,6 @@
-
 <?php
 
-$typeSegments = explode('/', trim($_GET['type'] ?? '', '/'));
-$blogSlug = $typeSegments[1] ?? '';
+$blogSlug = $geturl[1] ?? '';
 
 $blog = null;
 
@@ -27,7 +25,6 @@ if ($blogSlug !== '') {
 
 ?>
 
-<main>
 
 <?php if (!empty($blog)) { ?>
 
@@ -186,5 +183,4 @@ if ($blogSlug !== '') {
 
 <?php } ?>
 
-</main>
 

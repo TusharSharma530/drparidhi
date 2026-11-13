@@ -1,5 +1,4 @@
     <!-- Homepage Banner (web_banner table - slick slider) -->
-    <main>
         <?php
         $bannerQuery = mysqli_query($con, "SELECT wb_img FROM web_banner WHERE status = 1 ORDER BY wb_order ASC, id ASC");
         ?>
@@ -454,5 +453,3 @@
 
         </section>
 
-
-    </main>    

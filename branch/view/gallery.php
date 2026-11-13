@@ -1,4 +1,3 @@
-<main>
     <section class="gallery-section container">
         <div class="gallery-grid">
             <?php
@@ -21,4 +20,3 @@
             ?>
         </div>
     </section>
-</main>

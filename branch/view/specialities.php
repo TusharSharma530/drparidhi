@@ -1,6 +1,5 @@
 <?php
-$typeSegments = explode('/', trim($_GET['type'] ?? '', '/'));
-$condSlug = $typeSegments[1] ?? '';
+$condSlug = $geturl[1] ?? '';
 
 $conditionData = null;
 
@@ -24,7 +23,7 @@ if ($condSlug !== '') {
 }
 
 ?>
-<main>
+
 
 
 <?php if (!empty($conditionData)) { ?>
@@ -194,4 +193,3 @@ if ($condSlug !== '') {
 
 <?php } ?>
 
-</main>

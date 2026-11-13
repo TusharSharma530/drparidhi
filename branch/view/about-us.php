@@ -11,8 +11,6 @@ $aboutQuery = mysqli_query($con, "
 $aboutData = mysqli_fetch_assoc($aboutQuery);
 ?>
 
-<main>
-
     <!-- About Doctor Section -->
     <section class="about-doctor-section container">
 
@@ -74,4 +72,3 @@ $aboutData = mysqli_fetch_assoc($aboutQuery);
 
     </section>
 
-</main>
