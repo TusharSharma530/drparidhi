@@ -228,12 +228,12 @@
                 <div class="row">
                     <div class="col-lg-7">
 
-                        <h2 class="section-title text-white mb-5">
+                        <h2 class="section-title text-white mb-2">
                             Facing Gynae Concerns? Get Expert Help From
                             Dr. Paridhi Chaudhary
                         </h2>
 
-                        <div class="row g-4 mb-4">
+                        <div class="row g-4 mb-2">
 
                             <div class="col-sm-6">
                                 <div class="d-flex align-items-center gap-3 mb-2">
@@ -241,14 +241,19 @@
                                     <span class="text-white fw-bold fs-4">Call Us:</span>
                                 </div>
 
-                                <a href="tel:<?= $contactno ?>"
-                                class="text-white text-decoration-none fs-5">
-                                    <?= $contactno ?>
+                                <?php if (!empty($contactno)) { ?>
+                                    <a href="tel:<?= htmlspecialchars($contactno) ?>"
+                                    class="text-white text-decoration-none fs-5 d-block">
+                                        <?= htmlspecialchars($contactno) ?>
+                                    </a>
+                                <?php } ?>
 
-                                    <?php if (!empty($alternateno)) { ?>
-                                        , <?= $alternateno ?>
-                                    <?php } ?>
-                                </a>
+                                <?php if (!empty($alternateno)) { ?>
+                                    <a href="tel:<?= htmlspecialchars($alternateno) ?>"
+                                    class="text-white text-decoration-none fs-5 d-block">
+                                        <?= htmlspecialchars($alternateno) ?>
+                                    </a>
+                                <?php } ?>
                             </div>
 
                             <div class="col-sm-6">
@@ -265,7 +270,7 @@
 
                         </div>
 
-                        <div class="mb-5">
+                        <div class="mb-3">
                             <div class="d-flex align-items-center gap-3 mb-2">
                                 <i class="bi bi-geo-alt text-white fs-4"></i>
                                 <span class="text-white fw-bold fs-4">Visit Us:</span>
