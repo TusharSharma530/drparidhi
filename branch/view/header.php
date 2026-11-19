@@ -206,16 +206,17 @@ if ($form_type != '') {
                                     <?php } ?>
                                 </strong>
                             </span>
-                            <button
-                            type="button"
-                            class="btn appointment-btn availablebtn"
-                            data-bs-toggle="modal"
-                            data-bs-target="#appointmentModal"
-                        >
-                          <span>  24*7 Available <br> for Pregnant Ladies </span>
-                        </button>
 
                         </a>
+
+                       <button
+                            type="button"
+                            class="btn appointment-btn availablebtn"
+                            disabled
+                            aria-disabled="true"
+                        >
+                            <span>24*7 Available <br> for Pregnant Ladies</span>
+                        </button>
                     <?php } ?>
 
                 </div>
@@ -272,7 +273,7 @@ if ($form_type != '') {
                     <li class="nav-item dropdown speciality-dropdown">
                         <div class="speciality-nav-wrapper">
                             <a class="nav-link" href="<?= $path ?>specialities">
-                                Specialities
+                                Specialities/Services
                             </a>
                         </div>
                     </li>

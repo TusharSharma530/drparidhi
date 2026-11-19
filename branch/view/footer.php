@@ -70,7 +70,7 @@
         <div class="footer-divider"></div>
 
         <!-- Middle Columns -->
-        <div class="row g-4 footer-main">
+        <div class="row g-5 footer-main">
 
             <div class="col-md-4">
                 <h3>About Us</h3>
@@ -82,7 +82,7 @@
 
             <!-- Contact Info -->
            
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <h3>Contact Info</h3>
 
                 <ul class="footer-contact-list">
@@ -146,7 +146,7 @@
             
        
         <!-- Other Pages -->
-        <div class="col-md-4">
+        <div class="col-md-2">
             <h3>Other Pages</h3>
 
             <div class="footer-pages">
