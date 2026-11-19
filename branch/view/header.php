@@ -162,9 +162,9 @@ if ($form_type != '') {
                             <?= htmlspecialchars($websitename ?? '') ?>
                         </span>
 
-                       <span class="logo-tagline">
-    <?= str_replace('|', '<br>', strip_tags($headercenterline ?? '', '<strong><b><br>')) ?>
-</span>
+                        <span class="logo-tagline">
+                            <?= str_replace('|', '<br>', strip_tags($headercenterline ?? '', '<strong><b><br>')) ?>
+                        </span>
 
                     </span>
                 </a>
@@ -200,10 +200,20 @@ if ($form_type != '') {
                                     <?= htmlspecialchars($contactno) ?>
 
                                     <?php if (!empty($alternateno)) { ?>
-                                        , <?= htmlspecialchars($alternateno) ?>
+                                        <span class="alternate-number">
+                                            <?= htmlspecialchars($alternateno) ?>
+                                        </span>
                                     <?php } ?>
                                 </strong>
                             </span>
+                            <button
+                            type="button"
+                            class="btn appointment-btn availablebtn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#appointmentModal"
+                        >
+                          <span>  24*7 Available <br> for Pregnant Ladies </span>
+                        </button>
 
                         </a>
                     <?php } ?>

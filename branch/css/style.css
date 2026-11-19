@@ -965,6 +965,10 @@ a:hover .read-more,
     padding: 0;
     list-style: none;
 }
+.header-contact .contact-info .alternate-number {
+    display: block;
+    /* margin-top: 3px; */
+}
 
 .consult-section .consult-item {
     display: flex;
@@ -1012,6 +1016,23 @@ a:hover .read-more,
 
 a.consult-section .consult-value:hover {
     color: var(--primary-color);
+}
+.availablebtn {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: red !important;
+    color: white !important;
+    border: none !important;
+    font-size: 14px !important;
+}
+.availablebtn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ff7777;
+    z-index: -1;
+    animation: bgBlink 1s infinite ease-in-out;
 }
 
 /* Location Button */
@@ -2211,4 +2232,78 @@ a.consult-section .consult-value:hover {
 
 .other-speciality-link:hover span {
     color: #fff;
+}
+.availablebtn span {
+    position: relative;
+    z-index: 1;
+    color: white !important;
+    opacity: 1 !important;
+    animation: none !important;
+}
+
+
+@keyframes bgBlink {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+.vertical-available-btn {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+
+    background: red;
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 6px 0 0 6px;
+
+writing-mode: vertical-rl;
+text-orientation: mixed;
+transform: translateY(-50%) rotate(180deg);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+    animation: verticalBlink 1s ease-in-out infinite;
+}
+
+@keyframes verticalBlink {
+    0%, 100% {
+        background-color: red;
+        box-shadow: 0 0 3px rgba(255, 0, 0, 0.3);
+    }
+
+    50% {
+        background-color: #ff3333;
+        box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+    }
+}
+
+.vertical-available-btn:hover {
+    background-color: #c90000;
+    color: white;
+}
+.vertical-available-btn {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+    z-index: 999;
+    background: red;
+    color: white !important;
+    text-decoration: none;
+    padding: 15px 10px;
+    border-radius: 6px 0 0 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
 }

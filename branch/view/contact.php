@@ -15,7 +15,7 @@
                         </button>
                     </div>
 
-                    <p class="consult-availability">24*7 available</p>
+                  
 
                     <ul class="consult-list">
 

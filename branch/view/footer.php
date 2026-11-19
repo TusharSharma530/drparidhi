@@ -262,17 +262,8 @@
 </div>
 
 
-<!-- Emergency Call Button (right side, above back-to-top) -->
-<?php if (!empty($contactno)) { ?>
-    <a href="tel:<?= htmlspecialchars($contactno) ?>"
-       class="float-emergency"
-       aria-label="Emergency call">
-        <i class="bi bi-bell-fill"></i>
-        <span class="float-emergency-label">Emergency</span>
-    </a>
-<?php } ?>
 
-<!-- Back to Top Button (right side) -->
+
 <button type="button" class="back-to-top" aria-label="Back to top">
     <i class="bi bi-arrow-up"></i>
 </button>
@@ -292,7 +283,14 @@
 <!-- Main JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script src="<?= $path ?>branch/js/script.js"></script>
-
+<!-- Fixed Vertical Appointment Button -->
+<a
+    href="tel:<?= htmlspecialchars($contactno) ?>"
+    class="vertical-available-btn"
+    aria-label="Call for emergency assistance"
+>
+    <span>Emergency : +91-9286197331</span>
+</a>
 
 </body>
 </html>
