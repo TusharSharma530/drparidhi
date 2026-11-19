@@ -1435,6 +1435,9 @@
     .other-specialities {
         position: static;
         margin-bottom: 20px;
+        /* Stacked layout: let the list grow naturally, no inner scrollbar */
+        max-height: none;
+        overflow-y: visible;
     }
 
     .speciality-detail-row .speciality-detail-main {

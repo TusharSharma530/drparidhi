@@ -115,13 +115,20 @@ if(isset($_POST['editRecord'])){
 	<div class="page-content">
 	<form method="POST" id="submitForm" enctype="multipart/form-data">
 	<div class="row">
-		<div class="col-md-4 mb-3">
+		<div class="col-md-12 mb-3">
 			<label for="webname" >Website Name</label>
 			<input type="text" name="web_name" class="form-control" value="<?php echo $rwpinfo['web_name']; ?>">
 		</div>	
-		<div class="col-md-8 mb-3">
-			<label for="headercenterline" >Header Center Line</label>
-			<input type="text" name="headercenterline" class="form-control" value="<?php echo $rwpinfo['headercenterline']; ?>">
+		<div class="col-md-12 mb-3">
+			<label for="headercenterline">Header Center Line</label>
+
+			<textarea
+				class="tinyMCE"
+				name="headercenterline"
+				id="headercenterline"
+			><?php echo htmlspecialchars($rwpinfo['headercenterline'], ENT_QUOTES, 'UTF-8'); ?></textarea>
+		
+			
 		</div>
 
 		<div class="col-md-6 mb-3">

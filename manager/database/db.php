@@ -184,6 +184,9 @@ function __cfg($value, $fallback = ''){
 }
 
 
+// ===== Site settings values loaded above (see $rwlinks) =====
+
+
 if(!function_exists('imageUrl')){
 	function imageUrl($folder, $filename) {
 		return IMAGES_URL . $folder . '/' . $filename;

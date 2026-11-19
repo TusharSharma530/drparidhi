@@ -20,7 +20,7 @@
                     </span>
 
                 <span class="footer-doctor-tagline">
-                        <?= str_replace('|', '<br>', htmlspecialchars($headercenterline ?? '')) ?>
+                        <?= str_replace('|', '<br>', strip_tags($headercenterline ?? '', '<strong><b><br>')) ?>
                     </span>
                 </span>
             </a>
@@ -72,7 +72,7 @@
         <!-- Middle Columns -->
         <div class="row g-4 footer-main">
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-4">
                 <h3>About Us</h3>
 
                 <p>
@@ -82,7 +82,7 @@
 
             <!-- Contact Info -->
            
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-4">
                 <h3>Contact Info</h3>
 
                 <ul class="footer-contact-list">
@@ -146,7 +146,7 @@
             
        
         <!-- Other Pages -->
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-4">
             <h3>Other Pages</h3>
 
             <div class="footer-pages">
@@ -208,39 +208,7 @@
 
             <!-- Our Services -->
            
-        <!-- Our Services -->
-        <div class="col-md-6 col-lg-3">
-            <h3>Our Services</h3>
-
-            <ul class="footer-services">
-
-                <?php
-                $sql = "SELECT sc_name, sc_url FROM sub_cat WHERE status = 1 ORDER BY id ASC";
-                $result = mysqli_query($con, $sql);
-
-                if ($result && mysqli_num_rows($result) > 0) {
-
-                    while ($row = mysqli_fetch_assoc($result)) {
-
-                        $serviceSlug = !empty($row['sc_url'])
-                            ? trim($row['sc_url'])
-                            : seo_friendly_url($row['sc_name']);
-                ?>
-
-                        <li>
-                            <a href="<?= htmlspecialchars($path . 'specialities/' . $serviceSlug) ?>">
-                                <?= htmlspecialchars($row['sc_name']) ?>
-                            </a>
-                        </li>
-
-                <?php
-                    }
-
-                }
-                ?>
-
-            </ul>
-        </div>
+      
 
         </div>
 
@@ -293,6 +261,16 @@
 
 </div>
 
+
+<!-- Emergency Call Button (right side, above back-to-top) -->
+<?php if (!empty($contactno)) { ?>
+    <a href="tel:<?= htmlspecialchars($contactno) ?>"
+       class="float-emergency"
+       aria-label="Emergency call">
+        <i class="bi bi-bell-fill"></i>
+        <span class="float-emergency-label">Emergency</span>
+    </a>
+<?php } ?>
 
 <!-- Back to Top Button (right side) -->
 <button type="button" class="back-to-top" aria-label="Back to top">

@@ -162,9 +162,9 @@ if ($form_type != '') {
                             <?= htmlspecialchars($websitename ?? '') ?>
                         </span>
 
-                        <span class="logo-tagline">
-                            <?= str_replace('|', '<br>', htmlspecialchars($headercenterline ?? '')) ?>
-                        </span>
+                       <span class="logo-tagline">
+    <?= str_replace('|', '<br>', strip_tags($headercenterline ?? '', '<strong><b><br>')) ?>
+</span>
 
                     </span>
                 </a>
@@ -226,9 +226,7 @@ if ($form_type != '') {
                 <span class="logo-text">
                     <span class="logo-name">Dr. Paridhi</span>
                     <span class="logo-tagline">
-                        Obstetrician &amp; Gynecologist Laparascopic
-                        <br>
-                        Surgeon and Infertility Specialist
+                        <?= str_replace('|', '<br>', strip_tags($headercenterline ?? '', '<strong><b><br>')) ?>
                     </span>
                 </span>
             </a>
