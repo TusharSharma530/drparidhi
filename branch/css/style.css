@@ -942,16 +942,26 @@ a:hover .read-more,
 .consult-section .consult-tab:hover {
     color: var(--primary-color);
 }
-
 .consult-section .consult-tab.active, .consult-section .consult-tab.active:hover {
     background-color: var(--primary-color);
     color: #ffffff;
     font-size: 16px;
 }
 
+/* "24*7 available" note under the Clinic heading */
+.consult-section .consult-availability {
+    display: block;
+    /* margin: 8px 0 0; */
+    font-family: var(--font-family);
+    font-size: 17px;
+    font-weight: 600;
+    color: #25949C;
+    padding-left: 27px;
+}
+
 /* Contact List */
 .consult-section .consult-list {
-    margin: 36px 0 30px;
+    /* margin: 36px 0 30px; */
     padding: 0;
     list-style: none;
 }
