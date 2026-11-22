@@ -273,7 +273,7 @@ if ($form_type != '') {
                     <li class="nav-item dropdown speciality-dropdown">
                         <div class="speciality-nav-wrapper">
                             <a class="nav-link" href="<?= $path ?>specialities">
-                                Specialities/Services
+                               Services/Specialities
                             </a>
                         </div>
                     </li>

@@ -396,14 +396,15 @@ a {
 
 .about-doctor-section {
     background-color: var(--white);
-    margin-top: 45px;
-    margin-bottom: 55px;
+    /* margin-top: 45px; */
+    /* margin-bottom: 55px; */
 }
 
 .about-doctor-section.container {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-inline: auto;
+    /* margin-top: 40px; */
+    /* margin-bottom: 40px; */
+    /* margin-inline: auto; */
+    padding: 30px;
 }
 
 
@@ -419,7 +420,7 @@ a {
 .home-about-section {
     background-color: #87ceeb3b;
     margin-top: 0px;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
 }
 
 .home-about-section .about-row {
@@ -442,13 +443,14 @@ a {
     font-size: 16px;
     font-weight: 400;
     margin: 10px;
+    /* padding: 10px; */
 }
 
 .about-doctor-section .about-actions {
     display: flex;
     align-items: center;
     gap: 45px;
-    margin: 15px 10px 10px;
+    /* margin: 15px 10px 10px; */
 }
 
 .about-doctor-section .about-btn, .pregnancy-care-section .about-btn, .pregnancy-blog-page .blog-content .about-btn, .speciality-appointment-col .about-btn {
@@ -483,6 +485,7 @@ a {
     text-decoration: none;
     white-space: nowrap;
     transition: var(--transition);
+    padding-left: 9px;
 }
 
 .about-doctor-section .about-helpline:hover {
@@ -583,8 +586,9 @@ a {
 
 
 .blogs-list-page {
-    margin-top: 40px;
-    margin-bottom: 55px;
+    /* margin-top: 40px; */
+    /* margin-bottom: 55px; */
+    padding: 30px;
 }
 
 
@@ -717,8 +721,8 @@ a {
 }
 
 .gallery-section.container {
-    margin-top: 45px;
-    margin-bottom: 55px;
+    /* margin-top: 45px; */
+    /* margin-bottom: 55px; */
     margin-inline: auto;
 }
 
@@ -730,18 +734,18 @@ a {
 
 .section-head {
     max-width: 1100px;
-    margin: 0 auto 30px;
-    /* padding: 20px; */
+    /* margin: 0 auto 30px; */
+    padding-bottom: 20px;
     text-align: center;
 }
 
 .section-tag {
     display: block;
-    margin-bottom: -1px;
+    /* margin-bottom: -1px; */
     color: var(--primary-color);
     font-size: 16px;
     font-weight: 700;
-    padding: 5px 10px;
+    padding: 0px 10px;
 }
 
 .section-title {
@@ -778,13 +782,14 @@ a {
 
 .conditions-section {
     width: 100%;
-    margin-top: 45px;
-    margin-bottom: 55px;
+    /* margin-top: 45px; */
+    /* margin-bottom: 55px; */
+    padding: 30px;
 }
 
 .conditions-section.container {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    /* margin-top: 40px; */
+    /* margin-bottom: 40px; */
     margin-inline: auto;
 }
 
@@ -909,9 +914,10 @@ a:hover .read-more,
     padding-top: 80px;
     /* padding-left: 130px; */
     background: linear-gradient(rgb(37 148 156 / 38%), rgba(37, 148, 156, 0.88)), url(../assets/book-appointment.webp) center / cover no-repeat;
+    /* padding: 60px; */
 }
 
-.consult-section {width: 100%;padding: 40px 0;}
+.consult-section {width: 100%;padding: 30px 0;}
 
 .consult-section .section-title {
     margin-bottom: 45px;
@@ -925,6 +931,7 @@ a:hover .read-more,
     /* padding: 7px; */
     background-color: #f1f1f4;
     border-radius: 999px;
+    margin-bottom: 19px;
 }
 
 .consult-section .consult-tab {
@@ -939,6 +946,7 @@ a:hover .read-more,
     line-height: 1;
     cursor: pointer;
     transition: var(--transition);
+    /* margin-bottom: 10px; */
 }
 
 .consult-section .consult-tab:hover {
@@ -1180,7 +1188,7 @@ a.consult-section .consult-value:hover {
 
 /* Patient Testimonials */
 .testimonials-section {
-    padding: 40px 0;
+    padding: 30px 0;
     background: #25949c1a;
     border: 1px solid #eee;
 }
@@ -1248,14 +1256,14 @@ a.consult-section .consult-value:hover {
 }
 
 .blogs-section {
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 
 .site-footer {
     background: #e8f6fb;
     color: var(--text-color);
-    padding: 45px 0 0;
+    padding: 30px 0 0;
     font-family: 'Poppins', sans-serif;
     border-top: 1px solid var(--border-color);
 }
@@ -1480,19 +1488,25 @@ a.consult-section .consult-value:hover {
     background-color: #25d366;
 }
 
-/* Enquire Now button (right edge, middle — jahan pehle EMERGENCY tha) */
+/* Enquire Now button (right edge, middle â€" jahan pehle EMERGENCY tha) */
 .float-emergency {
+    /* Purani direction badalne ke liye is value ko change karein, jaise: 90deg / 180deg / -90deg */
+    --float-rotate: 0deg;
+    /* Text direction: 180deg = niche se upar (current), 0deg = upar se niche */
+    --float-text-rotate: 180deg;
+    /* Phone icon direction: 0deg = current, koi bhi angle daal sakte hain */
+    --float-icon-rotate: 0deg;
     position: fixed;
-    right: 0;
+    right: 10px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(var(--float-rotate));
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
     width: 56px;
     padding: 16px 0 20px;
-    border-radius: 28px 0 0 28px;
+    border-radius: 10px;
     background-color: #25949C;
     color: var(--white);
     text-decoration: none;
@@ -1505,7 +1519,7 @@ a.consult-section .consult-value:hover {
 .float-emergency:focus {
     color: var(--white);
     background-color: #111111;
-    transform: translateY(-50%) translateX(-4px);
+    transform: translateY(-50%) translateX(-4px) rotate(var(--float-rotate));
 }
 
 /* White circle with the phone icon */
@@ -1520,17 +1534,25 @@ a.consult-section .consult-value:hover {
     color: #2b2b2b;
     font-size: 18px;
     flex-shrink: 0;
+    transform: rotate(var(--float-icon-rotate));
+    transition: var(--transition);
 }
+
+/* Phone icon rotate*/
+/* .float-emergency .float-emergency-icon i {
+    transform: scaleX(-1);
+} */
 
 .float-emergency:hover .float-emergency-icon,
 .float-emergency:focus .float-emergency-icon {
     color: #111111;
 }
 
-/* Vertical "ENQUIRE NOW" text */
+/* Vertical "EMERGENCY" text - niche se upar (↑) */
 .float-emergency .float-emergency-label {
     writing-mode: vertical-rl;
     text-orientation: mixed;
+    transform: rotate(var(--float-text-rotate));
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 1.4px;
@@ -1678,6 +1700,15 @@ a.consult-section .consult-value:hover {
     color: #ffffff;
     font-size: 19px;
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Icon ko circle me exactly center me rakhe - top aur bottom ka gap equal */
+.site-footer .footer-social-icons a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* glyph ko optical center me lane ke liye halka sa neeche */
+    transform: translateY(1px);
 }
 
 .site-footer .footer-social-icons .social-youtube {
@@ -2042,13 +2073,7 @@ a.consult-section .consult-value:hover {
     padding: 22px 18px;
     border-radius: 10px;
     border: 1px solid #e5e5e5;
-    position: sticky;
-    top: 150px;
-    /* Sticky box must never exceed the viewport, otherwise the last
-       specialities get cut off with no way to reach them. */
-    max-height: calc(100vh - 170px);
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    /* Inner scrollbar / sticky hata diya - list ab poori page ke sath scroll hoti hai */
 }
 
 .other-specialities-title {
