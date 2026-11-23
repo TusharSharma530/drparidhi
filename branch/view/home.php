@@ -228,7 +228,7 @@
                 <div class="row">
                     <div class="col-lg-7">
 
-                        <h2 class="section-title text-white mb-2">
+                        <h2 class="section-title text-white mb-4">
                             Facing Gynae Concerns? Get Expert Help From
                             Dr. Paridhi Chaudhary
                         </h2>
@@ -236,7 +236,7 @@
                         <div class="row g-4 mb-2">
 
                             <div class="col-sm-6">
-                                <div class="d-flex align-items-center gap-3 mb-2">
+                                <div class="d-flex align-items-center gap-3 mb-3">
                                     <i class="bi bi-telephone text-white fs-4"></i>
                                     <span class="text-white fw-bold fs-4">Call Us:</span>
                                 </div>
@@ -257,7 +257,7 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <div class="d-flex align-items-center gap-3 mb-2">
+                                <div class="d-flex align-items-center gap-3 mb-3">
                                     <i class="bi bi-envelope text-white fs-4"></i>
                                     <span class="text-white fw-bold fs-4">E-mail Us:</span>
                                 </div>
@@ -271,7 +271,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <div class="d-flex align-items-center gap-3 mb-2">
+                            <div class="d-flex align-items-center gap-3 mb-2 mt-3">
                                 <i class="bi bi-geo-alt text-white fs-4"></i>
                                 <span class="text-white fw-bold fs-4">Visit Us:</span>
                             </div>
@@ -283,7 +283,7 @@
 
                         <button
                             type="button"
-                            class="about-btn bg-white text-dark border-0"
+                            class="about-btn bg-white text-dark border-0 mt-2"
                             data-bs-toggle="modal"
                             data-bs-target="#appointmentModal">
                             Book an Appointment
@@ -333,7 +333,7 @@
 
             <div class="container px-4">
 
-                <div class="section-head text-center mb-5">
+                <div class="section-head text-center ">
                     <span class="section-tag">Testimonials</span>
 
                     <h2 class="section-title">

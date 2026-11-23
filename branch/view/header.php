@@ -188,28 +188,34 @@ if ($form_type != '') {
                         </a>
                     <?php } ?>
 
-                    <?php if (!empty($contactno)) { ?>
-                        <a href="tel:<?= htmlspecialchars($contactno) ?>"
-                        class="contact-item">
+                    <?php if (!empty($contactno) || !empty($alternateno)) { ?>
+
+                        <div class="contact-item">
 
                             <i class="bi bi-telephone"></i>
 
                             <span class="contact-info">
                                 <small>Contact Us</small>
+
                                 <strong>
-                                    <?= htmlspecialchars($contactno) ?>
+                                    <?php if (!empty($contactno)) { ?>
+                                        <a href="tel:<?= htmlspecialchars($contactno) ?>">
+                                            <?= htmlspecialchars($contactno) ?>
+                                        </a>
+                                    <?php } ?>
 
                                     <?php if (!empty($alternateno)) { ?>
-                                        <span class="alternate-number">
+                                        <a href="tel:<?= htmlspecialchars($alternateno) ?>"
+                                        class="alternate-number">
                                             <?= htmlspecialchars($alternateno) ?>
-                                        </span>
+                                        </a>
                                     <?php } ?>
                                 </strong>
                             </span>
 
-                        </a>
+                        </div>
 
-                       <button
+                        <button
                             type="button"
                             class="btn appointment-btn availablebtn"
                             disabled
@@ -217,6 +223,7 @@ if ($form_type != '') {
                         >
                             <span>24*7 Available <br> for Pregnant Ladies</span>
                         </button>
+
                     <?php } ?>
 
                 </div>

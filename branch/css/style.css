@@ -1488,16 +1488,12 @@ a.consult-section .consult-value:hover {
     background-color: #25d366;
 }
 
-/* Enquire Now button (right edge, middle â€" jahan pehle EMERGENCY tha) */
 .float-emergency {
-    /* Purani direction badalne ke liye is value ko change karein, jaise: 90deg / 180deg / -90deg */
     --float-rotate: 0deg;
-    /* Text direction: 180deg = niche se upar (current), 0deg = upar se niche */
     --float-text-rotate: 180deg;
-    /* Phone icon direction: 0deg = current, koi bhi angle daal sakte hain */
     --float-icon-rotate: 0deg;
     position: fixed;
-    right: 10px;
+    right: 0px;
     top: 50%;
     transform: translateY(-50%) rotate(var(--float-rotate));
     display: flex;
@@ -2298,9 +2294,9 @@ a.consult-section .consult-value:hover {
     padding: 15px 10px;
     border-radius: 6px 0 0 6px;
 
-writing-mode: vertical-rl;
-text-orientation: mixed;
-transform: translateY(-50%) rotate(180deg);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: translateY(-50%) rotate(180deg);
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -2358,4 +2354,110 @@ transform: translateY(-50%) rotate(180deg);
     justify-content: center;
     font-size: 16px;
     writing-mode: horizontal-tb;
+}
+.contact-info strong a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+/* Testimonial slider arrows outside cards */
+.testimonials-section .slider {
+    position: relative;
+    padding: 0 35px;
+}
+
+.testimonials-section .slider .slick-prev {
+    left: -10px;
+}
+
+.testimonials-section .slider .slick-next {
+    right: -10px;
+}
+
+/* Keep arrows vertically centered */
+.testimonials-section .slider .slick-prev,
+.testimonials-section .slider .slick-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Ensure arrows remain visible */
+.testimonials-section .container {
+    overflow: visible;
+}
+
+.testimonials-section .slider {
+    overflow: visible;
+}
+/* Conditions slider arrows outside cards */
+.conditions-section .slider {
+    position: relative;
+    padding: 0 35px;
+    overflow: visible;
+}
+
+.conditions-section .slider .slick-prev {
+    left: -10px;
+}
+
+.conditions-section .slider .slick-next {
+    right: -10px;
+}
+
+.conditions-section .slider .slick-prev,
+.conditions-section .slider .slick-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.conditions-section {
+    overflow: visible;
+}
+/* Gallery slider arrows outside cards */
+.home-gallery-section .slider {
+    position: relative;
+    padding: 0 35px;
+    overflow: visible;
+}
+
+.home-gallery-section .slider .slick-prev {
+    left: -10px;
+}
+
+.home-gallery-section .slider .slick-next {
+    right: -10px;
+}
+
+.home-gallery-section .slider .slick-prev,
+.home-gallery-section .slider .slick-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.home-gallery-section {
+    overflow: visible;
+}
+/* Blog slider arrows outside cards */
+.blogs-section .slider {
+    position: relative;
+    padding: 0 35px;
+    overflow: visible;
+}
+
+.blogs-section .slider .slick-prev {
+    left: -10px;
+}
+
+.blogs-section .slider .slick-next {
+    right: -10px;
+}
+
+.blogs-section .slider .slick-prev,
+.blogs-section .slider .slick-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.blogs-section {
+    overflow: visible;
 }
