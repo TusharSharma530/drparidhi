@@ -111,15 +111,10 @@
                     <?php if (!empty($mapiframe)) { ?>
                     <div class="consult-map">
 
-                        <iframe
-                            src="<?= htmlspecialchars($mapiframe) ?>"
-                            width="100%"
-                            height="450"
-                            style="border:0;"
-                            allowfullscreen
-                            loading="lazy"
-                            referrerpolicy="strict-origin-when-cross-origin">
-                        </iframe>
+                     
+                            <?= ($mapiframe) ?>
+                            
+                     
 
                         <?php if (!empty($address)) { ?>
                         <div class="consult-map-address">
