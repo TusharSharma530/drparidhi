@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2026 at 11:27 AM
+-- Generation Time: Nov 25, 2026 at 01:26 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -467,10 +467,7 @@ INSERT INTO `gallery_imgs` (`id`, `gal_id`, `file`, `title`, `ordering`, `catego
 (271, 0, 'branch/assets/gallery_img/17954126530.jpg', '', 3, '', 1),
 (272, 0, 'branch/assets/gallery_img/17954130840.jpg', '', 12, '', 1),
 (274, 0, 'branch/assets/gallery_img/17954130610.jpg', '', 5, '', 1),
-(275, 0, 'branch/assets/gallery_img/17954130410.jpg', '', 11, '', 1),
-(276, 0, 'branch/assets/gallery_img/17954129980.jpg', '', 10, '', 1),
-(277, 0, 'branch/assets/gallery_img/17954129740.jpg', '', 9, '', 1),
-(278, 0, 'branch/assets/gallery_img/17954129500.jpg', '', 8, '', 1);
+(276, 0, 'branch/assets/gallery_img/17954129980.jpg', '', 10, '', 1);
 
 -- --------------------------------------------------------
 
@@ -709,7 +706,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `web_name`, `email_id`, `alternate_email_id`, `contact_no`, `alternate_no`, `whatsapp_no`, `reception_time`, `address`, `youtubelink`, `map_iframe`, `facebook`, `youtube`, `instagram`, `twitter`, `linkedin`, `logo`, `meta_title`, `meta_keywords`, `meta_desc`, `smart_classroom_desc`, `smart_classroom_text`, `brochure_file`, `footerdesc`, `googletag`, `headercenterline`, `no_of_experience`, `surgeries`, `no_of_patients`, `satisfied_patients`, `working_days`, `closed_days`) VALUES
-(1, 'Dr.Paridhi Chaudhary', 'drparidhichaudhary@gmail.com', '', '+91-9286197331', '+91-01214567142', '+91 7906246489', '11:00 AM – 8:00 PM ( sunday closed)', 'Shop No,6,7,RPG Galleria GP Pocket,Ganga Nagar, Meerut,Uttar Pradesh-250001', '', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.3969264330626!2d77.74936437551455!3d29.00523667546334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c7b9d685b63ed%3A0x424008da6370361b!2sDr%20Paridhi%20Chaudhary!5e0!3m2!1sen!2sin!4v1793430155967!5m2!1sen!2sin', 'https://www.facebook.com/Dr.Paridhi.chaudhary', 'https://www.youtube.com/@paridhichaudharyshaurya6955', 'https://www.instagram.com/drparidhigyne/', '', '', 'branch/assets/logo/logoImg1793338057.png', '', '', '', '', '', 'branch/images/brochure_1788931594.pdf', 'Dr. Paridhi Chaudhary believes Obstetrics & Gynecology is an important and sensitive field of medicine that requires dedication, empathy, and compassion. Every woman deserves to be heard, understood, and treated with respect.', '', '<p>Consultant Obstetrician <strong>Laparascopic</strong> | Infertility Specialist</p>', '', '', '', '', '', '');
+(1, 'Dr.Paridhi Chaudhary', 'drparidhichaudhary@gmail.com', '', '+91-9286197331', '+91-01214567142', '+91 7906246489', '11:00 AM – 8:00 PM ( sunday closed)', 'Shop No. 6 & 7, RPG Galleria, GP Pocket, Ganga Nagar, Meerut, UP 250001', '', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13957.587661899666!2d77.751939!3d29.005237000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c7b9d685b63ed%3A0x424008da6370361b!2sDr%20Paridhi%20Chaudhary!5e0!3m2!1sen!2sin!4v1795584263729!5m2!1sen!2sin\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"strict-origin-when-cross-origin\"></iframe>', 'https://www.facebook.com/Dr.Paridhi.chaudhary', 'https://www.youtube.com/@paridhichaudharyshaurya6955', 'https://www.instagram.com/drparidhigyne/', '', '', 'branch/assets/logo/logoImg1793338057.png', '', '', '', '', '', 'branch/images/brochure_1788931594.pdf', 'Dr. Paridhi Chaudhary believes Obstetrics & Gynecology is an important and sensitive field of medicine that requires dedication, empathy, and compassion. Every woman deserves to be heard, understood, and treated with respect.', '', '<p>Consultant Obstetrician<br /><strong>Laparascopic surgeon and Infertility Specialist</strong></p>', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
