@@ -5,16 +5,7 @@
                 <!-- Clinic Information -->
                 <div class="col-lg-7">
 
-                    <div class="consult-tabs" role="tablist">
-                        <button type="button"
-                                class="consult-tab"
-                                data-consult-tab="clinic"
-                                role="tab"
-                                aria-selected="true">
-                            Clinic
-                        </button>
-                    </div>
-
+                    
                   
 
                     <ul class="consult-list">

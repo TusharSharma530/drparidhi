@@ -221,7 +221,7 @@ if ($form_type != '') {
                             disabled
                             aria-disabled="true"
                         >
-                            <span>24*7 Available <br> for Pregnant Ladies</span>
+                            <span>24*7 Available <br> in case of emergencies</span>
                         </button>
 
                     <?php } ?>
